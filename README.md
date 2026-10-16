@@ -6,25 +6,66 @@ Allods 2 reference used for this project: [Allods2.eu: About](https://www.allods
 
 Move with WASD or the arrow keys. Spells cast automatically. Space dashes, I opens inventory, and Escape pauses. Survive the siege and defeat Urd. Death resets progression. Compatible equipment fills empty slots and clear upgrades equip automatically; items with stat tradeoffs remain in the backpack.
 
-## Run and build
+## Building the Electron app
 
-Install a current Node.js LTS release, then run:
+Build on Windows x64 with Node.js LTS and npm installed (Node.js 24 is used for development). Open a terminal in the repository root, where `package.json` is located. The first dependency install and packaging run need internet access to download Electron and build tools. The game assets are already included; no original Allods installation or asset extraction is required.
 
-```sh
+Install the exact dependencies from the lockfile:
+
+```powershell
 npm ci
-npm test
+```
+
+Run the desktop app during development:
+
+```powershell
 npm run desktop
 ```
 
-For the browser version, run `node survivors/launcher.cjs` or use `Start-Survivors-Browser.cmd` on Windows. The browser launcher serves the game on localhost.
+This stages the current game source and referenced assets, then launches Electron. Stop and rerun the command after changing source files; it does not start a watch process.
 
-Build a Windows x64 portable executable:
+Build a portable Windows x64 executable:
 
-```sh
+```powershell
 npm run desktop:dist
 ```
 
-The executable is written to `dist/Allods-Survivors-win-x64.exe`. Its game payload is restricted to referenced runtime assets and audited after packaging. The portable executable includes Electron and requires no Node.js installation on the player's machine.
+Distribute **`dist/Allods-Survivors-win-x64.exe`** as a single file. Players do not need Node.js, Electron, an installer, or the source repository.
+
+For an unpacked desktop build instead:
+
+```powershell
+npm run desktop:pack
+```
+
+Run `dist/win-unpacked/Allods Survivors.exe`. Distributing this version requires the entire `dist/win-unpacked/` folder, including its supporting files.
+
+Both packaging commands stage only the referenced runtime files and assets, then audit the packaged application. The audit report is written to `dist/asset-report.json`. To stage the game payload without launching or packaging Electron, run `npm run desktop:stage`.
+
+## Browser version and tests
+
+For the browser version, run `node survivors/launcher.cjs` or use `Start-Survivors-Browser.cmd` on Windows. The browser launcher serves the game on localhost.
+
+Run the self-contained gameplay tests after installing dependencies:
+
+```powershell
+npm test
+```
+
+## GitHub Actions releases
+
+The **Tests** workflow runs gameplay, release tooling and package-audit tests on Windows and Linux for pushes and pull requests, and checks runtime staging.
+
+To publish binaries, open **Actions > Release binaries > Run workflow** in GitHub. Select the branch containing the release source and enter a version such as `1.2.3` or `1.2.3-beta.1` (a leading `v` is optional). The workflow validates the version, runs tests, then builds and audits Windows x64 and Linux x64 packages on their respective runners. Only when both builds pass does it create the `v<VERSION>` GitHub release at the selected source commit and upload:
+
+- `Allods-Survivors-win-x64.exe`: portable Windows executable.
+- `Allods-Survivors-linux-x64.AppImage`: portable Linux executable; run `chmod +x` on it before launching.
+- `Allods-Survivors-linux-x64.tar.gz`: Linux app folder; extract it and run `allods-survivors` with the supporting files beside it.
+- Per-platform asset audit reports and `SHA256SUMS.txt` checksums.
+
+Prerelease versions create GitHub prereleases. Choose a new version for each release; an existing release is not overwritten. The workflow sets package versions only in the build job and creates no source commits. It uses the built-in GitHub token, with release write permission limited to the publishing job; no personal token is needed.
+
+For a local Linux build, use Node.js LTS on Linux and run `npm ci`, then `npm run desktop:dist -- --linux`. To build an unpacked Linux folder, use `npm run desktop:pack -- --linux`.
 
 ## Project layout
 

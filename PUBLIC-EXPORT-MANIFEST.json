@@ -7,6 +7,16 @@
       "sha256": "172689dd0494c9ddd2f9a390a4dc0f7e73240a9b95874a778500ecb7850e6372"
     },
     {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 556,
+      "sha256": "fb656d5c4dbb02bbd6e4eb9f36781324f2228e8307f371f39f1d1a8c091efd8f"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "bytes": 4191,
+      "sha256": "303661c1a23c88136bace15dcbb90a1f5b0e799627ad842ef43b28d5842bb1db"
+    },
+    {
       "path": ".gitignore",
       "bytes": 161,
       "sha256": "4f8e78857d921de821d6eb8a7489869c396a26f62db1df6b9eb17d621bdf646b"
@@ -23,8 +33,8 @@
     },
     {
       "path": "electron-builder.json",
-      "bytes": 547,
-      "sha256": "e51043ac3d9e5e807e7366ee1a0745f17223b695d6acb7e0c8aa0a64192e87ea"
+      "bytes": 1047,
+      "sha256": "a623237d6b9d2cb020d2452e9b7e8076880393e9ef4809563e682166c15d3077"
     },
     {
       "path": "LICENSE",
@@ -43,8 +53,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1864,
-      "sha256": "541ad1af04d667d3d500ecb4295a96cc2d15654eed8f6a3dd0e3628523b2d5fb"
+      "bytes": 4600,
+      "sha256": "288c0c2974cbc0916779b2f7243414b37d078fe1824f8179bf8f345da63bd5ad"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -9222,9 +9232,19 @@
       "sha256": "44515450271ca9030a98d4e6052a32374e519f55c69b54e146338e0bd5e2480e"
     },
     {
+      "path": "tests/package-audit.test.mjs",
+      "bytes": 2849,
+      "sha256": "eb0a299b3f520137dfba7d43ced78f3d8e6ad9b2594864b1ad3e58531523439a"
+    },
+    {
       "path": "tests/powerups.test.mjs",
       "bytes": 3309,
       "sha256": "0c59d53e6f8f3277f47de94ad1faaf93a6891565aa36bed6b45f3246817d4da6"
+    },
+    {
+      "path": "tests/release-build.test.mjs",
+      "bytes": 3377,
+      "sha256": "c078ec7602a1d48a81bf5c0b9e820e9d639d357a21e4bf5443e563dc68d26692"
     },
     {
       "path": "tests/spell-replacement.test.mjs",
@@ -9243,13 +9263,18 @@
     },
     {
       "path": "tools/audit-electron.cjs",
-      "bytes": 2214,
-      "sha256": "23dbf9edb7fbfca90e482bc3b05fe34895e92d9bb0d57737b955916062bac183"
+      "bytes": 2731,
+      "sha256": "ba4ff59fd3fe4298be5e395f8e54b4ab8bb04a9ffde7e52c5c5016d09225b91d"
     },
     {
       "path": "tools/build-electron.cjs",
-      "bytes": 1228,
-      "sha256": "5ff410ad8a1384b9bd65c9022e98cb17f7cab9c94962c57e61e67ed4d61b8520"
+      "bytes": 2340,
+      "sha256": "3cde4fff37a412ed5507af8206485cd4f4c104a5a5ee9e59c24826dc4cdb9be2"
+    },
+    {
+      "path": "tools/prepare-release.cjs",
+      "bytes": 2005,
+      "sha256": "69810e49857e67f1109332d4b1b83f525a1b5bc4ee45b78b8748693b16dce614"
     },
     {
       "path": "tools/run-electron.cjs",
