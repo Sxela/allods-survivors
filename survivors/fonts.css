@@ -1,0 +1,7 @@
+/* Romul is supplied as data/graphics/font5/font5.ttf in the original game. */
+@font-face{font-family:'Allods Romul';src:url('assets/allods-romul.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+#game h1,#game h2,#game h3,#game .primary,#game .text-button,#game .class-card strong,#game .upgrade-card strong,#game .clock,#game #announcement,#game .shop-wallet,#game .inventory-wallet,#game .tooltip-item-heading strong{font-family:'Allods Romul',Georgia,serif;font-weight:400;line-height:1.2}
+#game h1{letter-spacing:8px;line-height:1.05}#game h1 span{letter-spacing:5px}
+#game .item-detail h3,#game .shop-item h3,#game .item-tooltip h3{overflow-wrap:anywhere}
+
+#game .menu-panel{padding-top:8px;padding-bottom:8px}#game .intro{margin-top:8px;margin-bottom:10px}

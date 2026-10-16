@@ -1,0 +1,17 @@
+node_modules/
+.build/
+.cache/
+dist/
+.env*
+.aws/
+.ssh/
+.kube/
+.npmrc
+*.log
+*.pem
+*.key
+*.pfx
+.DS_Store
+Thumbs.db
+.public-export-tmp-*
+reference/

@@ -1,0 +1,16 @@
+#game .shop-dialog{width:94%;padding:20px 24px;text-align:left;max-height:96%;overflow:auto}
+.shop-wallet{color:#e6ca7e;font:14px Georgia;margin-left:auto;margin-right:20px}
+.shop-stock{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.shop-item{min-width:0;position:relative;background:#17271e;border:8px solid transparent;border-image:url('assets/ui-shopframe.png') 13 / 8px / 0 stretch;padding:8px 10px}
+.shop-item>img{float:left;width:46px;height:46px;object-fit:contain;image-rendering:pixelated;margin:0 6px 8px 0}
+.shop-item h3{font-size:12px;font-weight:400;min-height:37px;line-height:1.3;margin:5px 0 10px}
+.shop-item ul{clear:both;list-style:none;padding:0;margin:8px 0;min-height:56px;font:9px/1.7 system-ui;color:#b9c6a8}
+.shop-item button{font-size:10px;min-height:30px;padding:8px 12px;width:100%}
+.shop-item button:disabled{cursor:default;opacity:.4}.shop-actions{display:flex;align-items:center;gap:20px}.shop-actions>span{font:9px system-ui;color:#94a58a}.shop-actions button{font-size:11px}
+.shop-empty{grid-column:1/-1;min-height:180px;text-align:center;padding-top:70px}
+.inventory-wallet{font:10px Georgia;color:#d9bf79;margin-left:auto;margin-right:18px}
+#game.portrait .shop-stock{grid-template-columns:repeat(2,1fr)}
+.inventory-shop{border-top:1px solid #796b4655;margin-top:18px;padding-top:16px;scroll-margin-top:12px}
+.inventory-shop .shop-wallet{font-size:12px;margin-right:0}
+.inventory-shop .shop-actions{flex-wrap:wrap}
+#game #inventory-shop-button{margin-right:12px}

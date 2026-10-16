@@ -1,0 +1,12 @@
+import {formatStat,canEquip,classLabel} from './loot.mjs';
+import {buyPrice,REFRESH_COST} from './shop.mjs';
+import {attachInventoryTooltip} from './inventory-tooltip.mjs';
+const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function shopView({stock,inventory,manifest,gold,onBuy,onRefresh,onClose,root=document.querySelector('#modal'),embedded=false,tooltips=true}){
+  root.hidden=false;
+  // The inventory owns the shared wallet, persistence, and comparison tooltips.
+  root.innerHTML=`<section class="${embedded?'inventory-shop':'dialog shop-dialog'}"><div class="inventory-heading"><div><div class="eyebrow">THE BORDERLAND TRADER</div><h2>Camp shop</h2></div><div class="shop-wallet">${gold} gold</div>${embedded?'':`<button class="text-button" id="close-shop">Close · Esc</button>`}</div><div class="shop-stock">${stock.map(item=>`<article class="shop-item ${item.rarity}" data-item-id="${escape(item.id)}" tabindex="0"><img src="${manifest.items[item.icon].src}" alt=""><h3 class="rarity-${item.rarity}">${escape(item.name)}</h3><p class="class-restriction">${classLabel(item)}</p><ul>${Object.entries(item.stats).map(([key,value])=>`<li>${formatStat(key,value)}</li>`).join('')}</ul><button class="text-button" data-buy-item="${escape(item.id)}" ${gold<buyPrice(item)||inventory.bag.length>=36||!canEquip(item,inventory.hero)?'disabled':''}>Buy · ${buyPrice(item)} gold</button></article>`).join('')||'<p class="shop-empty">All items sold. Refresh the trader’s stock for new equipment.</p>'}</div><div class="shop-actions"><button class="text-button" id="refresh-shop" ${gold<REFRESH_COST?'disabled':''}>New stock · ${REFRESH_COST} gold</button><span>Hover to compare. Empty slots and clear upgrades equip automatically.</span></div></section>`;
+  root.querySelectorAll('[data-buy-item]').forEach(button=>button.onclick=()=>onBuy(button.dataset.buyItem));root.querySelector('#refresh-shop').onclick=onRefresh;if(!embedded)root.querySelector('#close-shop').onclick=onClose;
+  if(embedded){const back=document.createElement('button');back.id='shop-backpack';back.className='text-button';back.textContent='Back to backpack';back.onclick=()=>root.closest('.inventory-dialog').scrollTo({top:0});root.querySelector('.inventory-heading').append(back);}
+  return tooltips?attachInventoryTooltip(root,{inventory:{bag:stock,equipment:inventory.equipment,hero:inventory.hero},manifest}):()=>{};
+}

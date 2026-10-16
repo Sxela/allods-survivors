@@ -1,0 +1,24 @@
+/* Original Allods artwork; one inventory action, five offense and three defense slots. */
+#game #vanilla-sidebar{position:absolute;right:0;top:0;bottom:0;width:160px;background:#171311 url('assets/ui-extra1024r.png') center/160px 46px repeat-y;pointer-events:auto}
+#game #minimap-frame{height:158px;width:160px;background:url('assets/ui-crystalr.png') center/160px 158px no-repeat;position:relative}
+#game #minimap{position:absolute;inset:auto;left:15px;top:17px;width:128px;height:128px;image-rendering:pixelated}
+#game #action-bar{height:80px;background:url('assets/ui-commandempr.png') center/160px 80px no-repeat;position:relative}
+#game #action-bar #inventory-button{position:absolute;left:3px;top:3px;right:auto;bottom:auto;width:36px;height:36px;margin:0;padding:2px;pointer-events:auto}
+#game #inventory-button img{width:28px;height:28px}
+#game #hud-vitals{height:80px;background:#101713;padding:5px 8px}
+#game #hud-vitals .health-panel{position:static;width:144px;border:0;border-image:none;box-shadow:none;background:none;padding:2px}
+#game #hud-vitals .health-heading{font-size:7px;letter-spacing:0}#game #hud-vitals .health-track{height:9px;margin:4px 0}#game #hud-vitals #dash-label{font-size:6px;margin-top:4px}
+#game #vanilla-sidebar header{position:relative;height:40px;width:160px;display:flex;flex-wrap:wrap;gap:3px;justify-content:center;padding:2px;background:#101713;border:0;border-image:none}
+#game #vanilla-sidebar .brand{display:none}#game #vanilla-sidebar .clock{position:static;transform:none;font-size:15px;width:100%;text-align:center;line-height:15px}#game #vanilla-sidebar .counters{position:static;font-size:7px;line-height:12px}#game #vanilla-sidebar .counters span{font-size:11px}#game #vanilla-sidebar .counters i{padding:0 4px}
+#game #hud-character{position:absolute;bottom:0;right:0;width:160px;height:242px;background:url('assets/ui-humanbackr.png') center/160px 242px no-repeat;pointer-events:none}
+#game #hud-character img{position:absolute;left:0;top:1px;width:160px;height:240px;image-rendering:pixelated}
+#game #hud footer{position:absolute;left:0;right:160px;bottom:0;height:64px;display:block;padding:0;pointer-events:none}
+#game #hud #skills,#game.portrait #hud #skills{position:absolute;left:0;right:0;bottom:0;width:100%;height:64px;transform:none;display:flex;align-items:flex-end;justify-content:flex-start;gap:12px;padding:11px 10px 5px;background:#101a13;border:5px solid transparent;border-image:url('assets/ui-shopframe.png') 13 / 5px / 0 stretch}
+#game .spell-group{position:relative;display:flex;gap:3px}.spell-group:before{content:attr(data-group);position:absolute;top:-9px;left:2px;font:6px system-ui;text-transform:uppercase;letter-spacing:1px;color:#e2d4ad}
+#game #skills .skill-slot{position:relative;width:44px;height:44px;padding:4px;background:url('assets/ui-spellback.png') center/100% 100%;border:0;flex:none}#game #skills .skill-slot img{width:36px;height:36px}#game .gear-granted{outline:1px solid #a8c8df;outline-offset:-3px}#game .gear-granted small{color:#9fd6f5}
+#game #hud>.icon-button#pause-button{position:absolute;left:8px;right:auto;top:8px;bottom:auto;width:24px;height:24px;font-size:13px;pointer-events:auto}
+#game #hud .xp-track{position:absolute;top:auto;left:0;right:160px;bottom:64px;height:3px}#game #hud .level-label{position:absolute;top:8px;left:40px;right:auto;font-size:8px;margin:0}#game #hud .hint{left:8px;right:160px;bottom:70px;font-size:6px;text-align:left}
+#game #hud #pickup-buffs{bottom:88px;left:8px}#game #hud #announcement{left:0;right:160px;top:25%;font-size:18px}#game #hud .boss-status{left:calc((100% - 160px)/2);top:38px}
+#game.portrait #hud #skills{gap:7px;padding-left:4px;padding-right:4px}#game.portrait #skills .skill-slot{width:40px;height:42px;padding:3px 2px}
+#game #hud #skills{pointer-events:auto}
+#game .spell-cooldown{position:absolute;inset:4px;border-radius:50%;background:conic-gradient(from 0deg,#00000040 var(--cooldown-angle,0deg),transparent 0);pointer-events:none;z-index:1}#game #skills .skill-slot small{z-index:2}#game #skills .buff-state{z-index:3}

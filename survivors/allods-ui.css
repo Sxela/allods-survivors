@@ -1,0 +1,28 @@
+/* Original Allods II interface artwork, extracted from the supplied installation. */
+img{image-rendering:pixelated}#world{touch-action:none}
+.boss-status{position:absolute;top:112px;left:50%;transform:translateX(-50%);width:290px;padding:9px 14px;background:#15221de8;border:8px solid transparent;border-image:url('assets/ui-shopframe.png') 13 / 8px / 0 stretch;color:#e4c486;text-align:center;font:11px Georgia;letter-spacing:2px}.boss-status small{display:block;color:#b7b49b;font:9px system-ui;letter-spacing:1px;margin:5px}.boss-status>div{height:5px;background:#352b21}.boss-status i{display:block;height:100%;background:#a87a46}
+.menu-panel{background:#242d24;border:22px solid transparent;border-image:url('assets/ui-textbackr.png') 34 18 34 18 fill / 34px 22px / 0 stretch;padding:22px 38px;box-shadow:0 16px 100px #0009}
+.overlay{background:radial-gradient(ellipse at center,#0b171655,#07110fcf)}
+.class-card{background:url('assets/ui-humanbackr.png') center/100% 100%;border:1px solid #7e6f4066;text-shadow:0 2px 3px #000;padding:15px 8px 19px;min-height:194px;filter:brightness(.78)}
+.class-card:hover,.class-card.selected{background:url('assets/ui-humanbackr.png') center/100% 100%;border-color:#dfbd64;filter:brightness(1.1);box-shadow:0 0 18px #bba04c22}
+.class-card small{color:#c7c4a9}.class-card strong{color:#f1dfaf}
+.primary{background:url('assets/ui-shopbutton2.png') center/100% 100%;border:0;color:#ebd296;text-shadow:0 2px 2px #000;box-shadow:none;padding:19px 32px;min-height:58px;font-size:16px}
+.primary:hover{filter:brightness(1.3)}
+.dialog{border:13px solid transparent;border-image:url('assets/ui-shopframe.png') 13 / 13px / 0 stretch;background:#202b23;padding:28px 32px;box-shadow:0 12px 90px #000b}
+.upgrade-card{border:12px solid transparent;border-image:url('assets/ui-shopframe.png') 13 / 10px / 0 stretch;background:#17271f;padding:18px 13px}
+.upgrade-card:hover{background:#30412b;border-image:url('assets/ui-shopframe.png') 13 / 10px / 0 stretch;filter:brightness(1.13)}
+.upgrade-icon{width:62px;height:62px;display:block;image-rendering:pixelated;margin-bottom:20px}
+.legacy-row button,.text-button{background:url('assets/ui-shopbutton2.png') center/100% 100%;padding:12px 18px;min-height:39px;border:0;color:#d7c99e;text-shadow:0 1px 2px #000}
+.menu-bottom{gap:18px}.menu-bottom .text-button{min-width:130px}
+header{border:0;border-bottom:8px solid transparent;border-image:url('assets/ui-shopframe.png') 13 / 0 0 8px / 0 stretch;background:#17221de8}
+.brand{text-shadow:0 2px 2px #000}.brand:before{content:'';display:block;position:absolute;left:0;top:0;width:28px;height:65px;background:url('assets/ui-headsl.png') center/100% 100%;opacity:.9}
+#skills{width:480px;height:90px;gap:0;padding:12px 14px;align-items:center;justify-content:space-around;background:url('assets/ui-invframe.png') center/100% 100%;bottom:0}
+.skill-slot{width:62px;height:62px;border:0;background:url('assets/ui-backinv.png') center/100% 100%}
+.skill-slot img{width:48px;height:48px;image-rendering:pixelated}.skill-slot small{font:12px Georgia;color:#ffe6a5;text-shadow:1px 1px 2px #000;background:#17211ae6;padding:0 3px;bottom:1px;right:1px}.skill-slot.empty{background:none;opacity:1}
+.health-panel{border:12px solid transparent;border-image:url('assets/ui-textbackr.png') 34 18 34 18 fill / 18px 12px / 0 stretch;background:#243025;padding:12px 10px 14px;width:228px}
+.health-heading{color:#c8bc96}.health-track{height:9px;background:#1b1614;box-shadow:0 0 0 1px #77663a}
+.icon-button{background:url('assets/ui-backinv.png') center/100% 100%;border:0;width:52px;height:52px;text-shadow:0 1px 2px #000;color:#dac391}
+.hint{color:#d0bf91}.asset-note{color:#9eaa90}
+@media(max-width:1050px){#skills{width:384px;height:72px;padding:9px 12px}.skill-slot{width:48px;height:48px}.skill-slot img{width:38px;height:38px}}
+@media(max-width:760px){#skills{bottom:100px;width:336px;height:63px}.skill-slot{width:42px;height:42px}.skill-slot img{width:34px;height:34px}.menu-panel{padding:18px 12px;border-width:16px;width:96vw}.menu-bottom{gap:8px}.menu-bottom .text-button{min-width:0;font-size:11px}.class-card{padding:10px 4px 14px;min-height:172px}.class-card canvas{height:75px}.class-card strong{font-size:13px}.class-card small{font-size:9px}.dialog{padding:22px 12px}.upgrade-card{padding:12px 5px}.upgrade-icon{width:45px;height:45px}.health-panel{width:190px}.run-info{line-height:1.8;letter-spacing:1px}.run-info b{padding:0 7px}}
+@media(max-height:740px){.menu-panel{padding-top:13px;padding-bottom:13px}.class-card{min-height:160px;padding-top:9px}.menu-panel .intro{font-size:14px}.menu-panel .primary{min-height:48px;padding-top:15px;padding-bottom:15px}.menu-panel .run-info{margin:11px 0}.menu-panel .asset-note{margin-top:5px}}

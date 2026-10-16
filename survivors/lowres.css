@@ -1,0 +1,76 @@
+/* The entire game uses the same logical resolution as its framebuffer. */
+body{background:#050806}
+#game{position:fixed;overflow:hidden;transform-origin:top left;isolation:isolate;image-rendering:pixelated}
+#game #world,#game #hud,#game .overlay{position:absolute;inset:0;width:100%;height:100%}
+#game #world{image-rendering:pixelated}
+#game #toast{position:absolute}
+#game .menu-panel{width:680px;padding:12px 25px;border-width:18px}
+#game .eyebrow{font-size:8px;letter-spacing:3px;margin-bottom:12px}
+#game h1{font-size:54px;letter-spacing:14px}
+#game h1 span{font-size:14px;letter-spacing:10px}
+#game .ornament{margin:10px 0}
+#game .intro{font-size:13px;line-height:1.5;margin:10px 0 15px}
+#game .choose-label{font-size:8px;margin-bottom:10px}
+#game #classes{max-width:500px;gap:10px;margin-bottom:13px}
+#game .class-card{min-height:145px;padding:7px 5px 12px}
+#game .class-card canvas{height:63px;width:90px}
+#game .class-card strong{font-size:13px;margin:3px 0 6px}
+#game .class-card small{font-size:8px}
+#game .primary{font-size:14px;padding:13px 28px;min-height:44px;min-width:245px}
+#game .run-info{font-size:8px;line-height:1.5;margin:10px 0}
+#game .difficulty-setting{display:flex;align-items:center;justify-content:center;gap:8px;margin:3px 0}
+#game .difficulty-setting>span{font:8px system-ui;letter-spacing:1px;color:#b4a78c;margin-right:6px}
+#game .difficulty-setting .text-button{font-size:10px;padding:4px 14px;min-height:26px}
+#game .difficulty-setting .selected{outline:1px solid #d8c18b;color:#ffe3a6;filter:brightness(1.25)}
+#game .menu-bottom{margin-top:8px;gap:12px}
+#game .menu-bottom .text-button{font-size:10px;min-width:120px;padding:8px 12px;min-height:30px}
+#game .asset-note{font-size:8px;margin-top:10px}
+#game .session-button{font-size:9px;margin-top:7px;min-height:24px;padding:4px 14px}
+#game .dialog-actions{flex-wrap:wrap}
+#game header{height:55px;padding:0 20px}
+#game .brand{font-size:18px}
+#game .brand span{font-size:6px}
+#game .clock{font-size:25px}
+#game .counters{font-size:8px}
+#game .counters span{font-size:16px}
+#game .counters i{padding:0 8px}
+#game .level-label{font-size:8px;margin-top:9px}
+#game footer{left:14px;right:14px;bottom:25px}
+#game .health-panel{width:175px;padding:10px 8px;border-width:8px}
+#game .health-heading{font-size:7px}
+#game #dash-label{font-size:6px;letter-spacing:1px}
+#game #skills{width:336px;height:63px;bottom:0;padding:9px 10px}
+#game .skill-slot{width:42px;height:42px}
+#game .skill-slot img{width:34px;height:34px}
+#game .skill-slot small{font-size:9px}
+#game .icon-button{width:40px;height:40px}
+#game .hint{font-size:6px;bottom:9px;letter-spacing:1px}
+#game .dialog{width:94%;padding:20px 23px}
+#game .dialog h2{font-size:26px;margin:6px 0 12px}
+#game .dialog p{font-size:12px}
+#game .upgrade-grid{gap:10px;margin-top:20px}
+#game .upgrade-card{padding:14px 10px}
+#game .upgrade-card strong{font-size:16px}
+#game .upgrade-card p{font-size:10px}
+#game .upgrade-card small{font-size:8px}
+#game .upgrade-icon{width:48px;height:48px;margin-bottom:17px}
+#game .four-choices,#game .replacement-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#game .four-choices .upgrade-card{padding:10px 14px}
+#game .four-choices .upgrade-icon{float:left;width:32px;height:32px;margin:0 12px 6px 0}
+#game .four-choices .upgrade-card p{min-height:0;margin:8px 0;font-size:10px;line-height:1.5}
+#game .four-choices .upgrade-card strong{font-size:15px}
+#game .replacement-grid .upgrade-card{padding:10px 14px}
+#game .replacement-grid .upgrade-icon{float:left;width:32px;height:32px;margin:0 12px 0 0}
+#game .replacement-grid .upgrade-card strong{font-size:14px;margin-bottom:6px}
+#game .buff-active{border-color:#91d8e2;box-shadow:0 0 8px #7acbd466}
+#game .buff-state{position:absolute;top:1px;left:2px;padding:1px 2px;background:#07151de6;color:#c3f0f5;font:8px system-ui}
+#game #pickup-buffs{position:absolute;left:18px;bottom:124px;display:flex;gap:6px;pointer-events:none}
+#game #pickup-buffs span{font:9px Georgia;color:#d9e6cc;background:#11241ce8;border:1px solid #9a986777;padding:4px 7px}
+#game .boss-status{top:85px;font-size:10px;width:240px}
+#game #announcement{top:29%;font-size:20px}
+#game.portrait #skills{bottom:80px}
+#game.portrait .menu-panel{width:94%;padding:22px 19px}
+#game.portrait .class-card{min-height:175px;padding-top:20px}
+#game.portrait .class-card canvas{height:80px;width:100px}
+#game.portrait .intro{margin:20px 0 25px}
+#game.portrait .menu-bottom{margin-top:20px}

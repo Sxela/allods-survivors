@@ -1,0 +1,16 @@
+{
+  "appId": "local.allods.survivors",
+  "productName": "Allods Survivors",
+  "directories": {"app": ".build/electron-app", "output": "dist"},
+  "files": ["package.json", "main.cjs", "protocol.cjs", "game/**/*"],
+  "asar": true,
+  "electronDist": "node_modules/electron/dist",
+  "npmRebuild": false,
+  "electronLanguages": ["en-US"],
+  "win": {
+    "target": [{"target": "portable", "arch": ["x64"]}],
+    "signAndEditExecutable": false,
+    "artifactName": "Allods-Survivors-win-x64.${ext}"
+  },
+  "portable": {"requestExecutionLevel": "user"}
+}

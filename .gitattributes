@@ -1,0 +1,5 @@
+# Preserve exported bytes and checksums across platforms.
+* -text
+*.png binary
+*.wav binary
+*.ttf binary
