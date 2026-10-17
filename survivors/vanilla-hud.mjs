@@ -1,3 +1,4 @@
+import {presentationClothing} from './wardrobe.mjs';
 import {SPELL_CAPS} from './spell-loadout.mjs';
 import {SPELLS} from './original-spells.mjs';
 import {canEquip} from './loot.mjs';
@@ -40,7 +41,8 @@ export function updateVanillaHud(state,world,manifest){
   const p=world.player,signature=world.hero+JSON.stringify(Object.values(world.inventory.equipment).map(item=>item&&[item.id,item.icon]));
   if(signature!==state.dollSignature){
     state.dollSignature=signature;const doll=manifest.paperdolls[world.hero],root=state.side.querySelector('#hud-character');root.replaceChildren();
-    const add=src=>{const img=document.createElement('img');img.src=src;img.alt='';img.draggable=false;root.append(img);};add(doll.src);
+    const add=src=>{const img=document.createElement('img');img.src=src;img.alt='';img.draggable=false;root.append(img);return img;};add(doll.src);
+    const clothing=presentationClothing(manifest,world.hero);if((!world.inventory.equipment.armor||!canEquip(world.inventory.equipment.armor,world.hero))&&clothing)add(clothing).className='base-clothing';
     for(const slot of ['boots','armor','bracers','gloves','helm','weapon','shield','ring','amulet']){const item=world.inventory.equipment[slot];if(!item||!canEquip(item,world.hero))continue;const src=manifest.items[item.icon]?.overlays?.[world.hero]?.src||(item.icon===slot?doll.overlays[slot]?.src:null);if(src)add(src);}
   }
   if(world.time-state.lastMap<.1&&world.time>=state.lastMap)return;state.lastMap=world.time;

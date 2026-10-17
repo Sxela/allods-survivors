@@ -1,0 +1,81 @@
+﻿/* Generated forest / gold artwork. Layout and every label remain live HTML. */
+#game{--forest-ink:#101a16;--forest-panel:#121e18;--forest-gold:#b69555;--forest-line:#806936;--forest-frame:url('assets/ui-panel-gold.png');--forest-button:url('assets/ui-button-burgundy.png')}
+#game #menu{background:#0d1719 url('assets/ui-menu-forest.png') center/cover no-repeat;backdrop-filter:none;padding:16px 22px 10px}
+#game #menu:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,#06110a40 0%,transparent 74%);pointer-events:none}
+#game #menu .menu-panel{position:relative;display:flex;flex-direction:column;align-items:center;width:620px;max-width:100%;padding:0;background:none;border:0;border-image:none;box-shadow:none;text-shadow:0 1px 3px #000;max-height:100%;overflow:auto;scrollbar-width:thin;scrollbar-color:#806936 #111b14}
+#game #menu .eyebrow,#game #menu .ornament{display:none}
+#game #menu h1{font-size:53px;letter-spacing:9px;margin:0;color:#f0d79e;line-height:1.05;text-shadow:0 2px 7px #000}
+#game #menu h1 span{font-size:15px;letter-spacing:9px;margin:4px 0 0}
+#game #menu .intro{font-size:12px;line-height:1.4;color:#ded5b7;margin:9px 0 16px}
+#game #menu .choose-label{width:450px;max-width:100%;font:8px 'Allods Romul',Georgia,serif;letter-spacing:3px;color:#e2c690;margin:0 0 10px;display:flex;align-items:center;gap:12px;white-space:nowrap}
+#game #menu .choose-label:before,#game #menu .choose-label:after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,#a28447)}
+#game #menu .choose-label:after{transform:rotate(180deg)}
+#game #menu #classes{width:456px;max-width:100%;gap:12px;margin:0 0 11px;flex-shrink:0}
+#game #menu .class-card{min-height:182px;height:182px;min-width:0;padding:1px 3px 6px;background:#08150edb;border:8px solid transparent;border-image:var(--forest-frame) 12% / 8px / 0 stretch;filter:brightness(.8);box-shadow:none;text-shadow:0 1px 2px #000;transition:filter .15s,background-color .15s}
+#game #menu .class-card:hover,#game #menu .class-card.selected{background-color:#182617e8;filter:brightness(1.12);border-color:transparent;outline:1px solid #e0be6b;outline-offset:-3px;box-shadow:0 0 16px #c6a14920}
+#game .class-portrait{position:relative;width:90px;height:135px;margin:0 auto;pointer-events:none}
+#game .class-portrait img{position:absolute;inset:0;width:90px;height:135px;image-rendering:pixelated;object-fit:contain}
+#game #menu .class-card strong{font-size:13px;margin:1px 0 3px;color:#f2dcad}
+#game #menu .class-card small{font:8px/1.3 system-ui,sans-serif;color:#cec6ac;white-space:nowrap}
+#game #menu .difficulty-setting{margin:0;gap:7px;flex-shrink:0}
+#game #menu .difficulty-setting>span{font-size:7px;letter-spacing:1.5px;color:#d0bc8f;margin-right:5px}
+#game .text-button,#game .legacy-row button{background:transparent var(--forest-button) center/100% 215% no-repeat;border:0;box-shadow:none;color:#ffe4ab;min-height:28px;padding:6px 12px;text-shadow:0 1px 2px #000}
+#game .text-button:hover:not(:disabled){filter:brightness(1.2);color:#fff0bf}
+#game #menu .difficulty-setting .text-button{font-size:10px;min-height:25px;min-width:63px;padding:4px 12px}
+#game #menu .difficulty-setting .selected{color:#fff0bd;outline:1px solid #f3ce76;outline-offset:-2px;filter:brightness(1.25)}
+#game #menu .asset-note{font:8px/1.4 system-ui,sans-serif;color:#c2c4ae;letter-spacing:0;margin:7px 0 10px;min-height:12px;max-width:460px}
+#game .primary{border:0;border-image:none;background:transparent var(--forest-button) center/100% 215% no-repeat;box-shadow:none;color:#ffe4ab;text-shadow:0 2px 2px #160703;min-height:44px;padding:12px 24px;letter-spacing:2px}
+#game .primary:hover{filter:brightness(1.2)}
+#game #menu #start{width:360px;max-width:100%;height:46px;min-height:46px;font-size:17px;margin:0 0 10px;flex-shrink:0}
+#game #menu .menu-bottom,#game #menu .session-actions{display:flex;justify-content:center;gap:10px;flex-shrink:0;margin:0 0 6px}
+#game #menu .menu-bottom .text-button,#game #menu .session-actions .text-button{width:150px;min-width:0;min-height:24px;padding:5px 8px;font-size:9px;margin:0}
+#game #menu #sound-button{position:fixed;top:12px;right:14px;font-size:9px;min-height:25px;padding:5px 10px}
+#game #menu .fan-notice{font:8px/1.45 system-ui,sans-serif;color:#c1c4ae;letter-spacing:0;max-width:540px;border:0;border-top:1px solid #8b713d80;background:#08140e85;box-shadow:none;padding:7px 13px 0;margin:10px 0 0}
+#game .dialog,#game .upgrade-card,#game .shop-item,#game .inventory-tooltip,#game .boss-status{background-color:#122019;border:8px solid transparent;border-image:var(--forest-frame) 12% / 8px / 0 stretch;box-shadow:0 6px 25px #0009}
+#game .upgrade-card:hover{background:#233420;border-image:var(--forest-frame) 12% / 8px / 0 stretch}
+#game .inventory-tooltip{background-color:#101d17fa}
+#game .paperdoll{background:#09150f;border:0;box-shadow:inset 0 0 0 1px #71613a}
+#game .bag-grid{background:#09150f;border:1px solid #685a32;padding:0 6px}
+#game .item-cell{background:#17291d;border-color:#4c5635;box-shadow:inset 0 0 6px #0006}
+#game .item-cell.magic{border-color:#759ad2}#game .item-cell.rare{border-color:#d7b64d}#game .item-cell.unique{border-color:#a6733c}
+/* Preserve the original battlefield dimensions and live minimap/character layers. */
+#game #vanilla-sidebar{background:#0c1611;border-left:1px solid #786236;box-shadow:-3px 0 10px #0006}
+#game #minimap-frame{background:#111e16;border:8px solid transparent;border-image:var(--forest-frame) 12% / 8px / 0 stretch}
+#game #minimap{left:7px;top:9px}
+#game #action-bar{height:46px;background:#0d1912;border-bottom:1px solid #756136}
+#game #action-bar #inventory-button{left:9px;right:9px;top:6px;width:140px;height:32px;background:transparent var(--forest-button) center/100% 215% no-repeat;border:0;text-align:left;padding:4px 10px;display:flex;align-items:center;gap:9px}
+#game #inventory-button img{width:22px;height:22px}
+#game #action-bar #inventory-button:after{content:'Inventory  [I]';font:9px 'Allods Romul',Georgia,serif;letter-spacing:.3px;color:#e1c68b}
+#game #hud-vitals{height:87px;padding:7px 8px;background:#111e17;border-bottom:1px solid #756136}
+#game #hud-vitals .health-panel{width:142px}
+#game #hud-vitals .health-heading,#game #hud-vitals .mana-heading{font-size:7px;color:#dbcc9d}
+#game #hud-vitals .health-track{height:8px;margin:5px 0;box-shadow:0 0 0 1px #695332;background:#2c1212}
+#game #hud-vitals #hp-fill{background:linear-gradient(#b65c47,#853a32)}
+#game #hud-vitals .mana-track{height:6px;border-color:#4b6078}
+#game #hud-vitals #dash-label{font-size:6px;color:#b7bca6;margin-top:6px}
+#game #vanilla-sidebar header{height:44px;padding:5px 0;background:#0d1913;border-bottom:1px solid #756136}
+#game #hud-character{background:#0a150f;border:0;border-top:1px solid #756136;box-shadow:inset 0 0 24px #000}
+#game #hud-character:after{content:'';position:absolute;inset:0;border:7px solid transparent;border-image:var(--forest-frame) 12% / 7px / 0 stretch;pointer-events:none}
+#game #hud-character img{left:0;top:1px}
+#game #hud #skills,#game.portrait #hud #skills{background:#0d1913;border:5px solid transparent;border-image:var(--forest-frame) 12% / 5px / 0 stretch;gap:12px;padding:11px 10px 5px}
+#game #skills .skill-slot{background:#14241a;border:4px solid transparent;border-image:var(--forest-frame) 12% / 4px / 0 stretch;padding:0;display:flex;align-items:center;justify-content:center}
+#game #skills .skill-slot img{width:34px;height:34px}
+#game #skills .skill-slot.empty{background-color:#0a140e;opacity:.7}
+#game .gear-granted{outline-color:#94c4db}
+#game #pause-button{background:transparent var(--forest-button) center/100% 215% no-repeat;border:0}
+#game #hud .boss-status{background-color:#101d16f5;letter-spacing:1px}
+#game #hud .xp-track{background:#17251c;box-shadow:0 -1px #66552d}
+#game .dialog .fan-notice{background:#0b160f;border:0;border-top:1px solid #756136;padding-top:10px;font-size:8px}
+#game.portrait #menu .menu-panel{width:540px;max-width:100%;padding:16px 0}
+#game.portrait #menu #classes{gap:8px;width:456px}
+#game.portrait #hud #skills{gap:7px;padding-left:4px;padding-right:4px}
+#game.portrait #skills .skill-slot{width:40px;height:42px}
+@media(prefers-reduced-motion:reduce){#game #menu .class-card{transition:none}}
+
+/* One material for every action button, including compact HUD controls. */
+#game .text-button,#game .primary,#game .icon-button,#game .legacy-row button{color:#ffe4ab;text-shadow:0 1px 2px #160703}
+#game :is(.text-button,.primary,.icon-button):hover:not(:disabled),#game .legacy-row button:hover:not(:disabled){filter:brightness(1.2)}
+#game #menu .difficulty-setting .selected:hover{filter:brightness(1.4)}
+#game :is(.text-button,.primary,.icon-button):active:not(:disabled),#game .legacy-row button:active:not(:disabled){filter:brightness(.9)}
+#game button:focus-visible{outline:2px solid #ffe1a1;outline-offset:2px}
+#game button:disabled{filter:saturate(.5);opacity:.45}

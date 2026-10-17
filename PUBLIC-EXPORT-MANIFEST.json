@@ -83,8 +83,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5951,
-      "sha256": "6ceed973c10ffc7d75896e626034546cd1b9a0cb81d93828fafcf25cd01bd525"
+      "bytes": 6243,
+      "sha256": "eccdb57e62e4b097c9fd556718796578af610e1c717968e4bc9a8906090d2e5f"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -8497,6 +8497,11 @@
       "sha256": "38ed57bc6cbad9f780a297404199e589d664aa4816f3acc9d4d4ef55f7e32804"
     },
     {
+      "path": "survivors/assets/ui-button-burgundy.png",
+      "bytes": 930302,
+      "sha256": "b11e4e8832febe20c89a7ba07a2c16a3cf208b7dbaf5b266095d22291f3c33d8"
+    },
+    {
       "path": "survivors/assets/ui-commandempr.png",
       "bytes": 13194,
       "sha256": "6f5160e771d2731e4677981fbf2a68540f90fb3acddd3663b0aa01a7d8714f31"
@@ -8525,6 +8530,16 @@
       "path": "survivors/assets/ui-invframe.png",
       "bytes": 38325,
       "sha256": "c040d7fe17c0eb62f89df1cbccb0a25657ea0969af7d96bc893f02fc267a20c8"
+    },
+    {
+      "path": "survivors/assets/ui-menu-forest.png",
+      "bytes": 2243384,
+      "sha256": "53c28c5badea6861628a2edb8d674fbe5a97361d9135117ad88915e31455c2b0"
+    },
+    {
+      "path": "survivors/assets/ui-panel-gold.png",
+      "bytes": 409989,
+      "sha256": "701314ec03bd7ba8147cc470fd463a15bb049807e55d79404f33cf245320c52f"
     },
     {
       "path": "survivors/assets/ui-paperdoll-mage-amulet.png",
@@ -9002,14 +9017,19 @@
       "sha256": "a7c5373f9c986bb9bfde33570a619aa27ba9cbd083a0365e3901a55fd953db92"
     },
     {
+      "path": "survivors/forest-ui.css",
+      "bytes": 9047,
+      "sha256": "bfd02db75ce993c360096d92062b710c2d881e7fbc59bbd7e392b48340fe977d"
+    },
+    {
       "path": "survivors/game.mjs",
-      "bytes": 38984,
-      "sha256": "dd17fa1a1e57c4d3d07032948f5f4d99eb6247e56520b76e41dbd073b5c28253"
+      "bytes": 39639,
+      "sha256": "35189c3778881ef4573b509c1a332f6aeb86f62400a375b134449e0a6c1fa6b4"
     },
     {
       "path": "survivors/index.html",
-      "bytes": 2888,
-      "sha256": "12910f9dd092395d0340050e57eb1a66f44d94a8e407e84d26ad230a375015b5"
+      "bytes": 2740,
+      "sha256": "e242294e871e37f8a3c847fd497125774e0e4751300ef38976638bcd4b83288c"
     },
     {
       "path": "survivors/inventory-drag.mjs",
@@ -9023,8 +9043,8 @@
     },
     {
       "path": "survivors/inventory-view.mjs",
-      "bytes": 7096,
-      "sha256": "b588c0a6c96359286a0b11f341137769a59fefffcd2757504c613e53b647fdd1"
+      "bytes": 7387,
+      "sha256": "a874ab5f31a94c6e5a21d36b56ac71c8e2e92cb949a0eec5e7080fdc6e237154"
     },
     {
       "path": "survivors/inventory.css",
@@ -9138,13 +9158,18 @@
     },
     {
       "path": "survivors/vanilla-hud.mjs",
-      "bytes": 6253,
-      "sha256": "1c70161455addf4acfec899856a66f064353b0d24ecd58794c89d95d9e0b3787"
+      "bytes": 6524,
+      "sha256": "4f5d491750f4ea99330847dedfdae8e08efc7d9cfd60e8ebd0fa9a0186f16d90"
     },
     {
       "path": "survivors/vfx.mjs",
       "bytes": 4674,
       "sha256": "b2297d93b4da6911bfc90be2c5a39ad04fb93fd6f4299403a21c3ed2fb34e29b"
+    },
+    {
+      "path": "survivors/wardrobe.mjs",
+      "bytes": 716,
+      "sha256": "da757787fefd85026a8561efcffb7470d73a17f8e9a43df6a3c93a6051d15905"
     },
     {
       "path": "tests/auto-equip.test.mjs",
