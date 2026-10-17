@@ -83,8 +83,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6919,
-      "sha256": "c1ab4f0ce6230afca3042ba234e15c8e9756dc6b89a29ebeefac18179067541d"
+      "bytes": 7214,
+      "sha256": "8003e3a248686ce8a506e867381378b5d191b619a1e70b42a5c4efe8ee744a43"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -9018,13 +9018,13 @@
     },
     {
       "path": "survivors/forest-ui.css",
-      "bytes": 12123,
-      "sha256": "be63ffa580ff6d189f9e0c19e652ce05d6ca62a81bfd864c8090fad3d851ee11"
+      "bytes": 13951,
+      "sha256": "57c6b7c40d42259a9fbd2c9e7b232942a7f640047ab96dde8007266bf05e16fc"
     },
     {
       "path": "survivors/game.mjs",
-      "bytes": 41851,
-      "sha256": "a41c5e91325a8c4581317efd15510b4bc61565a0d0b3ad6bf4c8e95ee7f1c19e"
+      "bytes": 45859,
+      "sha256": "aedf2d96c314f2a75df018ccd6d0d43b1a19135e7ea07e4d297ad1fac3d7731a"
     },
     {
       "path": "survivors/index.html",
@@ -9083,8 +9083,8 @@
     },
     {
       "path": "survivors/mobile-controls.mjs",
-      "bytes": 2484,
-      "sha256": "d92fab3d569dadc672c38ab92706362e74d67f15be2fbc3a9c7ffb81656a7cd2"
+      "bytes": 3101,
+      "sha256": "9102a85af9691a80bf22488085fbf47d90dd60488584bd8c1d747a2f51f6c965"
     },
     {
       "path": "survivors/monster-data.mjs",
@@ -9268,8 +9268,8 @@
     },
     {
       "path": "tests/mobile-controls.test.mjs",
-      "bytes": 2709,
-      "sha256": "4a431a747d405ccdf4990a54fcb572187e74146bad4261db623115723f27f555"
+      "bytes": 3979,
+      "sha256": "f0cd46bc7b1d75626cf7996fc1b9074d0c57eda5fb5b49e47d9c5547461c1ef9"
     },
     {
       "path": "tests/monsters.test.mjs",

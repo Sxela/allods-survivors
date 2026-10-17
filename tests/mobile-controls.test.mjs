@@ -1,7 +1,7 @@
 ﻿import test from 'node:test';
 import assert from 'node:assert/strict';
 import {World} from '../survivors/core.mjs';
-import {mobileLayout,joystickVector} from '../survivors/mobile-controls.mjs';
+import {mobileLayout,joystickVector,normalizeControls,zoomViewport,screenSteering} from '../survivors/mobile-controls.mjs';
 import {battlefieldSize} from '../survivors/vanilla-hud.mjs';
 const scene=()=>{const world=new World();world.skills={};world.enemies=[];world.spawnTimer=Infinity;world.player.invulnerable=1000;return world;};
 test('mobile mode fills portrait/narrow screens and reserves safe-area space',()=>{
@@ -27,4 +27,16 @@ test('joystick movement has the same speed on cardinal and diagonal directions',
 });
 test('thumb movement respects existing Wall of Earth collision',()=>{
  const w=scene();w.fields=[{kind:'earthwall',x1:70,y1:-60,x2:70,y2:60,width:18,ttl:100}];for(let i=0;i<100;i++)w.step(.016,joystickVector(100,0,50));assert.ok(w.player.x>30&&w.player.x<50);
+});
+
+test('control preferences reject malformed values and clamp camera zoom',()=>{
+ assert.deepEqual(normalizeControls(null),{mode:'joystick',zoom:1});assert.deepEqual(normalizeControls({mode:'touch',zoom:1.5}),{mode:'touch',zoom:1.5});
+ assert.deepEqual(normalizeControls({mode:'bogus',zoom:Infinity}),{mode:'joystick',zoom:1});assert.equal(normalizeControls({zoom:20}).zoom,2);assert.equal(normalizeControls({zoom:-2}).zoom,1);assert.equal(normalizeControls({zoom:1.3}).zoom,1.25);
+});
+test('zoom scales the actual world viewport while retaining HUD dimensions',()=>{
+ const screen=battlefieldSize(600,1298,true);assert.deepEqual(zoomViewport(screen,1.5),{width:400,height:812});assert.deepEqual(zoomViewport(screen,2),{width:300,height:609});assert.deepEqual(zoomViewport(screen,1),screen);
+});
+test('full-screen steering uses the on-screen hero center even when camera zoom changes',()=>{
+ const screen=battlefieldSize(600,1298,true);assert.deepEqual(screenSteering(300,609,screen),{x:0,y:0});assert.deepEqual(screenSteering(310,609,screen),{x:0,y:0});
+ assert.deepEqual(screenSteering(400,609,screen),{x:100,y:0});assert.deepEqual(screenSteering(300,409,screen),{x:0,y:-200});
 });

@@ -26,3 +26,14 @@ export function mountThumbstick(root,{enabled}){
   for(const name of ['pointerup','pointercancel','lostpointercapture'])element.addEventListener(name,event=>{if(event.pointerId===pointerId)cancel();});
   return {element,cancel,get active(){return pointerId!==null;},get input(){return {x:vector.x,y:vector.y};}};
 }
+
+export const CONTROLS_KEY='allods-survivors-controls-v1';
+export function normalizeControls(value){
+  const raw=value&&typeof value==='object'?value:{};
+  return {mode:raw.mode==='touch'?'touch':'joystick',zoom:typeof raw.zoom==='number'&&Number.isFinite(raw.zoom)?Math.min(2,Math.max(1,Math.round(raw.zoom*4)/4)):1};
+}
+export function zoomViewport(view,zoom){const scale=normalizeControls({zoom}).zoom;return {width:view.width/scale,height:view.height/scale};}
+export function screenSteering(x,y,view){
+  const dx=x-view.width/2,dy=y-view.height/2;
+  return Math.hypot(dx,dy)<15?{x:0,y:0}:{x:dx,y:dy};
+}
