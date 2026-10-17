@@ -2,7 +2,25 @@
 
 A standalone autocast survival game with original Allods artwork, spells, equipment, enemy casters and terrain.
 
+**Unofficial fan project.** Allods 2 / Rage of Mages II: Necromancer was developed by [Nival Interactive](https://www.gog.com/en/game/rage_of_mages_ii_necromancer). All rights to the original game and its artwork, characters, interface, audio, fonts and other assets belong to their original creators and respective rights holders. No ownership of those assets is claimed. This project is not affiliated with or endorsed by Nival Interactive or the original game's publishers.
+
 Allods 2 reference used for this project: [Allods2.eu: About](https://www.allods2.eu/en/about/).
+
+## Screenshots
+
+| Elemental combat and spell loadouts | Equipment and the original character doll |
+| --- | --- |
+| ![Autocasting elemental spells with defensive buffs and the original HUD](docs/screenshots/combat.png) | ![Inventory with wearable gear and a fully dressed character doll](docs/screenshots/inventory.png) |
+| **Side-by-side item comparisons** | **Buy and sell in the inventory shop** |
+| ![Hover comparison showing stat gains, losses and spell-level bonuses](docs/screenshots/item-comparison.png) | ![The inventory shop with equipment offers and gold prices](docs/screenshots/shop.png) |
+
+**Steep grassy hills**
+
+![A steep grassy hill with a raised crest and shaded slope in the Shattered Grove](docs/screenshots/terrain.png)
+
+**Boss encounters**
+
+![Urd fully inside the arena, with the boss health bar visible](docs/screenshots/boss.png)
 
 Move with WASD or the arrow keys. Spells cast automatically. Space dashes, I opens inventory, and Escape pauses. Survive the siege and defeat Urd. Death resets progression. Compatible equipment fills empty slots and clear upgrades equip automatically; items with stat tradeoffs remain in the backpack.
 

@@ -32,6 +32,36 @@
       "sha256": "20c99dcf346ee9b73d6ca142295f112c8c2a382ef5b52e76baa4fff38c9c5834"
     },
     {
+      "path": "docs/screenshots/boss.png",
+      "bytes": 934854,
+      "sha256": "ace8aff08500fd72fde59f419fc3cf192cd87b92caa10da438f9549b3d3080b3"
+    },
+    {
+      "path": "docs/screenshots/combat.png",
+      "bytes": 986254,
+      "sha256": "4940a4dfc84153281692f6cfbe31c6a42780f4e3417a3eea873c14f0c49fef9b"
+    },
+    {
+      "path": "docs/screenshots/inventory.png",
+      "bytes": 409040,
+      "sha256": "d023d11efb0e102c7280dd6d0d8ecfee647ca962b6186265cc686900010c1092"
+    },
+    {
+      "path": "docs/screenshots/item-comparison.png",
+      "bytes": 361196,
+      "sha256": "d685e9e716a1c8303664a4a057864f9c2bbb4a8738c697046f711760650ebf17"
+    },
+    {
+      "path": "docs/screenshots/shop.png",
+      "bytes": 283253,
+      "sha256": "cd1a1065f31fa3f5beec8e426e9453e14928d1d132816799dff014fa203a48db"
+    },
+    {
+      "path": "docs/screenshots/terrain.png",
+      "bytes": 1004440,
+      "sha256": "d525ead79b6289814e7b39cf4235d6859371be6fe3b213e75e31208879731438"
+    },
+    {
       "path": "electron-builder.json",
       "bytes": 1047,
       "sha256": "a623237d6b9d2cb020d2452e9b7e8076880393e9ef4809563e682166c15d3077"
@@ -53,8 +83,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4600,
-      "sha256": "288c0c2974cbc0916779b2f7243414b37d078fe1824f8179bf8f345da63bd5ad"
+      "bytes": 5951,
+      "sha256": "6ceed973c10ffc7d75896e626034546cd1b9a0cb81d93828fafcf25cd01bd525"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -8122,11 +8152,6 @@
       "sha256": "90d1dda604a8ace4d0a786666a67c9d0fe6014def630b07d4251fe28bf128a3f"
     },
     {
-      "path": "survivors/assets/ground_dirt.png",
-      "bytes": 4617,
-      "sha256": "e7f9651dbd5b9206ca40ff9f0cb5b44639fdb3d82d467144e955f3079a69a8c4"
-    },
-    {
       "path": "survivors/assets/ground_dry.png",
       "bytes": 5705,
       "sha256": "47a82036e1ec9adb836ede72504136f548ac1f1e1449f102c01e3fa902ea66db"
@@ -8263,8 +8288,8 @@
     },
     {
       "path": "survivors/assets/manifest.json",
-      "bytes": 1653061,
-      "sha256": "0441297509c3174d0fe6239462584bfefbda4e8345cd24ff5b2af71499a25936"
+      "bytes": 1652870,
+      "sha256": "ffd7bcc9dfb75c1110442404cb1ecb6f4ef1219934933c4c04093c80f9d4f3c6"
     },
     {
       "path": "survivors/assets/meteor.wav",
@@ -8973,18 +8998,18 @@
     },
     {
       "path": "survivors/fonts.css",
-      "bytes": 798,
-      "sha256": "77b589453c83feb624008302865989e4488f3a78af7f94c73e65a630c6f06f46"
+      "bytes": 1577,
+      "sha256": "a7c5373f9c986bb9bfde33570a619aa27ba9cbd083a0365e3901a55fd953db92"
     },
     {
       "path": "survivors/game.mjs",
-      "bytes": 38994,
-      "sha256": "602c33b2f8f4e50b9bc3cc2865cf509382eebdce62808abab5bbdd84458746f2"
+      "bytes": 38984,
+      "sha256": "dd17fa1a1e57c4d3d07032948f5f4d99eb6247e56520b76e41dbd073b5c28253"
     },
     {
       "path": "survivors/index.html",
-      "bytes": 2567,
-      "sha256": "8a31b535792e2dc290a9605256bdf78da99c0824f19fe9de95281e97873753a0"
+      "bytes": 2888,
+      "sha256": "12910f9dd092395d0340050e57eb1a66f44d94a8e407e84d26ad230a375015b5"
     },
     {
       "path": "survivors/inventory-drag.mjs",
@@ -9018,8 +9043,8 @@
     },
     {
       "path": "survivors/landscape.mjs",
-      "bytes": 6623,
-      "sha256": "38ee0c18e02d987290be55559fe3fdbba7c55ebf69df29f72c9b13b16578af84"
+      "bytes": 6609,
+      "sha256": "a68334992c80650a701f67201b70cad816a476b6419b3be0029b05579d8b2667"
     },
     {
       "path": "survivors/launcher.cjs",
@@ -9103,8 +9128,8 @@
     },
     {
       "path": "survivors/terrain-renderer.mjs",
-      "bytes": 6630,
-      "sha256": "ffc99738b98042073342f2f0f82b930dadfaab77a96f63bd1e24a3efcfbccacc"
+      "bytes": 5487,
+      "sha256": "eefeb784e8eaae4d7a5cd92014281bab8d2add4ba1779f64b2f3f1446876debf"
     },
     {
       "path": "survivors/vanilla-hud.css",

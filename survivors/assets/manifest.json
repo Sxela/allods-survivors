@@ -72556,15 +72556,6 @@
       "src": "assets/ground_water.png",
       "width": 128,
       "height": 32
-    },
-    "ground_dirt": {
-      "src": "assets/ground_dirt.png",
-      "width": 128,
-      "height": 32,
-      "tileWidth": 32,
-      "tileHeight": 32,
-      "columns": 4,
-      "count": 4
     }
   },
   "vfx": {

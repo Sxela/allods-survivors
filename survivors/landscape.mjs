@@ -1,6 +1,6 @@
 import {terrainHash} from './biomes.mjs';
 export const SCENERY_IDS=['oak1','oak2','elka1','bush1','stones','bones','column','statue','henge1','drtree1','pine1','iva1','scenery-altar1','scenery-bhut1','scenery-bighouse1','scenery-ruins1'];
-export const LANDSCAPE_TERRAIN=['ground_water','ground_dirt'];
+export const LANDSCAPE_TERRAIN=['ground_water'];
 export const LAKE_MAX_RADIUS=76;
 export function landscapeFeatures(view){
   const features=[{kind:'hill',x:-240,y:-60,rx:310,ry:240,height:105}],cell=640;

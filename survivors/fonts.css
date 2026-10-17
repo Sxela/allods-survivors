@@ -5,3 +5,16 @@
 #game .item-detail h3,#game .shop-item h3,#game .item-tooltip h3{overflow-wrap:anywhere}
 
 #game .menu-panel{padding-top:8px;padding-bottom:8px}#game .intro{margin-top:8px;margin-bottom:10px}
+
+/* Keep original-game attribution separate from the changing difficulty hint. */
+#game .fan-notice{font:8px/1.5 system-ui,sans-serif;color:#c5c7b7;background:#101911;border:1px solid #61583c;padding:7px 10px;margin:8px auto 0;max-width:560px;letter-spacing:0}
+#game .fan-notice strong{color:#ebd6a2}
+#game .dialog .fan-notice{font-size:9px;margin-top:18px}
+
+/* Fit the persistent attribution alongside the camp controls at 800 x 600. */
+#game .menu-panel .eyebrow{margin-bottom:8px}
+#game .menu-panel .ornament{margin:6px 0}
+#game .menu-panel .intro{font-size:12px;line-height:1.35;margin:6px 0 8px}
+#game .menu-panel .choose-label{margin-bottom:7px}
+#game .menu-panel #classes{margin-bottom:9px}
+#game .menu-panel .class-card{min-height:125px;padding-bottom:8px}

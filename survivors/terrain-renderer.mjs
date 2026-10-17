@@ -23,25 +23,22 @@ export class TerrainRenderer{
     gl.attachShader(program,shader(gl.VERTEX_SHADER,`
       attribute vec3 position; attribute vec2 uv; attribute vec3 normal;
       uniform vec2 camera; uniform vec2 viewport;
-      varying vec2 texcoord; varying vec3 surfaceNormal; varying vec3 worldPosition;
+      varying vec2 texcoord; varying vec3 surfaceNormal;
       void main(){
         vec2 screen=vec2(position.x,position.y-position.z)-camera;
         gl_Position=vec4(screen.x*2.0/viewport.x,-screen.y*2.0/viewport.y,-position.z/1024.0,1.0);
-        texcoord=uv;surfaceNormal=normal;worldPosition=position;
+        texcoord=uv;surfaceNormal=normal;
       }`));
     gl.attachShader(program,shader(gl.FRAGMENT_SHADER,`
       precision mediump float;
-      uniform sampler2D ground; uniform sampler2D soil; uniform float hasSoil; varying vec2 texcoord; varying vec3 surfaceNormal; varying vec3 worldPosition;
+      uniform sampler2D ground; varying vec2 texcoord; varying vec3 surfaceNormal;
       void main(){
         vec3 n=normalize(vec3(surfaceNormal.xy*1.65,surfaceNormal.z));
         vec3 sun=normalize(vec3(-0.65,-0.8,0.5));
         float light=clamp(0.72+max(0.0,dot(n,sun)),0.72,1.55);
         vec3 color=texture2D(ground,texcoord).rgb;
-        vec2 tile=worldPosition.xy/32.0,cell=floor(tile);
-        float column=0.0;
-        vec2 soilUV=vec2((column+fract(tile.x))/4.0,fract(tile.y));
-        float exposed=clamp(smoothstep(12.0,95.0,worldPosition.z)*0.62+smoothstep(0.12,0.55,length(surfaceNormal.xy))*0.22,0.0,0.7);
-        color=mix(color,texture2D(soil,soilUV).rgb,exposed*hasSoil);
+        // Keep the biome texture continuous over slopes; repeating a single dirt
+        // cell here stamps its distinctive markings into a grid across every hill.
         vec3 ambient=vec3(0.88,0.94,1.0);
         gl_FragColor=vec4(color*mix(ambient,vec3(1.06,1.02,0.92),clamp(light-0.45,0.0,1.0))*light,1.0);
       }`));
@@ -49,17 +46,8 @@ export class TerrainRenderer{
     this.program=program;this.cache=new Map();
     this.camera=gl.getUniformLocation(program,'camera');this.viewport=gl.getUniformLocation(program,'viewport');
     this.attributes=['position','uv','normal'].map(name=>gl.getAttribLocation(program,name));
-    gl.useProgram(program);gl.uniform1i(gl.getUniformLocation(program,'ground'),0);gl.uniform1i(gl.getUniformLocation(program,'soil'),1);
-    this.soil=gl.createTexture();this.hasSoil=gl.getUniformLocation(program,'hasSoil');this.setSoil(null);
+    gl.useProgram(program);gl.uniform1i(gl.getUniformLocation(program,'ground'),0);
     gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);canvas.dataset.renderer='heightmap-webgl';
-  }
-  setSoil(image){
-    const gl=this.gl;gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,this.soil);
-    if(image)gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,image);
-    else gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,1,1,0,gl.RGB,gl.UNSIGNED_BYTE,new Uint8Array([255,255,255]));
-    for(const parameter of [gl.TEXTURE_MIN_FILTER,gl.TEXTURE_MAG_FILTER])gl.texParameteri(gl.TEXTURE_2D,parameter,gl.NEAREST);
-    for(const parameter of [gl.TEXTURE_WRAP_S,gl.TEXTURE_WRAP_T])gl.texParameteri(gl.TEXTURE_2D,parameter,gl.CLAMP_TO_EDGE);
-    gl.useProgram(this.program);gl.uniform1f(this.hasSoil,image?1:0);gl.activeTexture(gl.TEXTURE0);
   }
   release(entry){const gl=this.gl;gl.deleteBuffer(entry.vertices);gl.deleteBuffer(entry.indices);gl.deleteTexture(entry.texture);}
   reset(){for(const entry of this.cache.values())this.release(entry);this.cache.clear();}
