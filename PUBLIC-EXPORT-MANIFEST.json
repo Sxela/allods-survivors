@@ -83,8 +83,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6243,
-      "sha256": "eccdb57e62e4b097c9fd556718796578af610e1c717968e4bc9a8906090d2e5f"
+      "bytes": 6919,
+      "sha256": "c1ab4f0ce6230afca3042ba234e15c8e9756dc6b89a29ebeefac18179067541d"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -9018,18 +9018,18 @@
     },
     {
       "path": "survivors/forest-ui.css",
-      "bytes": 9047,
-      "sha256": "bfd02db75ce993c360096d92062b710c2d881e7fbc59bbd7e392b48340fe977d"
+      "bytes": 12123,
+      "sha256": "be63ffa580ff6d189f9e0c19e652ce05d6ca62a81bfd864c8090fad3d851ee11"
     },
     {
       "path": "survivors/game.mjs",
-      "bytes": 39639,
-      "sha256": "35189c3778881ef4573b509c1a332f6aeb86f62400a375b134449e0a6c1fa6b4"
+      "bytes": 41851,
+      "sha256": "a41c5e91325a8c4581317efd15510b4bc61565a0d0b3ad6bf4c8e95ee7f1c19e"
     },
     {
       "path": "survivors/index.html",
-      "bytes": 2740,
-      "sha256": "e242294e871e37f8a3c847fd497125774e0e4751300ef38976638bcd4b83288c"
+      "bytes": 2759,
+      "sha256": "436a6111710fe7b4f94d003d4e93952f2711ef2f32ddfd1f01fb4cde3b155987"
     },
     {
       "path": "survivors/inventory-drag.mjs",
@@ -9080,6 +9080,11 @@
       "path": "survivors/lowres.css",
       "bytes": 4483,
       "sha256": "2a7ba9a8ac9f3b5cb341335dd9292facc1143f492111cbb1789020c38f82961c"
+    },
+    {
+      "path": "survivors/mobile-controls.mjs",
+      "bytes": 2484,
+      "sha256": "d92fab3d569dadc672c38ab92706362e74d67f15be2fbc3a9c7ffb81656a7cd2"
     },
     {
       "path": "survivors/monster-data.mjs",
@@ -9158,8 +9163,8 @@
     },
     {
       "path": "survivors/vanilla-hud.mjs",
-      "bytes": 6524,
-      "sha256": "4f5d491750f4ea99330847dedfdae8e08efc7d9cfd60e8ebd0fa9a0186f16d90"
+      "bytes": 6620,
+      "sha256": "64c77bf1f4fa1e43df844b843213342f94fcda4ec1730aecedbac2f380b31e3d"
     },
     {
       "path": "survivors/vfx.mjs",
@@ -9260,6 +9265,11 @@
       "path": "tests/loot.test.mjs",
       "bytes": 6429,
       "sha256": "f1d36ce710764758308934e9e510ba97edc03ebbf508b25e3e45e9ebe88ae7ef"
+    },
+    {
+      "path": "tests/mobile-controls.test.mjs",
+      "bytes": 2709,
+      "sha256": "4a431a747d405ccdf4990a54fcb572187e74146bad4261db623115723f27f555"
     },
     {
       "path": "tests/monsters.test.mjs",

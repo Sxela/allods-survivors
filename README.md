@@ -4,7 +4,9 @@ A standalone autocast survival game with original Allods artwork, spells, equipm
 
 **Unofficial fan project.** Allods 2 / Rage of Mages II: Necromancer was developed by [Nival Interactive](https://www.gog.com/en/game/rage_of_mages_ii_necromancer). All rights to the original game and its artwork, characters, interface, audio, fonts and other assets belong to their original creators and respective rights holders. No ownership of those assets is claimed. This project is not affiliated with or endorsed by Nival Interactive or the original game's publishers.
 
-The forest menu backdrop, gold panel frame and burgundy button are generated artwork. Menu text, class selection, stats and cooldowns remain live UI; character dolls, equipment and spell icons use original Allods assets. Base outfits are presentation only and grant no equipment or stats.
+The forest menu backdrop, gold panel frame and burgundy button are generated artwork. Menu text, class selection, stats and cooldowns remain live UI; character dolls, equipment and spell icons use original Allods assets. Base outfits are presentation only and grant no equipment or stats. In-game paperdolls, backpack rows, item cells, minimap and spell slots retain their original Allods image backdrops; vital and stat text uses plain backgrounds for readability.
+
+Portrait screens and windows at most 900 CSS pixels wide automatically use a mobile layout that fills the screen. Drag the translucent thumb joystick at the bottom right to move; release it to stop. The control stays above the spell row, has a small dead zone, and resets when inventory, pause, or level-up opens. The mobile HUD keeps only eight spell slots, backpack and pause buttons; desktop controls return on wider landscape screens. Phone notch and home-indicator safe areas are respected.
 
 Allods 2 reference used for this project: [Allods2.eu: About](https://www.allods2.eu/en/about/).
 

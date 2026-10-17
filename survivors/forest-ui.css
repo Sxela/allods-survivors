@@ -31,36 +31,38 @@
 #game #menu .menu-bottom .text-button,#game #menu .session-actions .text-button{width:150px;min-width:0;min-height:24px;padding:5px 8px;font-size:9px;margin:0}
 #game #menu #sound-button{position:fixed;top:12px;right:14px;font-size:9px;min-height:25px;padding:5px 10px}
 #game #menu .fan-notice{font:8px/1.45 system-ui,sans-serif;color:#c1c4ae;letter-spacing:0;max-width:540px;border:0;border-top:1px solid #8b713d80;background:#08140e85;box-shadow:none;padding:7px 13px 0;margin:10px 0 0}
-#game .dialog,#game .upgrade-card,#game .shop-item,#game .inventory-tooltip,#game .boss-status{background-color:#122019;border:8px solid transparent;border-image:var(--forest-frame) 12% / 8px / 0 stretch;box-shadow:0 6px 25px #0009}
-#game .upgrade-card:hover{background:#233420;border-image:var(--forest-frame) 12% / 8px / 0 stretch}
+/* Keep original in-game artwork beneath the new menu/button treatment. */
+#game .dialog,#game .upgrade-card,#game .shop-item,#game .inventory-tooltip,#game .boss-status{background-color:#202b23;border:8px solid transparent;border-image:url('assets/ui-shopframe.png') 13 / 8px / 0 stretch;box-shadow:0 6px 25px #0009}
+#game .upgrade-card,#game .shop-item{background:#17271f}
+#game .upgrade-card:hover{background-color:#233420;border-image:url('assets/ui-shopframe.png') 13 / 8px / 0 stretch}
 #game .inventory-tooltip{background-color:#101d17fa}
-#game .paperdoll{background:#09150f;border:0;box-shadow:inset 0 0 0 1px #71613a}
-#game .bag-grid{background:#09150f;border:1px solid #685a32;padding:0 6px}
-#game .item-cell{background:#17291d;border-color:#4c5635;box-shadow:inset 0 0 6px #0006}
+#game .paperdoll{background:url('assets/ui-humanbackr.png') center/160px 242px no-repeat;border:0;box-shadow:none}
+#game .bag-grid{background:url('assets/ui-invframe.png') left top/288px 54px repeat-y;border:0;padding:0 7px}
+#game .item-cell{background:url('assets/ui-backinv.png') center/100% 100% no-repeat;border-color:#626542;box-shadow:none}
 #game .item-cell.magic{border-color:#759ad2}#game .item-cell.rare{border-color:#d7b64d}#game .item-cell.unique{border-color:#a6733c}
 /* Preserve the original battlefield dimensions and live minimap/character layers. */
-#game #vanilla-sidebar{background:#0c1611;border-left:1px solid #786236;box-shadow:-3px 0 10px #0006}
-#game #minimap-frame{background:#111e16;border:8px solid transparent;border-image:var(--forest-frame) 12% / 8px / 0 stretch}
-#game #minimap{left:7px;top:9px}
-#game #action-bar{height:46px;background:#0d1912;border-bottom:1px solid #756136}
+#game #vanilla-sidebar{background:#171311 url('assets/ui-extra1024r.png') center/160px 46px repeat-y;border-left:1px solid #786236;box-shadow:-3px 0 10px #0006}
+#game #minimap-frame{background:url('assets/ui-crystalr.png') center/160px 158px no-repeat;border:0;border-image:none}
+#game #minimap{left:15px;top:17px}
+#game #action-bar{height:80px;background:url('assets/ui-commandempr.png') center/160px 80px no-repeat;border:0}
 #game #action-bar #inventory-button{left:9px;right:9px;top:6px;width:140px;height:32px;background:transparent var(--forest-button) center/100% 215% no-repeat;border:0;text-align:left;padding:4px 10px;display:flex;align-items:center;gap:9px}
 #game #inventory-button img{width:22px;height:22px}
 #game #action-bar #inventory-button:after{content:'Inventory  [I]';font:9px 'Allods Romul',Georgia,serif;letter-spacing:.3px;color:#e1c68b}
-#game #hud-vitals{height:87px;padding:7px 8px;background:#111e17;border-bottom:1px solid #756136}
+#game #hud-vitals{height:80px;padding:7px 8px;background:#111e17;border-bottom:1px solid #756136}
 #game #hud-vitals .health-panel{width:142px}
 #game #hud-vitals .health-heading,#game #hud-vitals .mana-heading{font-size:7px;color:#dbcc9d}
 #game #hud-vitals .health-track{height:8px;margin:5px 0;box-shadow:0 0 0 1px #695332;background:#2c1212}
 #game #hud-vitals #hp-fill{background:linear-gradient(#b65c47,#853a32)}
 #game #hud-vitals .mana-track{height:6px;border-color:#4b6078}
 #game #hud-vitals #dash-label{font-size:6px;color:#b7bca6;margin-top:6px}
-#game #vanilla-sidebar header{height:44px;padding:5px 0;background:#0d1913;border-bottom:1px solid #756136}
-#game #hud-character{background:#0a150f;border:0;border-top:1px solid #756136;box-shadow:inset 0 0 24px #000}
-#game #hud-character:after{content:'';position:absolute;inset:0;border:7px solid transparent;border-image:var(--forest-frame) 12% / 7px / 0 stretch;pointer-events:none}
+#game #vanilla-sidebar header{height:40px;padding:5px 0;background:#0d1913;border-bottom:1px solid #756136}
+#game #hud-character{background:url('assets/ui-humanbackr.png') center/160px 242px no-repeat;border:0;box-shadow:none}
+#game #hud-character:after{content:none}
 #game #hud-character img{left:0;top:1px}
-#game #hud #skills,#game.portrait #hud #skills{background:#0d1913;border:5px solid transparent;border-image:var(--forest-frame) 12% / 5px / 0 stretch;gap:12px;padding:11px 10px 5px}
-#game #skills .skill-slot{background:#14241a;border:4px solid transparent;border-image:var(--forest-frame) 12% / 4px / 0 stretch;padding:0;display:flex;align-items:center;justify-content:center}
-#game #skills .skill-slot img{width:34px;height:34px}
-#game #skills .skill-slot.empty{background-color:#0a140e;opacity:.7}
+#game #hud #skills,#game.portrait #hud #skills{background:#101a13;border:5px solid transparent;border-image:url('assets/ui-shopframe.png') 13 / 5px / 0 stretch;gap:12px;padding:11px 10px 5px}
+#game #skills .skill-slot{background:url('assets/ui-spellback.png') center/100% 100% no-repeat;border:0;border-image:none;padding:4px;display:flex;align-items:center;justify-content:center}
+#game #skills .skill-slot img{width:36px;height:36px}
+#game #skills .skill-slot.empty{opacity:1}
 #game .gear-granted{outline-color:#94c4db}
 #game #pause-button{background:transparent var(--forest-button) center/100% 215% no-repeat;border:0}
 #game #hud .boss-status{background-color:#101d16f5;letter-spacing:1px}
@@ -79,3 +81,27 @@
 #game :is(.text-button,.primary,.icon-button):active:not(:disabled),#game .legacy-row button:active:not(:disabled){filter:brightness(.9)}
 #game button:focus-visible{outline:2px solid #ffe1a1;outline-offset:2px}
 #game button:disabled{filter:saturate(.5);opacity:.45}
+
+/* Compact full-width mobile battlefield: spells, backpack, pause only. */
+#game.mobile #vanilla-sidebar,#game.mobile #hud header,#game.mobile #hud>.xp-track,#game.mobile #hud>.level-label,#game.mobile #hud>.hint,#game.mobile #pickup-buffs,#game.mobile .boss-status,#game.mobile #announcement{display:none!important}
+#game.mobile #hud footer{left:0;right:0;height:calc(80px + var(--safe-bottom,0px))}
+#game.mobile #hud #skills{left:0;right:0;height:calc(80px + var(--safe-bottom,0px));width:100%;justify-content:center;gap:14px;padding:18px calc(8px + var(--safe-right,0px)) calc(6px + var(--safe-bottom,0px)) calc(8px + var(--safe-left,0px));background:#0b1712e8;border:0;border-top:1px solid #806936}
+#game.mobile #skills .skill-slot{width:56px;height:56px;padding:5px}
+#game.mobile #skills .skill-slot img{width:44px;height:44px}
+#game.mobile .spell-group:before{font-size:8px;top:-12px}
+#game.mobile #hud>#inventory-button,#game.mobile #hud>#pause-button{position:absolute;top:calc(12px + var(--safe-top,0px));bottom:auto;left:auto;right:calc(90px + var(--safe-right,0px));width:68px;height:60px;padding:12px;pointer-events:auto;background:transparent var(--forest-button) center/100% 215% no-repeat;border:0}
+#game.mobile #hud>#inventory-button img{width:32px;height:32px}
+#game.mobile #hud>#pause-button{right:calc(12px + var(--safe-right,0px));font-size:23px}
+#game.mobile .hint{display:none}
+#game.mobile #menu #sound-button{top:calc(8px + var(--safe-top,0px));right:calc(10px + var(--safe-right,0px))}
+#game.mobile .inventory-heading button{min-height:38px;padding:8px 12px}
+#game.mobile .dialog-actions button{min-height:44px}
+
+#game.mobile .dialog{max-width:calc(100% - var(--safe-left,0px) - var(--safe-right,0px) - 16px);max-height:calc(100% - var(--safe-top,0px) - var(--safe-bottom,0px) - 16px)}
+#game.mobile button:not(.item-cell):not(.doll-region){touch-action:manipulation}
+
+/* Right-thumb movement control floats above the spell row. */
+#game #mobile-joystick{display:none}
+#game.mobile #mobile-joystick{display:block;position:absolute;right:calc(14px + var(--safe-right,0px));bottom:calc(98px + var(--safe-bottom,0px));width:var(--stick-size,176px);height:var(--stick-size,176px);border-radius:50%;border:2px solid #c1a46a88;background:radial-gradient(circle,#24382b66 0%,#0a171480 65%,#b99a5433 67%,#09130f66 70%);box-shadow:inset 0 0 0 7px #050d0b40,0 2px 10px #0005;opacity:.5;touch-action:none;user-select:none;-webkit-user-select:none;pointer-events:auto;z-index:1}
+#game.mobile #mobile-joystick.active{opacity:.9;border-color:#e7cc8bbb}
+#game .joystick-knob{position:absolute;left:50%;top:50%;width:36%;height:36%;transform:translate(-50%,-50%);border-radius:50%;border:2px solid #d2b475aa;background:radial-gradient(circle at 35% 30%,#82977e99,#203a2be6 65%,#0a1912ee);box-shadow:0 2px 8px #0008;pointer-events:none}

@@ -4,8 +4,8 @@ import {SPELLS} from './original-spells.mjs';
 import {canEquip} from './loot.mjs';
 import {BIOMES,biomeStage} from './biomes.mjs';
 import {landscapeFeatures,decorations,terrainElevation} from './landscape.mjs';
-export const HUD_WIDTH=160,HUD_BOTTOM=64;
-export function battlefieldSize(width,height){return {width:width-HUD_WIDTH,height:height-HUD_BOTTOM};}
+export const HUD_WIDTH=160,HUD_BOTTOM=64,MOBILE_HUD_BOTTOM=80;
+export function battlefieldSize(width,height,mobile=false,safeBottom=0){return {width:width-(mobile?0:HUD_WIDTH),height:height-(mobile?MOBILE_HUD_BOTTOM+safeBottom:HUD_BOTTOM)};}
 export function mountVanillaHud(hud){
   const side=document.createElement('aside');side.id='vanilla-sidebar';side.innerHTML='<div id="minimap-frame"><canvas id="minimap" width="128" height="128" aria-label="Minimap: terrain, enemies and nearby loot"></canvas></div><div id="action-bar" aria-label="Actions"></div><div id="hud-vitals"></div><div id="hud-character" aria-label="Equipped character"></div>';
   hud.append(side);side.querySelector('#action-bar').append(hud.querySelector('#inventory-button'));side.querySelector('#hud-vitals').append(hud.querySelector('.health-panel'));side.insertBefore(hud.querySelector('header'),side.querySelector('#hud-character'));
