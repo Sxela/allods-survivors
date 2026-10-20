@@ -8,7 +8,7 @@ export function pickupGuides(world,{width,height}){
     const tx=dx>0?(maxX-cx)/dx:dx<0?(minX-cx)/dx:Infinity,ty=dy>0?(maxY-cy)/dy:dy<0?(minY-cy)/dy:Infinity,t=Math.min(tx,ty);
     return {x:cx+dx*t,y:cy+dy*t,angle:Math.atan2(dy,dx),distance:Math.round(distance)};
   };
-  const guides=[];
+  const guides=[];if(world.campaign?.exit){const p=point(world.campaign.exit);if(p)guides.push({...p,kind:'exit',label:'EXIT',color:'#9ce7df'});}
   const loot=[...world.lootDrops].sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));
   for(const drop of loot){const p=point(drop);if(p){guides.push({...p,kind:'loot',label:'LOOT',rarity:drop.item.rarity});if(guides.length>=3)break;}}
   const powerups=[...(world.powerups||[])].filter(drop=>drop.ttl>0).sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));

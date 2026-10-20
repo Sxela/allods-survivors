@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Inventory,makeItem,equipmentStats,formatStat,sellPrice,SLOTS,STAT_LABELS} from '../survivors/loot.mjs';
 import {World,random} from '../survivors/core.mjs';
-import {shopStock,buyPrice,purchase} from '../survivors/shop.mjs';
+import {shopStock,buyPrice,purchase,refreshCost} from '../survivors/shop.mjs';
 const relic={id:'relic',name:'Treasure band',slot:'ring',rarity:'magic',icon:'ring',stats:{magicFind:.4,goldFind:.5}};
 test('find stats survive saves, apply through equipment, and revert without stacking',()=>{const w=new World({inventory:{bag:[relic]}});w.equipItem('relic');w.refreshEquipment();assert.equal(w.player.magicFind,.4);assert.equal(w.player.goldFind,.5);const restored=new World({inventory:JSON.parse(JSON.stringify(w.inventory.snapshot()))});assert.equal(restored.player.magicFind,.4);restored.unequipItem('ring');assert.equal(restored.player.goldFind,0);});
 test('Magic Find shifts common rolls toward magic and magic rolls toward rare',()=>{
@@ -23,3 +23,8 @@ test('shop stock is deterministic, covers all slots, and offers prices above res
 test('purchase removes stock and deducts the price exactly once',()=>{const inv=new Inventory(),stock=shopStock(42),item=stock[0],price=buyPrice(item);const result=purchase(inv,stock,1000,item.id);assert.equal(result.ok,true);assert.equal(result.gold,1000-price);assert.equal(inv.bag[0].id,item.id);assert.equal(stock.length,SLOTS.length-1);assert.equal(purchase(inv,stock,result.gold,item.id).ok,false);});
 test('unaffordable or full-bag purchases are atomic and cannot create free items',()=>{for(const full of [false,true]){const inv=new Inventory();if(full)for(let i=0;i<36;i++)inv.add(makeItem(random(i+1),{id:`filled-${i}`}));const stock=shopStock(42),before=JSON.stringify({inv:inv.snapshot(),stock});const result=purchase(inv,stock,full?1000:0,stock[0].id);assert.equal(result.ok,false);assert.equal(JSON.stringify({inv:inv.snapshot(),stock}),before);}});
 test('all item stat displays use exactly one decimal place',()=>{for(const key of Object.keys(STAT_LABELS))assert.match(formatStat(key,.1234),/^\+\d+\.\d%? /);assert.equal(formatStat('regen',.15),'+0.2 Health per second');assert.equal(formatStat('magicFind',.1234),'+12.3% Magic Find');assert.equal(formatStat('goldFind',-.1234),'-12.3% Gold Find');});
+
+
+test('equipment shop charges the quoted scaled purchase once without increasing resale value',()=>{
+ for(const scale of [1,1.5,3,4.5]){const inventory=new Inventory(),stock=shopStock(42),item=stock[0],resale=sellPrice(item),price=buyPrice(item,scale);assert.equal(price,Math.ceil(resale*3*scale));assert.equal(refreshCost(scale),Math.ceil(8*scale));assert.equal(purchase(inventory,stock,price-1,item.id,scale).ok,false);const bought=purchase(inventory,stock,price,item.id,scale);assert.equal(bought.ok,true);assert.equal(bought.gold,0);assert.equal(sellPrice(bought.item),resale);assert.equal(purchase(inventory,stock,10000,item.id,scale).ok,false);}
+});

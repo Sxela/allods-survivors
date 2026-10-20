@@ -5,6 +5,7 @@
   "description": "Allods Survivors desktop game",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
+    "test:balance": "node tools/balance-campaign.mjs --policies=collect,stationary,tactical",
     "desktop:stage": "node tools/stage-electron.cjs",
     "desktop": "node tools/run-electron.cjs",
     "desktop:pack": "node tools/build-electron.cjs --dir",

@@ -9,7 +9,7 @@ test('difficulty scales actual regular and boss health, damage and speed',()=>{
   for(const boss of [false,true]){
     const enemies=Object.keys(DIFFICULTIES).map(difficulty=>new World({seed:42,difficulty}).spawn('wolf',boss));
     for(const key of ['hp','damage','speed']){assert.ok(enemies[0][key]<enemies[1][key]);assert.ok(enemies[1][key]<enemies[2][key]);}
-    assert.equal(enemies[0].hp,enemies[1].hp*.7);assert.equal(enemies[2].hp,enemies[1].hp*1.45);
+    assert.equal(enemies[0].hp,enemies[1].hp*.5);assert.equal(enemies[2].hp,enemies[1].hp*1.2);
   }
 });
 test('three settings produce different opening waves and reinforcement rates',()=>{

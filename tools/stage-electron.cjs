@@ -11,8 +11,8 @@ function runtimeMetadata(value){
   return value;
 }
 async function collectRuntime(){
-  const [{CLASSES,SKILLS},{MONSTERS,projectileVfxById},{BIOMES},{POWERUPS},original,{SCENERY_IDS,LANDSCAPE_TERRAIN}]=await Promise.all([
-    import(pathToFileURL(path.join(SOURCE,'core.mjs'))),import(pathToFileURL(path.join(SOURCE,'monsters.mjs'))),import(pathToFileURL(path.join(SOURCE,'biomes.mjs'))),import(pathToFileURL(path.join(SOURCE,'powerups.mjs'))),fs.readFile(path.join(SOURCE,'assets/manifest.json'),'utf8').then(JSON.parse),import(pathToFileURL(path.join(SOURCE,'landscape.mjs')))
+  const [{CLASSES,SKILLS},{MONSTERS,projectileVfxById},{BIOMES},{POWERUPS},original,{SCENERY_IDS,LANDSCAPE_TERRAIN},{NATIVE_SCENERY_IDS}]=await Promise.all([
+    import(pathToFileURL(path.join(SOURCE,'core.mjs'))),import(pathToFileURL(path.join(SOURCE,'monsters.mjs'))),import(pathToFileURL(path.join(SOURCE,'biomes.mjs'))),import(pathToFileURL(path.join(SOURCE,'powerups.mjs'))),fs.readFile(path.join(SOURCE,'assets/manifest.json'),'utf8').then(JSON.parse),import(pathToFileURL(path.join(SOURCE,'landscape.mjs'))),import(pathToFileURL(path.join(SOURCE,'map-arenas.mjs')))
   ]);
   const code=new Map(),assets=new Set();
   const addAsset=relative=>{
@@ -39,7 +39,7 @@ async function collectRuntime(){
     addAsset(value.src);return [id,runtimeMetadata(value)];
   }));
   const manifest={version:original.version,
-    sprites:select('sprites',['hero',...Object.values(CLASSES).map(c=>c.sprite),...Object.keys(MONSTERS),...SCENERY_IDS]),
+    sprites:select('sprites',['hero',...Object.values(CLASSES).map(c=>c.sprite),...Object.keys(MONSTERS),...SCENERY_IDS,...NATIVE_SCENERY_IDS]),
     terrain:select('terrain',[...BIOMES.map(b=>b.ground),...LANDSCAPE_TERRAIN]),
     vfx:select('vfx',[...Object.values(SKILLS).map(s=>s.vfx),...Object.values(POWERUPS).map(p=>p.vfx),...Object.values(MONSTERS).map(m=>projectileVfxById[m.projectileId]).filter(Boolean),'poison_hit','ice_dust','explosion']),
     items:select('items',Object.keys(original.items)),sounds:select('sounds',Object.keys(original.sounds)),paperdolls:runtimeMetadata(original.paperdolls)

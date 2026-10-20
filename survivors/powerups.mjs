@@ -27,7 +27,7 @@ export function grantPowerup(world,id){
     p.statuses.shield.maxPool=Math.max(p.statuses.shield.maxPool,p.statuses.shield.pool);
   }else if(id==='magnet'){
     for(const gem of world.gems||[])if(gem.type==='xp'&&!gem.collected)gem.attracted=true;
-  }else if(id==='heal')p.hp=Math.min(p.maxHp,p.hp+p.maxHp*.35);
+  }else if(id==='heal')world.heal?world.heal(p.maxHp*.35):p.hp=Math.min(p.maxHp,p.hp+p.maxHp*.35);
   world.effects??=[];
   world.effects.push({kind:def.vfx,vfx:def.vfx,x:p.x,y:p.y,ttl:.7,maxTtl:.7});
   world.emit?.('powerup',{kind:id,name:def.name});

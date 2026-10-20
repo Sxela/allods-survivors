@@ -1,0 +1,66 @@
+/* Dense information uses solid surfaces and source-styled buttons. */
+#game .knowledge-dialog{width:820px;max-width:94%;text-align:left;background-color:#102018}
+#game .knowledge-dialog h2{text-align:center}
+#game .offer-preview{flex:1;font:11px/1.5 system-ui,sans-serif;width:100%;text-align:left;color:#dfdbc5;overflow-wrap:anywhere}
+#game .offer-preview>p{font:inherit;margin:8px 0;color:#d9c795}
+#game dl{margin:6px 0}#game dl>div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #75623955;padding:4px 0}#game dt{color:#b7bca7}#game dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}#game .offer-preview dl>div{display:block}#game .offer-preview dd{text-align:left}#game .offer-preview dd strong{color:#f2dc9b}
+#game .stats-breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;font:12px/1.5 system-ui,sans-serif}
+#game .stats-breakdown article{background:#0b1712;border:1px solid #66562f;padding:10px;overflow-wrap:anywhere}#game .stats-breakdown h3{font:13px/1.5 'Allods Romul',serif;margin:0;color:#dfcfa3}#game .stats-breakdown h3 strong{display:block;color:#f8e3ad}#game .stats-breakdown p{font:11px/1.6 system-ui,sans-serif;margin:7px 0}#game .stats-breakdown small{color:#9eaf9c;font:10px/1.5 system-ui,sans-serif}
+#game .spell-inspections h3,#game #spell-detail h3{font:15px 'Allods Romul',serif;color:#eed89c;margin:5px 0 10px}
+#game #spell-detail{max-height:60%;overflow-y:auto;overscroll-behavior:contain;pointer-events:auto}#game #spell-detail p{font:inherit;margin:8px 0}#game .spell-values{font:inherit}
+#game .bestiary-filters{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;align-items:center;font:12px system-ui,sans-serif}#game .bestiary-filters input[type=search]{min-width:120px;flex:1;width:160px}#game .bestiary-filters input[type=search],#game .bestiary-filters select{background:#0b1812;color:#e9d9b7;border:1px solid #8d7542;padding:10px;font:inherit}#game .creature-card{display:grid;grid-template-columns:144px minmax(0,1fr);border-top:1px solid #89703c;padding:14px 0;gap:12px;font:12px/1.6 system-ui,sans-serif}#game .creature-card h3{font:17px 'Allods Romul',serif;margin:4px 0 8px;color:#edd49b}#game .creature-card p{font:inherit;margin:8px 0}#game .creature-card small{font-size:10px;color:#a7b19a}#game .creature-card canvas{position:static;inset:auto;width:144px;height:144px;display:block;background:#0a1712;border:1px solid #594d2e;image-rendering:pixelated;max-width:100%;height:auto}#game .creature-card details p{max-height:130px;overflow:auto}#game .bestiary-paging{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px 0}
+#game.mobile .knowledge-dialog{max-width:96%}#game.mobile .stats-breakdown{grid-template-columns:1fr;font-size:15px}#game.mobile .stats-breakdown h3{font-size:16px}#game.mobile .stats-breakdown p,#game.mobile .stats-breakdown small{font-size:13px}#game.mobile .offer-preview{font-size:14px}#game.mobile .creature-card{grid-template-columns:100px minmax(0,1fr);font-size:14px;gap:8px}#game.mobile .creature-card small{font-size:12px}#game.mobile .bestiary-filters{font-size:15px}
+
+#game .offer-preview>p{min-height:0;margin:8px 0 12px}#game .offer-preview dl dd strong{display:inline;font:inherit;font-weight:600;letter-spacing:0;text-transform:none}#game .offer-preview dl>div{padding:5px 0}#game .upgrade-card>button{margin-top:12px}#game .stats-sections{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}#game .stats-sections button{min-width:0;font-size:10px;padding:8px}
+#game.mobile .upgrade-grid,#game.mobile .camp-grid{grid-template-columns:1fr}#game.mobile .offer-preview{font-size:17px}#game.mobile .knowledge-dialog>p,#game.mobile .spell-inspections,#game.mobile .stats-breakdown p,#game.mobile .stats-breakdown small{font-size:17px;line-height:1.55}#game.mobile .stats-breakdown h3{font-size:20px}#game.mobile .creature-card{font-size:17px}#game.mobile .creature-card small{font-size:14px}#game.mobile .stats-sections button{font-size:15px;min-height:44px}#game.mobile #spell-detail{font-size:17px}#game .knowledge-dialog h3{scroll-margin-top:12px}
+
+#game .offer-preview>.dps-note,#game .spell-inspections .dps-note,#game #spell-detail .dps-note{font:10px/1.45 system-ui,sans-serif;color:#9eaf9c;margin:5px 0}
+
+/* Fit the logical game viewport, even when the whole framebuffer is scaled. */
+#game #modal>.upgrade-dialog{height:94%;max-height:94%;box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden;padding:12px 16px}
+#game .upgrade-dialog>.eyebrow{margin:0 0 4px;flex-shrink:0}
+#game .upgrade-dialog>h2{font-size:22px;margin:3px 0 5px;flex-shrink:0}
+#game .upgrade-dialog>p{font:11px/1.35 system-ui,sans-serif;margin:3px 0 6px;flex-shrink:0}
+#game .upgrade-dialog>.camp-wallet{font-size:16px;margin:3px;flex-shrink:0}
+#game .upgrade-dialog>.upgrade-grid{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - var(--offer-gaps,20px))/var(--offer-columns,3));grid-template-rows:minmax(0,1fr);gap:10px;flex:1;min-height:0;margin:8px 0 4px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:5px}
+#game .upgrade-dialog .upgrade-card{box-sizing:border-box;height:100%;min-height:0;min-width:0;padding:8px;scroll-snap-align:start;overflow:hidden;transform:none;flex-shrink:0}
+#game .upgrade-dialog .upgrade-icon{width:30px;height:30px;margin:0 0 5px;flex-shrink:0;float:none}
+#game .upgrade-dialog .upgrade-card>strong{font-size:15px;line-height:1.25;margin:3px 0;flex-shrink:0}
+#game .upgrade-dialog .upgrade-card>small{font-size:8px;flex-shrink:0}
+#game .upgrade-dialog .offer-preview{min-height:0;flex:1;overflow-y:auto;overscroll-behavior-y:contain;overscroll-behavior-x:auto;scrollbar-width:thin;font:11px/1.35 system-ui,sans-serif}
+#game .upgrade-dialog .offer-preview>p{min-height:0;margin:4px 0;font:inherit}
+#game .upgrade-dialog .offer-preview dl{margin:2px 0}
+#game .upgrade-dialog .offer-preview dl>div{padding:3px 0}
+#game .upgrade-dialog .upgrade-card>button{flex-shrink:0;margin-top:6px;min-height:34px}
+#game .upgrade-dialog>.dialog-actions{flex-shrink:0;gap:6px;margin-top:6px}
+#game .upgrade-dialog>.dialog-actions button{min-width:0;padding:8px 12px;font-size:11px}
+#game .upgrade-dialog::after{content:'Scroll sideways for more offers; scroll stats for details.';font:9px/1.3 system-ui,sans-serif;color:#a6af9d;margin-top:4px;flex-shrink:0}
+#game.mobile #modal>.upgrade-dialog{padding:10px 12px}
+#game.mobile .upgrade-dialog>.upgrade-grid{grid-auto-columns:100%}
+#game.mobile .upgrade-dialog .upgrade-card>strong{font-size:28px}
+#game.mobile .upgrade-dialog .upgrade-card>small{font-size:18px}
+#game.mobile .upgrade-dialog .offer-preview{font-size:26px;line-height:1.4}
+#game.mobile .upgrade-dialog .upgrade-card>button{min-height:84px;font-size:28px}
+#game.mobile .upgrade-dialog>.dialog-actions button{font-size:24px;min-height:84px}
+#game.mobile .upgrade-dialog::after{font-size:16px}
+#game.mobile .upgrade-dialog>h2{font-size:30px}
+#game.mobile .upgrade-dialog>.camp-wallet{font-size:24px}
+
+@media(max-height:500px),(max-width:900px) and (orientation:landscape){
+ #game.mobile .upgrade-dialog>h2{font-size:17px}
+ #game.mobile .upgrade-dialog>.camp-wallet{font-size:14px}
+ #game.mobile .upgrade-dialog .upgrade-card>strong{font-size:15px}
+ #game.mobile .upgrade-dialog .upgrade-card>small{font-size:9px}
+ #game.mobile .upgrade-dialog .offer-preview{font-size:15px}
+ #game.mobile .upgrade-dialog::after{font-size:10px}
+
+ #game.mobile .upgrade-dialog .upgrade-card>button,#game.mobile .upgrade-dialog>.dialog-actions button{min-height:44px;font-size:15px}
+ #game .upgrade-dialog>.eyebrow,#game .upgrade-dialog>p,#game .upgrade-dialog .upgrade-icon{display:none}
+ #game .upgrade-dialog>h2{font-size:17px;margin:0 0 3px}
+ #game .upgrade-dialog>.camp-wallet{font-size:14px;margin:0}
+ #game .upgrade-dialog .upgrade-card>strong{font-size:15px;margin:2px 0}
+ #game .upgrade-dialog .upgrade-card>small{font-size:9px}
+ #game .upgrade-dialog .offer-preview{font-size:13px}
+ #game .upgrade-dialog>.dialog-actions{margin-top:3px}
+ #game .upgrade-dialog::after{font-size:10px;margin-top:2px}
+}

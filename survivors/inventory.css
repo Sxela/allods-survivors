@@ -8,7 +8,7 @@
 .equipped-grid{display:grid;grid-template-columns:repeat(3,48px);gap:6px 8px;text-align:center;margin-top:8px}
 .item-cell.restricted img{opacity:.45}.class-restriction{font:10px system-ui;color:#c4ad83}
 .rarity-unique{color:#d99a56!important}.item-cell.unique{border-color:#a6733c}
-.mana-heading{display:flex;justify-content:space-between;font:8px system-ui;color:#9db8e0;margin-top:3px}.mana-track{height:4px;background:#071326;border:1px solid #344963}.mana-track>div{height:100%;background:#658ed3;width:100%}
+
 .equipped-grid small{display:block;font:8px system-ui;color:#aca88d;margin-top:4px}
 .bag-grid{display:grid;grid-template-columns:repeat(6,44px);grid-auto-rows:54px;gap:0 2px;padding:0 7px;background:url('assets/ui-invframe.png') left top/288px 54px repeat-y;width:288px}
 .item-cell{background:url('assets/ui-backinv.png') center/100% 100%;border:1px solid #626542;width:100%;height:42px;min-width:0;padding:1px;display:flex;justify-content:center;align-items:center;align-self:center;touch-action:none;user-select:none}

@@ -21,13 +21,13 @@ const emptyEquipment=()=>Object.fromEntries(SLOTS.map(slot=>[slot,null]));
 export const ITEM_BALANCE_VERSION=2;
 export function balancedBonus(key,value){
   if(key.startsWith('skill:'))return Math.min(3,Math.max(1,Math.floor(value)));
-  const cap=key==='maxHp'?60:key==='maxMana'?100:LIMITS[key];
+  const cap=key==='maxHp'?60:LIMITS[key];
   return Math.min(cap,Math.max(.001,round(value*.1)));
 }
 // Convert legacy gear once, retaining art, identities, affixes and spell grants.
 export function rebalanceSavedItems(save){
   for(const item of [...(save.inventory?.bag||[]),...Object.values(save.inventory?.equipment||{}),...(save.shopStock||[])]){
-    if(!plain(item)||!plain(item.stats)||item.balanceVersion===ITEM_BALANCE_VERSION)continue;
+    if(!plain(item)||!plain(item.stats))continue;item.stats=Object.fromEntries(Object.entries(item.stats).filter(([key,value])=>own(LIMITS,key)&&Number.isFinite(value)&&value>0&&value<=LIMITS[key]));if(item.balanceVersion===ITEM_BALANCE_VERSION)continue;
     item.stats=Object.fromEntries(Object.entries(item.stats).filter(([key,value])=>own(LIMITS,key)&&Number.isFinite(value)&&value>0&&value<=LIMITS[key]).map(([key,value])=>[key,balancedBonus(key,value)]));
     item.balanceVersion=ITEM_BALANCE_VERSION;
   }

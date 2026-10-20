@@ -21,7 +21,7 @@ async function exportSave(){
 }
 async function importSave(){
   await pauseForDialog();const result=await dialog.showOpenDialog(window,{title:'Import progress',properties:['openFile'],filters:[{name:'Game save',extensions:['json']}]});
-  if(result.canceled)return;const file=result.filePaths[0];if((await fs.stat(file)).size>1024*1024)throw new Error('Save file is too large.');
+  if(result.canceled)return;const file=result.filePaths[0];if((await fs.stat(file)).size>4_000_000)throw new Error('Save file is too large.');
   const save=JSON.parse(await fs.readFile(file,'utf8'));
   if(!save||typeof save!=='object'||Array.isArray(save)||!save.inventory||!Number.isFinite(save.gold)||save.gold<0)throw new Error('This is not an Allods Survivors save.');
   const confirm=await dialog.showMessageBox(window,{type:'question',buttons:['Cancel','Import'],defaultId:0,cancelId:0,message:'Replace desktop progress with this save?',detail:'The active run will end. Export your current save first if you want a backup.'});

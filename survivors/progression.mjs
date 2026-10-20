@@ -8,7 +8,7 @@ export function freshProgress(previous,hero,now=Date.now()){
 
 export function resetAfterDeath(world,previous){
   world.inventory=new Inventory({},world.hero);world.skills={};world.cooldowns={};
-  world.cooldownDurations={};world.cooldownWaiting={};world.pendingLevels=0;world.choices=[];
+  world.localBonuses={};world.individualPurchases={};world.behaviors={};world.milestones=[];world.learningQueue=[];world.cooldownDurations={};world.cooldownWaiting={};world.pendingLevels=0;world.choices=[];
   world.refreshEquipment();world.player.statuses={};world.fields=[];world.allies=[];world.lootDrops=[];world.gold=0;
   return freshProgress(previous,world.hero);
 }

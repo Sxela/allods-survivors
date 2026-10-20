@@ -50,10 +50,9 @@
 #game #action-bar #inventory-button:after{content:'Inventory  [I]';font:9px 'Allods Romul',Georgia,serif;letter-spacing:.3px;color:#e1c68b}
 #game #hud-vitals{height:80px;padding:7px 8px;background:#111e17;border-bottom:1px solid #756136}
 #game #hud-vitals .health-panel{width:142px}
-#game #hud-vitals .health-heading,#game #hud-vitals .mana-heading{font-size:7px;color:#dbcc9d}
+#game #hud-vitals .health-heading{font-size:7px;color:#dbcc9d}
 #game #hud-vitals .health-track{height:8px;margin:5px 0;box-shadow:0 0 0 1px #695332;background:#2c1212}
 #game #hud-vitals #hp-fill{background:linear-gradient(#b65c47,#853a32)}
-#game #hud-vitals .mana-track{height:6px;border-color:#4b6078}
 #game #hud-vitals #dash-label{font-size:6px;color:#b7bca6;margin-top:6px}
 #game #vanilla-sidebar header{height:40px;padding:5px 0;background:#0d1913;border-bottom:1px solid #756136}
 #game #hud-character{background:url('assets/ui-humanbackr.png') center/160px 242px no-repeat;border:0;box-shadow:none}
@@ -124,3 +123,30 @@
 #game.mobile .controls-dialog #control-description{font-size:14px}
 #game.mobile .zoom-control{font-size:15px}
 #game.mobile .controls-dialog .settings-note{font-size:12px}
+
+/* Route feedback stays readable over the field, including on portrait phones. */
+#game #route-status{position:absolute;left:48px;right:170px;top:8px;padding:5px 9px;background:#0a1712e8;border:1px solid #796439;color:#e7d4a4;font:10px/1.5 system-ui,sans-serif;pointer-events:none;text-align:center}
+#game.mobile #route-status{left:12px;right:12px;top:calc(84px + var(--safe-top,0px));font-size:14px;padding:7px 10px}
+#game .upgrade-card{cursor:default;border-color:var(--gift-color,#a89058);display:flex;flex-direction:column;align-items:center}
+#game .upgrade-card>small{color:var(--gift-color,#d9c392)}
+#game .upgrade-card>p{flex:1}
+#game .upgrade-card>button{min-height:34px;width:100%}
+#game #modal>.dialog{max-height:94%;overflow-y:auto;overscroll-behavior:contain}
+#game .camp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#game .camp-wallet{font:20px 'Allods Romul',Georgia,serif;color:#e5ca85;margin:12px}
+#game .spell-inspections{text-align:left;font:11px/1.6 system-ui,sans-serif}
+#game .spell-inspections article{border-top:1px solid #66552d;padding:10px 0}
+#game #spell-detail{position:absolute;left:12px;right:172px;bottom:76px;padding:12px;background:#0a1712f5;border:1px solid #a18a56;color:#e3d9ba;font:11px/1.5 system-ui,sans-serif;pointer-events:none;z-index:3}
+#game.mobile #spell-detail{left:12px;right:12px;bottom:calc(92px + var(--safe-bottom,0px));font-size:15px}
+#game.mobile .camp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#game.mobile .upgrade-card>button{min-height:48px}
+#game.mobile .spell-inspections{font-size:14px}
+
+#game.mobile .upgrade-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+#game.mobile .upgrade-card strong{font-size:21px}
+#game.mobile .upgrade-card p{font:15px/1.5 system-ui,sans-serif}
+#game.mobile .upgrade-card small{font-size:12px}
+#game.mobile .upgrade-card>button{font-size:15px}
+
+#game .route-setting{display:flex;align-items:center;justify-content:center;gap:12px;margin:8px 0;color:#e4d0a2;font:11px system-ui,sans-serif}
+#game #route-length{background:#14231a;color:#e8d6a9;border:1px solid #92723c;padding:7px;font:inherit}

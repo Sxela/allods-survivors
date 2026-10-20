@@ -57,7 +57,7 @@ test('Wall of Fire damages along its segment rather than its entire bounding cir
   assert.ok(w.enemies[0].hp<1000);assert.equal(w.enemies[1].hp,1000);
 });
 test('Heal restores one wounded target; Drain Life cannot heal more than life actually drained',()=>{
-  const w=fixture();castOriginal(w,'heal',1);assert.equal(w.player.hp,72);w.player.hp=40;w.enemies[0].hp=5;castOriginal(w,'drain',1);assert.equal(w.player.hp,45);
+  const w=fixture();castOriginal(w,'heal',1);assert.equal(w.player.hp,58);w.player.hp=40;w.enemies[0].hp=5;castOriginal(w,'drain',1);assert.equal(w.player.hp,45);
   w.player.hp=100;assert.equal(castOriginal(w,'heal',1),false);
 });
 test('Animate Dead requires and consumes a corpse, summons defend caster, and army is bounded',()=>{

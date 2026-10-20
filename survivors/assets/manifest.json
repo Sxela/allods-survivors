@@ -72504,6 +72504,5242 @@
           "anchorY": 34
         }
       ]
+    },
+    "native-object-12": {
+      "src": "assets/native-object-12.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-131": {
+      "src": "assets/native-object-131.png",
+      "cellWidth": 64,
+      "cellHeight": 48,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 48,
+          "anchorX": 32,
+          "anchorY": 46
+        }
+      ]
+    },
+    "native-object-92": {
+      "src": "assets/native-object-92.png",
+      "cellWidth": 72,
+      "cellHeight": 112,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 72,
+          "h": 112,
+          "anchorX": 36,
+          "anchorY": 110
+        }
+      ]
+    },
+    "native-object-127": {
+      "src": "assets/native-object-127.png",
+      "cellWidth": 88,
+      "cellHeight": 104,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 88,
+          "h": 104,
+          "anchorX": 44,
+          "anchorY": 102
+        }
+      ]
+    },
+    "native-object-97": {
+      "src": "assets/native-object-97.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-129": {
+      "src": "assets/native-object-129.png",
+      "cellWidth": 72,
+      "cellHeight": 104,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 72,
+          "h": 104,
+          "anchorX": 36,
+          "anchorY": 102
+        }
+      ]
+    },
+    "native-object-103": {
+      "src": "assets/native-object-103.png",
+      "cellWidth": 48,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 48,
+          "h": 96,
+          "anchorX": 24,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-98": {
+      "src": "assets/native-object-98.png",
+      "cellWidth": 24,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 80,
+          "anchorX": 12,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-99": {
+      "src": "assets/native-object-99.png",
+      "cellWidth": 16,
+      "cellHeight": 56,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 56,
+          "anchorX": 8,
+          "anchorY": 54
+        }
+      ]
+    },
+    "native-object-78": {
+      "src": "assets/native-object-78.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-79": {
+      "src": "assets/native-object-79.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-80": {
+      "src": "assets/native-object-80.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-81": {
+      "src": "assets/native-object-81.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-77": {
+      "src": "assets/native-object-77.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-structure-21": {
+      "src": "assets/native-structure-21.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-22": {
+      "src": "assets/native-structure-22.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-23": {
+      "src": "assets/native-structure-23.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-4": {
+      "src": "assets/native-structure-4.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-1": {
+      "src": "assets/native-structure-1.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-2": {
+      "src": "assets/native-structure-2.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-53": {
+      "src": "assets/native-structure-53.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-18": {
+      "src": "assets/native-object-18.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-119": {
+      "src": "assets/native-object-119.png",
+      "cellWidth": 64,
+      "cellHeight": 56,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 56,
+          "anchorX": 32,
+          "anchorY": 54
+        }
+      ]
+    },
+    "native-object-42": {
+      "src": "assets/native-object-42.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-185": {
+      "src": "assets/native-object-185.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-111": {
+      "src": "assets/native-object-111.png",
+      "cellWidth": 32,
+      "cellHeight": 24,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 24,
+          "anchorX": 16,
+          "anchorY": 22
+        }
+      ]
+    },
+    "native-object-40": {
+      "src": "assets/native-object-40.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-41": {
+      "src": "assets/native-object-41.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-44": {
+      "src": "assets/native-object-44.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-6": {
+      "src": "assets/native-object-6.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-2": {
+      "src": "assets/native-object-2.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-0": {
+      "src": "assets/native-object-0.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-177": {
+      "src": "assets/native-object-177.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-8": {
+      "src": "assets/native-object-8.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-159": {
+      "src": "assets/native-object-159.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-structure-9": {
+      "src": "assets/native-structure-9.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-83": {
+      "src": "assets/native-structure-83.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-79": {
+      "src": "assets/native-structure-79.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-106": {
+      "src": "assets/native-structure-106.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-100": {
+      "src": "assets/native-object-100.png",
+      "cellWidth": 16,
+      "cellHeight": 72,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 72,
+          "anchorX": 8,
+          "anchorY": 70
+        }
+      ]
+    },
+    "native-object-101": {
+      "src": "assets/native-object-101.png",
+      "cellWidth": 24,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 80,
+          "anchorX": 12,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-135": {
+      "src": "assets/native-object-135.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-138": {
+      "src": "assets/native-object-138.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-183": {
+      "src": "assets/native-object-183.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-3": {
+      "src": "assets/native-object-3.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-62": {
+      "src": "assets/native-object-62.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-72": {
+      "src": "assets/native-object-72.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-75": {
+      "src": "assets/native-object-75.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-137": {
+      "src": "assets/native-object-137.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-115": {
+      "src": "assets/native-structure-115.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-146": {
+      "src": "assets/native-structure-146.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-5": {
+      "src": "assets/native-structure-5.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-11": {
+      "src": "assets/native-structure-11.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-15": {
+      "src": "assets/native-structure-15.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-123": {
+      "src": "assets/native-structure-123.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-89": {
+      "src": "assets/native-structure-89.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-116": {
+      "src": "assets/native-structure-116.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-114": {
+      "src": "assets/native-structure-114.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-187": {
+      "src": "assets/native-object-187.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-109": {
+      "src": "assets/native-object-109.png",
+      "cellWidth": 24,
+      "cellHeight": 24,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "anchorX": 12,
+          "anchorY": 22
+        }
+      ]
+    },
+    "native-object-113": {
+      "src": "assets/native-object-113.png",
+      "cellWidth": 40,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 32,
+          "anchorX": 20,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-154": {
+      "src": "assets/native-object-154.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-171": {
+      "src": "assets/native-object-171.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-28": {
+      "src": "assets/native-object-28.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-152": {
+      "src": "assets/native-object-152.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-12": {
+      "src": "assets/native-structure-12.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-14": {
+      "src": "assets/native-structure-14.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-19": {
+      "src": "assets/native-structure-19.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-20": {
+      "src": "assets/native-structure-20.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-18": {
+      "src": "assets/native-structure-18.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-27": {
+      "src": "assets/native-structure-27.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-31": {
+      "src": "assets/native-structure-31.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-141": {
+      "src": "assets/native-object-141.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-153": {
+      "src": "assets/native-object-153.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-24": {
+      "src": "assets/native-object-24.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-140": {
+      "src": "assets/native-object-140.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-142": {
+      "src": "assets/native-object-142.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-27": {
+      "src": "assets/native-object-27.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-136": {
+      "src": "assets/native-object-136.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-84": {
+      "src": "assets/native-object-84.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-17": {
+      "src": "assets/native-object-17.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-43": {
+      "src": "assets/native-object-43.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-61": {
+      "src": "assets/native-object-61.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-63": {
+      "src": "assets/native-object-63.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-49": {
+      "src": "assets/native-object-49.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-5": {
+      "src": "assets/native-object-5.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-29": {
+      "src": "assets/native-object-29.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-26": {
+      "src": "assets/native-object-26.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-68": {
+      "src": "assets/native-object-68.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-25": {
+      "src": "assets/native-object-25.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-88": {
+      "src": "assets/native-object-88.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-89": {
+      "src": "assets/native-object-89.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-90": {
+      "src": "assets/native-object-90.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-30": {
+      "src": "assets/native-structure-30.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-121": {
+      "src": "assets/native-structure-121.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-122": {
+      "src": "assets/native-structure-122.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-134": {
+      "src": "assets/native-structure-134.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-133": {
+      "src": "assets/native-structure-133.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-80": {
+      "src": "assets/native-structure-80.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-139": {
+      "src": "assets/native-structure-139.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-160": {
+      "src": "assets/native-object-160.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-45": {
+      "src": "assets/native-object-45.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-164": {
+      "src": "assets/native-object-164.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-162": {
+      "src": "assets/native-object-162.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-20": {
+      "src": "assets/native-object-20.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-65": {
+      "src": "assets/native-object-65.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-55": {
+      "src": "assets/native-object-55.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-53": {
+      "src": "assets/native-object-53.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-67": {
+      "src": "assets/native-object-67.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-11": {
+      "src": "assets/native-object-11.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-175": {
+      "src": "assets/native-object-175.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-48": {
+      "src": "assets/native-object-48.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-179": {
+      "src": "assets/native-object-179.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-60": {
+      "src": "assets/native-object-60.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-15": {
+      "src": "assets/native-object-15.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-173": {
+      "src": "assets/native-object-173.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-181": {
+      "src": "assets/native-object-181.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-123": {
+      "src": "assets/native-object-123.png",
+      "cellWidth": 40,
+      "cellHeight": 48,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 48,
+          "anchorX": 20,
+          "anchorY": 46
+        }
+      ]
+    },
+    "native-object-115": {
+      "src": "assets/native-object-115.png",
+      "cellWidth": 32,
+      "cellHeight": 24,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 24,
+          "anchorX": 16,
+          "anchorY": 22
+        }
+      ]
+    },
+    "native-object-54": {
+      "src": "assets/native-object-54.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-189": {
+      "src": "assets/native-object-189.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-50": {
+      "src": "assets/native-object-50.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-52": {
+      "src": "assets/native-object-52.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-9": {
+      "src": "assets/native-object-9.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-161": {
+      "src": "assets/native-object-161.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-66": {
+      "src": "assets/native-object-66.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-163": {
+      "src": "assets/native-object-163.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-46": {
+      "src": "assets/native-object-46.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-57": {
+      "src": "assets/native-object-57.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-structure-25": {
+      "src": "assets/native-structure-25.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-167": {
+      "src": "assets/native-structure-167.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-169": {
+      "src": "assets/native-structure-169.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-170": {
+      "src": "assets/native-structure-170.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-153": {
+      "src": "assets/native-structure-153.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-168": {
+      "src": "assets/native-object-168.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-35": {
+      "src": "assets/native-object-35.png",
+      "cellWidth": 16,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 32,
+          "anchorX": 8,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-139": {
+      "src": "assets/native-object-139.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-56": {
+      "src": "assets/native-object-56.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-121": {
+      "src": "assets/native-object-121.png",
+      "cellWidth": 64,
+      "cellHeight": 56,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 56,
+          "anchorX": 32,
+          "anchorY": 54
+        }
+      ]
+    },
+    "native-object-125": {
+      "src": "assets/native-object-125.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-107": {
+      "src": "assets/native-object-107.png",
+      "cellWidth": 40,
+      "cellHeight": 24,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 24,
+          "anchorX": 20,
+          "anchorY": 22
+        }
+      ]
+    },
+    "native-object-86": {
+      "src": "assets/native-object-86.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-87": {
+      "src": "assets/native-object-87.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-117": {
+      "src": "assets/native-object-117.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-64": {
+      "src": "assets/native-object-64.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-176": {
+      "src": "assets/native-object-176.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-158": {
+      "src": "assets/native-object-158.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-105": {
+      "src": "assets/native-object-105.png",
+      "cellWidth": 48,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 48,
+          "h": 96,
+          "anchorX": 24,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-34": {
+      "src": "assets/native-object-34.png",
+      "cellWidth": 16,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 32,
+          "anchorX": 8,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-58": {
+      "src": "assets/native-object-58.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-21": {
+      "src": "assets/native-object-21.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-14": {
+      "src": "assets/native-object-14.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-69": {
+      "src": "assets/native-object-69.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-144": {
+      "src": "assets/native-object-144.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-133": {
+      "src": "assets/native-object-133.png",
+      "cellWidth": 48,
+      "cellHeight": 48,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 48,
+          "h": 48,
+          "anchorX": 24,
+          "anchorY": 46
+        }
+      ]
+    },
+    "native-object-73": {
+      "src": "assets/native-object-73.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-74": {
+      "src": "assets/native-object-74.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-70": {
+      "src": "assets/native-object-70.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-71": {
+      "src": "assets/native-object-71.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-16": {
+      "src": "assets/native-structure-16.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-39": {
+      "src": "assets/native-structure-39.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-40": {
+      "src": "assets/native-structure-40.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-42": {
+      "src": "assets/native-structure-42.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-41": {
+      "src": "assets/native-structure-41.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-23": {
+      "src": "assets/native-object-23.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-156": {
+      "src": "assets/native-object-156.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-38": {
+      "src": "assets/native-object-38.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-26": {
+      "src": "assets/native-structure-26.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-130": {
+      "src": "assets/native-structure-130.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-150": {
+      "src": "assets/native-object-150.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-91": {
+      "src": "assets/native-object-91.png",
+      "cellWidth": 72,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 72,
+          "h": 128,
+          "anchorX": 36,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-93": {
+      "src": "assets/native-object-93.png",
+      "cellWidth": 88,
+      "cellHeight": 104,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 88,
+          "h": 104,
+          "anchorX": 44,
+          "anchorY": 102
+        }
+      ]
+    },
+    "native-object-130": {
+      "src": "assets/native-object-130.png",
+      "cellWidth": 40,
+      "cellHeight": 104,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 104,
+          "anchorX": 20,
+          "anchorY": 102
+        }
+      ]
+    },
+    "native-object-106": {
+      "src": "assets/native-object-106.png",
+      "cellWidth": 32,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 96,
+          "anchorX": 16,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-169": {
+      "src": "assets/native-object-169.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-47": {
+      "src": "assets/native-object-47.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-151": {
+      "src": "assets/native-object-151.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-167": {
+      "src": "assets/native-object-167.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-85": {
+      "src": "assets/native-object-85.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-76": {
+      "src": "assets/native-object-76.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-36": {
+      "src": "assets/native-object-36.png",
+      "cellWidth": 64,
+      "cellHeight": 48,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 48,
+          "anchorX": 32,
+          "anchorY": 46
+        }
+      ]
+    },
+    "native-object-132": {
+      "src": "assets/native-object-132.png",
+      "cellWidth": 16,
+      "cellHeight": 48,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 48,
+          "anchorX": 8,
+          "anchorY": 46
+        }
+      ]
+    },
+    "native-object-128": {
+      "src": "assets/native-object-128.png",
+      "cellWidth": 48,
+      "cellHeight": 104,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 48,
+          "h": 104,
+          "anchorX": 24,
+          "anchorY": 102
+        }
+      ]
+    },
+    "native-object-126": {
+      "src": "assets/native-object-126.png",
+      "cellWidth": 16,
+      "cellHeight": 8,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 8,
+          "anchorX": 8,
+          "anchorY": 6
+        }
+      ]
+    },
+    "native-object-96": {
+      "src": "assets/native-object-96.png",
+      "cellWidth": 80,
+      "cellHeight": 104,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 104,
+          "anchorX": 40,
+          "anchorY": 102
+        }
+      ]
+    },
+    "native-object-95": {
+      "src": "assets/native-object-95.png",
+      "cellWidth": 64,
+      "cellHeight": 112,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 112,
+          "anchorX": 32,
+          "anchorY": 110
+        }
+      ]
+    },
+    "native-object-94": {
+      "src": "assets/native-object-94.png",
+      "cellWidth": 72,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 72,
+          "h": 128,
+          "anchorX": 36,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-134": {
+      "src": "assets/native-object-134.png",
+      "cellWidth": 16,
+      "cellHeight": 48,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 48,
+          "anchorX": 8,
+          "anchorY": 46
+        }
+      ]
+    },
+    "native-object-104": {
+      "src": "assets/native-object-104.png",
+      "cellWidth": 32,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 96,
+          "anchorX": 16,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-object-82": {
+      "src": "assets/native-object-82.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-112": {
+      "src": "assets/native-object-112.png",
+      "cellWidth": 8,
+      "cellHeight": 16,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 8,
+          "h": 16,
+          "anchorX": 4,
+          "anchorY": 14
+        }
+      ]
+    },
+    "native-object-155": {
+      "src": "assets/native-object-155.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-105": {
+      "src": "assets/native-structure-105.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-111": {
+      "src": "assets/native-structure-111.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-140": {
+      "src": "assets/native-structure-140.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-141": {
+      "src": "assets/native-structure-141.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-142": {
+      "src": "assets/native-structure-142.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-168": {
+      "src": "assets/native-structure-168.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-175": {
+      "src": "assets/native-structure-175.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-8": {
+      "src": "assets/native-structure-8.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-102": {
+      "src": "assets/native-object-102.png",
+      "cellWidth": 16,
+      "cellHeight": 56,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 56,
+          "anchorX": 8,
+          "anchorY": 54
+        }
+      ]
+    },
+    "native-structure-81": {
+      "src": "assets/native-structure-81.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-3": {
+      "src": "assets/native-structure-3.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-143": {
+      "src": "assets/native-structure-143.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-137": {
+      "src": "assets/native-structure-137.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-161": {
+      "src": "assets/native-structure-161.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-164": {
+      "src": "assets/native-structure-164.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-165": {
+      "src": "assets/native-structure-165.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-100": {
+      "src": "assets/native-structure-100.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-93": {
+      "src": "assets/native-structure-93.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-184": {
+      "src": "assets/native-object-184.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-186": {
+      "src": "assets/native-object-186.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-structure-112": {
+      "src": "assets/native-structure-112.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-84": {
+      "src": "assets/native-structure-84.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-163": {
+      "src": "assets/native-structure-163.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-118": {
+      "src": "assets/native-structure-118.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-120": {
+      "src": "assets/native-structure-120.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-146": {
+      "src": "assets/native-object-146.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-10": {
+      "src": "assets/native-structure-10.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-157": {
+      "src": "assets/native-object-157.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-22": {
+      "src": "assets/native-object-22.png",
+      "cellWidth": 64,
+      "cellHeight": 80,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80,
+          "anchorX": 32,
+          "anchorY": 78
+        }
+      ]
+    },
+    "native-object-51": {
+      "src": "assets/native-object-51.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-156": {
+      "src": "assets/native-structure-156.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-160": {
+      "src": "assets/native-structure-160.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-58": {
+      "src": "assets/native-structure-58.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-60": {
+      "src": "assets/native-structure-60.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-64": {
+      "src": "assets/native-structure-64.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-171": {
+      "src": "assets/native-structure-171.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-174": {
+      "src": "assets/native-structure-174.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-180": {
+      "src": "assets/native-object-180.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-structure-144": {
+      "src": "assets/native-structure-144.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-165": {
+      "src": "assets/native-object-165.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-116": {
+      "src": "assets/native-object-116.png",
+      "cellWidth": 16,
+      "cellHeight": 16,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 16,
+          "anchorX": 8,
+          "anchorY": 14
+        }
+      ]
+    },
+    "native-object-170": {
+      "src": "assets/native-object-170.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-166": {
+      "src": "assets/native-object-166.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-124": {
+      "src": "assets/native-object-124.png",
+      "cellWidth": 16,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 32,
+          "anchorX": 8,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-37": {
+      "src": "assets/native-object-37.png",
+      "cellWidth": 64,
+      "cellHeight": 48,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 48,
+          "anchorX": 32,
+          "anchorY": 46
+        }
+      ]
+    },
+    "native-object-182": {
+      "src": "assets/native-object-182.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-object-190": {
+      "src": "assets/native-object-190.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-object-39": {
+      "src": "assets/native-object-39.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-85": {
+      "src": "assets/native-structure-85.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-86": {
+      "src": "assets/native-structure-86.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-52": {
+      "src": "assets/native-structure-52.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-32": {
+      "src": "assets/native-structure-32.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-117": {
+      "src": "assets/native-structure-117.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-172": {
+      "src": "assets/native-structure-172.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-6": {
+      "src": "assets/native-structure-6.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-59": {
+      "src": "assets/native-structure-59.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-131": {
+      "src": "assets/native-structure-131.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-173": {
+      "src": "assets/native-structure-173.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-36": {
+      "src": "assets/native-structure-36.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-143": {
+      "src": "assets/native-object-143.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-145": {
+      "src": "assets/native-object-145.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-126": {
+      "src": "assets/native-structure-126.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-47": {
+      "src": "assets/native-structure-47.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-56": {
+      "src": "assets/native-structure-56.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-136": {
+      "src": "assets/native-structure-136.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-125": {
+      "src": "assets/native-structure-125.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-191": {
+      "src": "assets/native-object-191.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-7": {
+      "src": "assets/native-structure-7.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-50": {
+      "src": "assets/native-structure-50.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-71": {
+      "src": "assets/native-structure-71.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-172": {
+      "src": "assets/native-object-172.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-structure-76": {
+      "src": "assets/native-structure-76.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-46": {
+      "src": "assets/native-structure-46.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-73": {
+      "src": "assets/native-structure-73.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-72": {
+      "src": "assets/native-structure-72.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-34": {
+      "src": "assets/native-structure-34.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-82": {
+      "src": "assets/native-structure-82.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-69": {
+      "src": "assets/native-structure-69.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-35": {
+      "src": "assets/native-structure-35.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-119": {
+      "src": "assets/native-structure-119.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-124": {
+      "src": "assets/native-structure-124.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-118": {
+      "src": "assets/native-object-118.png",
+      "cellWidth": 16,
+      "cellHeight": 16,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 16,
+          "anchorX": 8,
+          "anchorY": 14
+        }
+      ]
+    },
+    "native-object-122": {
+      "src": "assets/native-object-122.png",
+      "cellWidth": 8,
+      "cellHeight": 16,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 8,
+          "h": 16,
+          "anchorX": 4,
+          "anchorY": 14
+        }
+      ]
+    },
+    "native-object-114": {
+      "src": "assets/native-object-114.png",
+      "cellWidth": 16,
+      "cellHeight": 16,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 16,
+          "anchorX": 8,
+          "anchorY": 14
+        }
+      ]
+    },
+    "native-structure-51": {
+      "src": "assets/native-structure-51.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-188": {
+      "src": "assets/native-object-188.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-structure-61": {
+      "src": "assets/native-structure-61.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-135": {
+      "src": "assets/native-structure-135.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-32": {
+      "src": "assets/native-object-32.png",
+      "cellWidth": 16,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 32,
+          "anchorX": 8,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-148": {
+      "src": "assets/native-object-148.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-68": {
+      "src": "assets/native-structure-68.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-88": {
+      "src": "assets/native-structure-88.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-87": {
+      "src": "assets/native-structure-87.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-77": {
+      "src": "assets/native-structure-77.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-70": {
+      "src": "assets/native-structure-70.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-31": {
+      "src": "assets/native-object-31.png",
+      "cellWidth": 16,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 32,
+          "anchorX": 8,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-113": {
+      "src": "assets/native-structure-113.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-178": {
+      "src": "assets/native-object-178.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-structure-24": {
+      "src": "assets/native-structure-24.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-65": {
+      "src": "assets/native-structure-65.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-179": {
+      "src": "assets/native-structure-179.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-30": {
+      "src": "assets/native-object-30.png",
+      "cellWidth": 16,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 32,
+          "anchorX": 8,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-13": {
+      "src": "assets/native-structure-13.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-83": {
+      "src": "assets/native-object-83.png",
+      "cellWidth": 32,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 64,
+          "anchorX": 16,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-54": {
+      "src": "assets/native-structure-54.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-149": {
+      "src": "assets/native-object-149.png",
+      "cellWidth": 64,
+      "cellHeight": 64,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "anchorX": 32,
+          "anchorY": 62
+        }
+      ]
+    },
+    "native-structure-78": {
+      "src": "assets/native-structure-78.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-67": {
+      "src": "assets/native-structure-67.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-107": {
+      "src": "assets/native-structure-107.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-98": {
+      "src": "assets/native-structure-98.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-59": {
+      "src": "assets/native-object-59.png",
+      "cellWidth": 96,
+      "cellHeight": 96,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "anchorX": 48,
+          "anchorY": 94
+        }
+      ]
+    },
+    "native-structure-138": {
+      "src": "assets/native-structure-138.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-33": {
+      "src": "assets/native-object-33.png",
+      "cellWidth": 16,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 32,
+          "anchorX": 8,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-object-174": {
+      "src": "assets/native-object-174.png",
+      "cellWidth": 128,
+      "cellHeight": 128,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128,
+          "anchorX": 64,
+          "anchorY": 126
+        }
+      ]
+    },
+    "native-structure-159": {
+      "src": "assets/native-structure-159.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
+    },
+    "native-structure-94": {
+      "src": "assets/native-structure-94.png",
+      "cellWidth": 32,
+      "cellHeight": 32,
+      "count": 1,
+      "directions": 1,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "anchorX": 16,
+          "anchorY": 30
+        }
+      ]
     }
   },
   "terrain": {
@@ -72556,6 +77792,11 @@
       "src": "assets/ground_water.png",
       "width": 128,
       "height": 32
+    },
+    "native-terrain": {
+      "src": "assets/native-terrain.png",
+      "width": 1024,
+      "height": 1024
     }
   },
   "vfx": {

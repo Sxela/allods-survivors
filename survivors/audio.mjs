@@ -1,12 +1,13 @@
 // Original local WAV playback with per-event throttling and bounded overlap.
 export class GameAudio {
-  constructor(manifest){this.manifest=manifest;this.enabled=true;this.context=null;this.buffers=new Map();this.pending=new Map();this.last=new Map();this.voices=new Set();this.scene='menu';this.ambientSource=null;this.ambientGain=null;this.played=new Set();}
+  constructor(manifest){this.manifest=manifest;this.enabled=true;this.volume=.35;this.context=null;this.buffers=new Map();this.pending=new Map();this.last=new Map();this.voices=new Set();this.scene='menu';this.ambientSource=null;this.ambientGain=null;this.played=new Set();}
   unlock(){
-    if(!this.context){const Context=globalThis.AudioContext||globalThis.webkitAudioContext;if(!Context)return;this.context=new Context();this.master=this.context.createGain();this.master.gain.value=this.enabled?.7:0;this.master.connect(this.context.destination);}
+    if(!this.context){const Context=globalThis.AudioContext||globalThis.webkitAudioContext;if(!Context)return;this.context=new Context();this.master=this.context.createGain();this.master.gain.value=this.enabled?this.volume:0;this.master.connect(this.context.destination);}
     if(this.context.state==='suspended')this.context.resume().catch(()=>{});
     this.ensureAmbience();
   }
-  setEnabled(enabled){this.enabled=enabled;if(this.master)this.master.gain.setTargetAtTime(enabled?.7:0,this.context.currentTime,.04);if(enabled)this.unlock();}
+  setEnabled(enabled){this.enabled=enabled;if(this.master)this.master.gain.setTargetAtTime(enabled?this.volume:0,this.context.currentTime,.04);if(enabled)this.unlock();}
+  setVolume(value){this.volume=Math.max(0,Math.min(1,Number.isFinite(value)?value:.35));if(this.master)this.master.gain.setTargetAtTime(this.enabled?this.volume:0,this.context.currentTime,.04);}
   setScene(scene){this.scene=scene;if(this.ambientGain)this.ambientGain.gain.setTargetAtTime(scene==='playing'?.075:scene==='hidden'?0:.025,this.context.currentTime,.3);this.ensureAmbience();}
   async load(id){
     if(this.buffers.has(id))return this.buffers.get(id);if(this.pending.has(id))return this.pending.get(id);

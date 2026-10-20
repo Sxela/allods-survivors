@@ -8,11 +8,11 @@ import {physicalRoll,resistance} from '../survivors/original-spells.mjs';
 const gear=(id,slot,stats)=>({id,slot,stats,name:id,icon:slot,rarity:'rare'});
 const enemy=w=>{const e=w.spawn('wolf');Object.assign(e,{x:80,y:0,hp:10000,maxHp:10000,speed:0});return e;};
 
-test('attribute bonuses alter health, mana, accuracy, evasion, movement, spell power and learning without stacking',()=>{
+test('attribute bonuses alter health, accuracy, evasion, movement, spell power and learning without stacking',()=>{
   const item=gear('attributes','amulet',{body:4,agility:5,mind:6,spirit:7}),w=new World({inventory:{bag:[item]}});
-  w.equipItem(item.id);const p=w.player;assert.equal(p.maxHp,120);assert.equal(p.maxMana,128);assert.equal(p.attack,12);assert.equal(p.defense,10);assert.equal(p.speed,151);assert.equal(p.spellDamage,.09);
+  w.equipItem(item.id);const p=w.player;assert.equal(p.maxHp,120);assert.equal(p.maxMana,undefined);assert.equal(p.attack,12);assert.equal(p.defense,10);assert.equal(p.speed,151);assert.equal(p.spellDamage,.09);
   const before=JSON.stringify(p);w.refreshEquipment();assert.equal(JSON.stringify(p),before);
-  w.addXp(1);assert.equal(p.xp,1.06);p.mana=120;w.unequipItem('amulet');assert.equal(p.maxHp,100);assert.equal(p.maxMana,100);assert.equal(p.mana,100);assert.equal(p.spellDamage,0);
+  w.addXp(1);assert.equal(p.xp,1.06);w.unequipItem('amulet');assert.equal(p.maxHp,100);assert.equal(p.maxMana,undefined);assert.equal(p.mana,undefined);assert.equal(p.spellDamage,0);
 });
 
 test('equipment and temporary elemental resistances combine with caps, reducing real incoming spell damage',()=>{
@@ -29,10 +29,8 @@ test('weapon ranges and skill bonuses affect actual physical damage, accuracy an
   w.player.defense=100;w.rng=()=>0;assert.equal(w.damagePlayer(20,'physical'),0);
 });
 
-test('mana costs spend only on successful casts, regenerate in play and remain frozen in inventory',()=>{
-  const w=new World();assert.equal(w.cast('lightning'),false);assert.equal(w.player.mana,100);enemy(w);
-  w.player.mana=0;assert.equal(w.cast('lightning'),false);w.spawnTimer=Infinity;w.skills={};w.step(.05);assert.equal(w.player.mana,.4);
-  w.status='inventory';w.step(.05);assert.equal(w.player.mana,.4);w.player.mana=20;assert.equal(w.cast('lightning'),true);assert.equal(w.player.mana,15);
+test('autocasting uses cooldowns without a mana resource or gear requirements',()=>{
+ const w=new World();assert.equal(w.cast('lightning'),false);assert.equal(w.player.mana,undefined);enemy(w);assert.equal(w.cast('lightning'),true);w.spawnTimer=Infinity;w.skills={lightning:1};w.step(.05);assert.ok(w.cooldowns.lightning>0);const cooldown=w.cooldowns.lightning;w.status='inventory';w.step(.05);assert.equal(w.cooldowns.lightning,cooldown);assert.equal(w.player.mana,undefined);
 });
 
 test('+3 Wall of Fire and school bonuses boost learned casts without teaching spells or changing learned ranks',()=>{

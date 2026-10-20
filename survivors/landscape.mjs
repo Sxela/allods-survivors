@@ -1,8 +1,9 @@
+import {nativeHeightAt,nativeDecorations,nativeTileAt} from './map-arenas.mjs';
 import {terrainHash} from './biomes.mjs';
 export const SCENERY_IDS=['oak1','oak2','elka1','bush1','stones','bones','column','statue','henge1','drtree1','pine1','iva1','scenery-altar1','scenery-bhut1','scenery-bighouse1','scenery-ruins1'];
-export const LANDSCAPE_TERRAIN=['ground_water'];
+export const LANDSCAPE_TERRAIN=['ground_water','native-terrain'];
 export const LAKE_MAX_RADIUS=76;
-export function landscapeFeatures(view){
+export function landscapeFeatures(view){if(nativeTileAt(0,0)!==null)return [];
   const features=[{kind:'hill',x:-240,y:-60,rx:310,ry:240,height:105}],cell=640;
   for(let cy=Math.floor(view.top/cell)-1;cy<=Math.floor(view.bottom/cell)+1;cy++)for(let cx=Math.floor(view.left/cell)-1;cx<=Math.floor(view.right/cell)+1;cx++){
     const x=cx*cell+150+terrainHash(cx+91,cy+43)*340,y=cy*cell+150+terrainHash(cx-43,cy+71)*340;
@@ -13,7 +14,7 @@ export function landscapeFeatures(view){
   }
   return features.filter(f=>f.x+f.rx+20>view.left&&f.x-f.rx-20<view.right&&f.y+f.ry+20>view.top&&f.y-f.ry-20<view.bottom);
 }
-export function decorations(view){
+export function decorations(view){const native=nativeDecorations(view);if(native)return native;
   const objects=[],cell=224;
   for(let cy=Math.floor(view.top/cell)-1;cy<=Math.floor(view.bottom/cell)+1;cy++)for(let cx=Math.floor(view.left/cell)-1;cx<=Math.floor(view.right/cell)+1;cx++){
     const roll=terrainHash(cx+11,cy+29);if(roll>.25)continue;
@@ -44,7 +45,7 @@ function smoothNoise(x,y,cell){
 }
 export const TERRAIN_MESH_STEP=16;
 const smooth=t=>{t=Math.max(0,Math.min(1,t));return t*t*t*(t*(t*6-15)+10);};
-function heightAt(x,y){
+function heightAt(x,y){const native=nativeHeightAt(x,y);if(native!==null)return native;
   const features=landscapeFeatures({left:x-220,right:x+220,top:y-220,bottom:y+220});
   let height=38*smoothNoise(x,y,640)+16*smoothNoise(x+731,y-413,280),water=1;
   for(const f of features){const d=Math.hypot((x-f.x)/f.rx,(y-f.y)/f.ry);
@@ -71,8 +72,9 @@ export function elevatedPoint(point){
   return result;
 }
 export function elevatedWorld(world){
-  const result={...world,player:elevatedPoint(world.player)};
-  for(const key of ['enemies','allies','neutrals','corpses','lootDrops','powerups','gems','fields','enemyFields','projectiles','enemyProjectiles','effects'])result[key]=(world[key]||[]).map(elevatedPoint);
+  const actor=p=>({...elevatedPoint(p),ground:{x:p.x,y:p.y}});
+  const result={...world,player:actor(world.player)};
+  for(const key of ['enemies','allies','neutrals','corpses','lootDrops','powerups','gems','fields','enemyFields','projectiles','enemyProjectiles','effects'])result[key]=(world[key]||[]).map(['enemies','allies','neutrals'].includes(key)?actor:elevatedPoint);
   return result;
 }
 // Cache a continuous triangular mesh. Adjacent chunks share boundary samples.

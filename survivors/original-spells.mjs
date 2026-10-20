@@ -1,3 +1,5 @@
+import {arenaFor,arenaWalkable,safeArenaPoint,arenaDirection} from './map-arenas.mjs';
+import {spellValues} from './spell-values.mjs';
 // Spell identities and behavior follow the shipped English spells.txt descriptions.
 // Damage, cooldowns, durations and ranges below are standalone survival balancing,
 // not recovered original-engine constants. Icon names are extracted visual aliases.
@@ -28,13 +30,14 @@ export const SPELLS={
   drain:entry('Drain Life',"Drains a single victim's life, healing the caster at the same time",'spell-curse','drain',4,'astral'),
   shield:entry('Shield','Creates temporary shield to absorb part of the incoming damage','spell-magic','shield',11,'astral'),
 };
+const healTarget=(world,amount,target=world.player)=>world.heal?world.heal(amount,target):(target.hp=Math.min(target.maxHp,target.hp+amount));
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export const SELF_BUFFS=new Set(['protectFire','protectWater','protectAir','protectEarth','bless','hasteSpell','invisibility','shield']);
 const statuses=e=>e.statuses||(e.statuses={});
 const protection={fire:'protectFire',water:'protectWater',air:'protectAir',earth:'protectEarth'};
 export function resistance(entity,element){const s=entity.statuses?.[protection[element]],gear=Math.min(.75,Math.max(0,entity[`${element}Resist`]||0));return Math.min(.9,1-(1-gear)*(1-(s?.ttl>0?s.reduction:0)));}
 export function statusDuration(entity,element,duration){const s=entity.statuses?.[protection[element]];return duration*(s?.ttl>0?s.durationScale:1)*(1-Math.min(.75,Math.max(0,entity[`${element}Resist`]||0)));}
-export function movementMultiplier(entity){const s=entity.statuses?.hasteSpell;return s?.ttl>0?s.multiplier:1;}
+export function movementMultiplier(entity){const s=entity.statuses?.hasteSpell;const stance=Object.values(entity.statuses||{}).filter(s=>s.ttl>0&&s.moveMultiplier).reduce((v,s)=>v*s.moveMultiplier,1);return (s?.ttl>0?s.multiplier:1)*stance;}
 export function physicalRoll(world,min,max,entity=world.player){min+=(entity.minDamage||0)+(entity.body||0)*.4+(entity.weaponSkill||0)*.2;max=Math.max(min,max+(entity.maxDamage||0)+(entity.body||0)*.7+(entity.weaponSkill||0)*.2);const s=entity.statuses?.bless;return s?.ttl>0&&world.rng()<s.maxRollChance?max:min+(max-min)*world.rng();}
 // Return post-resistance, post-shield damage; armor remains the caller's concern.
 export function absorbIncoming(entity,amount,element='physical'){
@@ -45,44 +48,44 @@ export function absorbIncoming(entity,amount,element='physical'){
 const effect=(world,vfx,x,y,extra={})=>world.effects.push({kind:vfx,vfx,x,y,ttl:.7,maxTtl:.7,...extra});
 function projectile(world,id,target,rank){
   const p=world.player,spell=SPELLS[id],speed=id==='stone'?260:390,angle=Math.atan2(target.y-p.y,target.x-p.x);
-  world.projectiles.push({kind:id,vfx:spell.vfx,element:spell.element,targetId:target.id,x:p.x,y:p.y-12,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,speed,ttl:4,damage:(id==='fireball'?32:18)+rank*10,radius:id==='fireball'?65+rank*7:0,homing:true,hits:new Set(),pierce:1});
+  world.projectiles.push({kind:id,vfx:spell.vfx,element:spell.element,targetId:target.id,x:p.x,y:p.y-12,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,speed,ttl:4,damage:spellValues(id,rank).damage,radius:spellValues(id,rank).radius||0,homing:true,hits:new Set(),pierce:1});
 }
 function segmentDistance(x,y,f){const dx=f.x2-f.x1,dy=f.y2-f.y1,t=Math.max(0,Math.min(1,((x-f.x1)*dx+(y-f.y1)*dy)/(dx*dx+dy*dy||1)));return Math.hypot(x-(f.x1+dx*t),y-(f.y1+dy*t));}
-export function blocksMovement(world,x,y,radius=12){return world.fields.some(f=>f.kind==='earthwall'&&f.ttl>0&&segmentDistance(x,y,f)<f.width/2+radius);}
+export function blocksMovement(world,x,y,radius=12){return !arenaWalkable(arenaFor(world),x,y,radius)||world.fields.some(f=>f.kind==='earthwall'&&f.ttl>0&&segmentDistance(x,y,f)<f.width/2+radius);}
 export const EARTH_WALL_MIN_DISTANCE=110;
-function wall(world,kind,target,rank){const p=world.player,dx=target.x-p.x,dy=target.y-p.y,angle=Math.hypot(dx,dy)>.001?Math.atan2(dy,dx):Math.atan2(p.dy??1,p.dx??0),a=angle+Math.PI/2,length=100+rank*15,half=length/2;
+function wall(world,kind,target,rank){const p=world.player,dx=target.x-p.x,dy=target.y-p.y,angle=Math.hypot(dx,dy)>.001?Math.atan2(dy,dx):Math.atan2(p.dy??1,p.dx??0),a=angle+Math.PI/2,values=spellValues(kind,rank),length=values.length,half=length/2;
   let x=target.x,y=target.y;
   if(kind==='earthwall'){const distance=Math.max(EARTH_WALL_MIN_DISTANCE,Math.min(300,Math.hypot(dx,dy)));x=p.x+Math.cos(angle)*distance;y=p.y+Math.sin(angle)*distance;world.fields=world.fields.filter(f=>f.kind!=='earthwall');}
-  world.fields.push({kind,vfx:SPELLS[kind].vfx,x,y,x1:x-Math.cos(a)*half,y1:y-Math.sin(a)*half,x2:x+Math.cos(a)*half,y2:y+Math.sin(a)*half,width:kind==='earthwall'?26:38,r:half,ttl:kind==='earthwall'?5+rank*.4:4+rank*.3,damage:8+rank*6,element:kind==='earthwall'?'earth':'fire',tick:0});
+  world.fields.push({kind,vfx:SPELLS[kind].vfx,x,y,x1:x-Math.cos(a)*half,y1:y-Math.sin(a)*half,x2:x+Math.cos(a)*half,y2:y+Math.sin(a)*half,width:kind==='earthwall'?26:38,r:half,ttl:values.duration,damage:values.damage||0,element:kind==='earthwall'?'earth':'fire',tick:0});
 }
-function addAlly(world,type,x,y,rank){const hp=45+rank*18;world.allies.push({id:world.nextId++,type,x,y,hp,maxHp:hp,radius:13,speed:115,damage:10+rank*5,ttl:20+rank*2,attackCooldown:0,dx:0,dy:1,moving:false});effect(world,'ghost',x,y);}
+function addAlly(world,type,x,y,rank){const values=spellValues('summon',rank),hp=values.allyHp;world.allies.push({id:world.nextId++,type,...safeArenaPoint(world,{x,y},13),hp,maxHp:hp,radius:13,speed:115,damage:values.allyDamage,ttl:values.duration,attackCooldown:0,dx:0,dy:1,moving:false});effect(world,'ghost',x,y);}
 export function castOriginal(world,id,rank=1){
   const spell=SPELLS[id];if(!spell)return false;
   world.allies??=[];world.corpses??=[];
-  const p=world.player,target=world.nearest(),s=statuses(p);let cast=true;
+  const p=world.player,target=world.nearest(),s=statuses(p),values=spellValues(id,rank);let cast=true;
   if(['bolt','ice','stone','fireball'].includes(id)){if(!target)return false;projectile(world,id,target,rank);}
   else if(id==='lightning'||id==='prismatic'){
-    if(!target)return false;const targets=id==='lightning'?[target]:world.enemies.filter(e=>e.hp>0&&distance(p,e)<700+(p.sight||0)).sort((a,b)=>distance(p,a)-distance(p,b)).slice(0,3+Math.floor(rank/2));
-    for(const e of targets){effect(world,id==='lightning'?'lightning':'chain',p.x,p.y-15,{x2:e.x,y2:e.y-15,ttl:.35,maxTtl:.35});world.hurt(e,22+rank*12,'air');}
+    if(!target)return false;const targets=id==='lightning'?[target]:world.enemies.filter(e=>e.hp>0&&distance(p,e)<700+(p.sight||0)).sort((a,b)=>distance(p,a)-distance(p,b)).slice(0,values.targets);
+    for(const e of targets){effect(world,id==='lightning'?'lightning':'chain',p.x,p.y-15,{x2:e.x,y2:e.y-15,ttl:.35,maxTtl:.35});world.hurt(e,values.damage,'air');}
   }else if(id==='poison'||id==='frost'){
-    if(!target)return false;world.fields.push({kind:id,vfx:spell.vfx,x:target.x,y:target.y,r:65+rank*9,ttl:3+rank*.35,tick:0,damage:5+rank*4,element:'water',rank});
+    if(!target)return false;world.fields.push({kind:id,vfx:spell.vfx,x:target.x,y:target.y,r:values.radius,ttl:values.duration,tick:0,damage:values.damage,element:'water',rank});
   }else if(id==='firewall'||id==='earthwall'){if(!target)return false;wall(world,id,target,rank);}
-  else if(id.startsWith('protect'))s[id]={ttl:8+rank*.5,reduction:Math.min(.8,.35+rank*.04),durationScale:Math.max(.2,.65-rank*.04)};
-  else if(id==='stonecurse'){if(!target)return false;statuses(target).stonecurse={ttl:statusDuration(target,'earth',2+rank*.35)};effect(world,'curse',target.x,target.y);}
-  else if(id==='bless')s.bless={ttl:8+rank*.5,maxRollChance:Math.min(1,.45+rank*.06)};
-  else if(id==='hasteSpell')s.hasteSpell={ttl:7+rank*.5,multiplier:1.25+rank*.04};
-  else if(id==='invisibility')s.invisibility={ttl:4+rank*.4};
-  else if(id==='shield')s.shield={ttl:8+rank*.5,pool:35+rank*16,maxPool:35+rank*16,fraction:.65};
+  else if(id.startsWith('protect'))s[id]={ttl:values.duration,reduction:values.reduction,durationScale:Math.max(.2,.65-rank*.04)};
+  else if(id==='stonecurse'){if(!target)return false;statuses(target).stonecurse={ttl:statusDuration(target,'earth',values.duration)};effect(world,'curse',target.x,target.y);}
+  else if(id==='bless')s.bless={ttl:values.duration,maxRollChance:values.maxRollChance};
+  else if(id==='hasteSpell')s.hasteSpell={ttl:values.duration,multiplier:values.movement};
+  else if(id==='invisibility')s.invisibility={ttl:values.duration};
+  else if(id==='shield')s.shield={ttl:values.duration,pool:values.absorption,maxPool:values.absorption,fraction:values.fraction};
   else if(id==='heal'){
     const recipient=[p,...world.allies].filter(e=>e.hp<e.maxHp).sort((a,b)=>a.hp/a.maxHp-b.hp/b.maxHp)[0];if(!recipient)return false;
-    recipient.hp=Math.min(recipient.maxHp,recipient.hp+20+rank*12);effect(world,'healing',recipient.x,recipient.y);
+    healTarget(world,values.healing,recipient);effect(world,'healing',recipient.x,recipient.y);
   }else if(id==='drain'){
-    if(!target)return false;const before=target.hp;world.hurt(target,20+rank*10,'astral');p.hp=Math.min(p.maxHp,p.hp+Math.max(0,before-Math.max(0,target.hp)));effect(world,'drain',target.x,target.y,{x2:p.x,y2:p.y});
+    if(!target)return false;const before=target.hp;world.hurt(target,values.damage,'astral');healTarget(world,Math.max(0,before-Math.max(0,target.hp)));effect(world,'drain',target.x,target.y,{x2:p.x,y2:p.y});
   }else if(id==='teleport'){
     // Autocast supplies a specified safe destination; it is an instant move,
     // unlike the existing dash. Prefer the player's movement direction.
     const startX=p.x,startY=p.y,angle=p.moving?Math.atan2(p.dy,p.dx):Math.atan2(p.y-(target?.y??p.y+1),p.x-(target?.x??p.x));
-    let destination=null;for(let n=0;n<12;n++){const a=angle+n*Math.PI/6,x=p.x+Math.cos(a)*(135+rank*8),y=p.y+Math.sin(a)*(135+rank*8);if(!blocksMovement(world,x,y)&&!world.enemies.some(e=>e.hp>0&&Math.hypot(e.x-x,e.y-y)<e.radius+24)){destination={x,y};break;}}
+    let destination=null;for(let n=0;n<12;n++){const a=angle+n*Math.PI/6,x=p.x+Math.cos(a)*values.distance,y=p.y+Math.sin(a)*values.distance;if(!blocksMovement(world,x,y)&&!world.enemies.some(e=>e.hp>0&&Math.hypot(e.x-x,e.y-y)<e.radius+24)){destination={x,y};break;}}
     if(!destination)return false;Object.assign(p,destination);effect(world,'teleport',startX,startY);effect(world,'teleport',p.x,p.y);
   }else if(id==='animate'){
     if(world.allies.length>=8)return false;const corpse=world.corpses.filter(c=>c.ttl>0&&distance(p,c)<450).sort((a,b)=>distance(p,a)-distance(p,b))[0];if(!corpse)return false;
@@ -108,7 +111,7 @@ export function stepOriginal(world,dt){
   for(const ally of world.allies){ally.ttl-=dt;ally.attackCooldown-=dt;if(ally.hp<=0)continue;
     const target=world.nearest(ally,350),destination=target||world.player,d=distance(ally,destination)||1,reach=target?35:65;
     ally.dx=(destination.x-ally.x)/d;ally.dy=(destination.y-ally.y)/d;ally.moving=d>reach;
-    if(ally.moving){const x=ally.x+ally.dx*ally.speed*dt,y=ally.y+ally.dy*ally.speed*dt;if(!blocksMovement(world,x,y,ally.radius)){ally.x=x;ally.y=y;}}
+    if(ally.moving){const x=ally.x+ally.dx*ally.speed*dt,y=ally.y+ally.dy*ally.speed*dt;if(!blocksMovement(world,x,y,ally.radius)){ally.x=x;ally.y=y;}else{const next=arenaDirection(world,ally,destination);if(next){const length=Math.hypot(next.x-ally.x,next.y-ally.y)||1,step=Math.min(length,ally.speed*dt),nx=ally.x+(next.x-ally.x)/length*step,ny=ally.y+(next.y-ally.y)/length*step;if(!blocksMovement(world,nx,ny,ally.radius)){ally.x=nx;ally.y=ny;}}}}
     if(target&&d<reach+target.radius&&ally.attackCooldown<=0){ally.attackCooldown=.8;world.hurt(target,physicalRoll(world,ally.damage*.6,ally.damage,ally),'physical');effect(world,'bless',target.x,target.y,{ttl:.2,maxTtl:.2});}
   }
   world.allies=world.allies.filter(a=>a.ttl>0&&a.hp>0);

@@ -30,7 +30,7 @@ export function mountThumbstick(root,{enabled}){
 export const CONTROLS_KEY='allods-survivors-controls-v1';
 export function normalizeControls(value){
   const raw=value&&typeof value==='object'?value:{};
-  return {mode:raw.mode==='touch'?'touch':'joystick',zoom:typeof raw.zoom==='number'&&Number.isFinite(raw.zoom)?Math.min(2,Math.max(1,Math.round(raw.zoom*4)/4)):1};
+  return {mode:raw.mode==='joystick'?'joystick':'touch',zoom:typeof raw.zoom==='number'&&Number.isFinite(raw.zoom)?Math.min(2,Math.max(1,Math.round(raw.zoom*4)/4)):1};
 }
 export function zoomViewport(view,zoom){const scale=normalizeControls({zoom}).zoom;return {width:view.width/scale,height:view.height/scale};}
 export function screenSteering(x,y,view){

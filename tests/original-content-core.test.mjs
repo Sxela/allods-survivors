@@ -17,7 +17,7 @@ test('Fireball explodes at its homing target and damages neighbors only on impac
 });
 test('Shield and elemental resistance combine once in the live damage path',()=>{
   const w=arena();w.player.invulnerable=0;w.cast('protectFire',1);w.cast('shield',1);
-  const before=w.player.hp,expected=20*(1-.39)*(1-.65);
+  const before=w.player.hp,expected=20*(1-.39)*(1-.55);
   w.damagePlayer(20,'fire');assert.ok(Math.abs(before-w.player.hp-expected)<1e-8);
 });
 test('Petrification stops enemy movement and attacks until the status expires',()=>{

@@ -19,7 +19,7 @@ test('new rolls stay bounded at extreme levels and never shrink again on reload'
   const rng=random(4821);let spells=0;
   for(let i=0;i<4000;i++){
     const item=makeItem(rng,{level:99,boss:true,statMultiplier:3,id:`bounded-${i}`});
-    assert.ok((item.stats.maxHp||0)<=60);assert.ok((item.stats.maxMana||0)<=100);
+    assert.ok((item.stats.maxHp||0)<=60);assert.equal(item.stats.maxMana,undefined);
     for(const [key,value] of Object.entries(item.stats))if(key.startsWith('skill:')){assert.ok(Number.isInteger(value)&&value>=1&&value<=3);spells++;}
     const save={inventory:{bag:[item]}};rebalanceSavedItems(save);assert.deepEqual(new Inventory(save.inventory).bag,[item]);
   }

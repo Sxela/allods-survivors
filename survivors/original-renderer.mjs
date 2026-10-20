@@ -1,3 +1,5 @@
+import {opaqueBounds} from './player-vitals.mjs';
+import {elevatedPoint} from './landscape.mjs';
 import {SPELLS} from './original-spells.mjs';
 export function blizzardParticles(field,time){
   return Array.from({length:36},(_,i)=>{
@@ -45,7 +47,8 @@ export function drawSpellEffects(vfx,w,metrics){
   for(const b of w.enemyProjectiles)vfx.draw(b.vfx||'stone',b.x,b.y-12,{time:w.time,dx:b.vx,dy:b.vy});
   for(const e of w.effects){
     const progress=1-e.ttl/e.maxTtl;
-    if(e.kind==='lightning')vfx.chain(e.x,e.y,e.x2,e.y2,w.time,progress);
+    if(e.kind==='enemy-target'){const ctx=vfx.ctx;ctx.save();ctx.strokeStyle='#ffb083';ctx.fillStyle='#e56c3c22';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(e.x,e.y,e.r,e.r*.65,0,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.beginPath();ctx.arc(e.x,e.y,9+e.r*(1-progress),0,Math.PI*2);ctx.stroke();ctx.restore();}
+    else if(e.kind==='lightning')vfx.chain(e.x,e.y,e.x2,e.y2,w.time,progress);
     else if(e.kind==='chain')vfx.chain(e.x,e.y,e.x2,e.y2,w.time,progress,'chain');
     else if(e.kind==='drain'){
       const n=Math.max(2,Math.ceil(Math.hypot(e.x2-e.x,e.y2-e.y)/18));
@@ -63,4 +66,25 @@ export function drawSpellEffects(vfx,w,metrics){
     if(e.statuses.stonecurse?.ttl>0)vfx.draw('curse',e.x,e.y-16,{time:w.time,scale:1.3,alpha:.7});
     if(e.statuses.poison?.ttl>0)vfx.draw('poison_hit',e.x,e.y-8,{time:w.time,alpha:.7});
   }
+}
+
+// Atlas cells include transparent margins; ground contact follows visible feet.
+export function unitFrameContact(pixels,width,height,anchorY){
+  const bounds=opaqueBounds(pixels,width,height);
+  return {bounds,offsetY:anchorY-bounds.top-bounds.height,radius:Math.max(7,Math.min(40,bounds.width*.4))};
+}
+export function groundShadowOutline(ground,radius=14){
+  const c=elevatedPoint(ground),east=elevatedPoint({x:ground.x+radius,y:ground.y}),south=elevatedPoint({x:ground.x,y:ground.y+radius*.4});
+  // Local terrain tangents keep the footprint on the slope without 24 height samples.
+  return Array.from({length:24},(_,i)=>{const a=i*Math.PI*2/24;return {x:c.x+radius*Math.cos(a),y:c.y+(east.y-c.y)*Math.cos(a)+(south.y-c.y)*Math.sin(a)};});
+}
+export function drawUnitShadow(ctx,ground,radius=14){
+  const center=elevatedPoint(ground),outline=groundShadowOutline(ground,radius);
+  ctx.save();
+  for(const [scale,color] of [[1,'#07100b30'],[.64,'#07100b70']]){
+    ctx.fillStyle=color;ctx.beginPath();
+    outline.forEach((p,i)=>{const x=center.x+(p.x-center.x)*scale,y=center.y+(p.y-center.y)*scale;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});
+    ctx.closePath();ctx.fill();
+  }
+  ctx.restore();
 }

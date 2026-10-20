@@ -24,13 +24,24 @@ test('render projection moves actors, effects and wall endpoints together withou
 });
 
 test('every earned level grants exactly one free hero Heal, capped at max health',()=>{
-  const w=new World();w.player.hp=1;w.player.mana=0;
+  const w=new World();w.player.hp=1;
   w.allies=[{hp:1,maxHp:1000}];w.addXp(w.player.nextXp);
-  assert.equal(w.player.hp,33);assert.equal(w.player.mana,0);assert.equal(w.allies[0].hp,1);
+  assert.equal(w.player.hp,33);assert.equal(w.player.mana,undefined);assert.equal(w.allies[0].hp,1);
   assert.equal(w.skills.heal,undefined);assert.equal(w.effects.filter(e=>e.kind==='healing').length,1);
   w.offer();assert.equal(w.player.hp,33);
   w.addXp(w.player.nextXp);assert.equal(w.player.hp,65);
   w.addXp(w.player.nextXp);assert.equal(w.player.hp,97);
   w.addXp(w.player.nextXp);assert.equal(w.player.hp,100);
   assert.equal(w.effects.filter(e=>e.kind==='healing').length,4);
+});
+
+test('slope shadows share actor contact and follow the terrain tangent',async()=>{
+ const {groundShadowOutline}=await import('../survivors/original-renderer.mjs');
+ const ground={x:731,y:440},w=new World();Object.assign(w.player,ground);
+ const actor=elevatedWorld(w).player,outline=groundShadowOutline(ground,20);
+ assert.deepEqual(actor.ground,ground);assert.notEqual(actor.ground,w.player);
+ const center=outline.reduce((p,v)=>({x:p.x+v.x/outline.length,y:p.y+v.y/outline.length}),{x:0,y:0});
+ assert.ok(Math.abs(center.x-actor.x)<1e-8);assert.ok(Math.abs(center.y-actor.y)<1e-8);
+ assert.ok(Math.abs(outline[0].y-actor.y)>.01,'side of shadow must tilt with the slope');
+ assert.equal(outline[0].y,ground.y-terrainElevation(ground.x+20,ground.y));
 });

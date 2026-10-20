@@ -6,7 +6,9 @@ A standalone autocast survival game with original Allods artwork, spells, equipm
 
 The forest menu backdrop, gold panel frame and burgundy button are generated artwork. Menu text, class selection, stats and cooldowns remain live UI; character dolls, equipment and spell icons use original Allods assets. Base outfits are presentation only and grant no equipment or stats. In-game paperdolls, backpack rows, item cells, minimap and spell slots retain their original Allods image backdrops; vital and stat text uses plain backgrounds for readability.
 
-Portrait screens and windows at most 900 CSS pixels wide automatically use a mobile layout that fills the screen. Drag the translucent thumb joystick at the bottom right to move; release it to stop. The control stays above the spell row, has a small dead zone, and resets when inventory, pause, or level-up opens. The mobile HUD keeps eight spell slots, backpack, pause and a left-hand settings gear; desktop controls return on wider landscape screens. Phone notch and home-indicator safe areas are respected. The gear button on the left opens controls and camera settings: choose thumb joystick or full-screen hold-and-drag steering, and set world zoom from 100% to 200%. Buttons and menus keep their size. Preferences are saved separately from progress and survive death or a new session.
+Portrait screens and windows at most 900 CSS pixels wide automatically use a mobile layout that fills the screen. Full-screen touch steering is the default: hold on the battlefield to move in that direction, drag to steer, and release to stop. An optional translucent thumb joystick can be enabled in settings; it stays above the spell row, has a small dead zone, and resets when inventory, pause, or level-up opens. The mobile HUD keeps eight spell slots, backpack, pause and a left-hand settings gear; desktop controls return on wider landscape screens. Phone notch and home-indicator safe areas are respected. The gear button on the left opens controls and camera settings: choose thumb joystick or full-screen hold-and-drag steering, and set world zoom from 100% to 200%. Buttons and menus keep their size. Preferences are saved separately from progress and survive death or a new session.
+
+The campaign uses native map regions from the [Allods2.eu map pack](https://allods2.eu/files/maps_all.zip): 202 suitable map files currently contribute bounded regions of at most 48 x 40 tiles. Choose a seeded 12-region journey or all 202 regions. Original terrain, heights, sparse trees/buildings and supported creature families are retained. Fight a guardian, enter its portal within 30 active seconds, then spend earned gold at camp. Spells use cooldowns only; mana, mana regeneration, mana affixes and mana-efficiency rewards are removed, including from older saves. **Continue saved run** restores the current region, build and pending rewards. See [the mechanics profile](docs/survivors-mechanics.md) for the map selection rules, formulas and tests.
 
 Allods 2 reference used for this project: [Allods2.eu: About](https://www.allods2.eu/en/about/).
 
@@ -26,7 +28,7 @@ Allods 2 reference used for this project: [Allods2.eu: About](https://www.allods
 
 ![Urd fully inside the arena, with the boss health bar visible](docs/screenshots/boss.png)
 
-Move with WASD or the arrow keys. Spells cast automatically. Space dashes, I opens inventory, and Escape pauses. Survive the siege and defeat Urd. Death resets progression. Compatible equipment fills empty slots and clear upgrades equip automatically; items with stat tradeoffs remain in the backpack.
+Move with WASD or the arrow keys. Spells cast automatically. Space dashes, I opens inventory, and Escape pauses. Defeat each guardian, extract, and finish the final camp after defeating Urd. Death resets progression. Compatible equipment fills empty slots and clear upgrades equip automatically; items with stat tradeoffs remain in the backpack.
 
 ## Building the Electron app
 
@@ -98,3 +100,11 @@ For a local Linux build, use Node.js LTS on Linux and run `npm ci`, then `npm ru
 - `PUBLIC-EXPORT-MANIFEST.json`: relative paths and hashes from the latest source export.
 
 Game data is already prepared; an original installation or extraction tools are not needed to run or build this tree. Survival balance and reconstructed rendering behavior are project-specific. Allods artwork, audio and font retain their original ownership; this repository does not assign a new license to those assets.
+
+Balance diagnostics: run `npm run test:balance` for a five-seed, three-class/difficulty/policy matrix. See [balance testing](docs/balance-testing.md) for focused runs, telemetry and limits. Simulation results are separate from correctness tests and human playtesting.
+
+Upgrade and camp cards show their rolled HP, speed, spell rank and potency changes as before/after values. Hover, keyboard-focus or tap a bottom-row spell for current values, equipment levels and live cooldown/ward state. The left gear opens **Current stats & spells** (with contributing sources) and a searchable **Bestiary**, including current-region creatures, source art, encounter scaling, attacks and resistances. Item bonuses such as **+3 Wall of Fire** still grant an autocast without learning the spell or enabling its individual upgrades.
+
+Waves begin with 25-40 enemies on Normal, grow by five every two waves within an area (up to +25), and gain up to 20 more across route progress. Reinforcements use the current camera perimeter and retain queued spawns; extraction increases their frequency. Difficulty scales density and timing.
+
+Fresh Mage campaigns start with Fire Arrow and Fireball, giving focused and area attacks immediately. Existing saved loadouts are restored as saved.

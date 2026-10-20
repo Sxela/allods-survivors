@@ -30,8 +30,8 @@ test('thumb movement respects existing Wall of Earth collision',()=>{
 });
 
 test('control preferences reject malformed values and clamp camera zoom',()=>{
- assert.deepEqual(normalizeControls(null),{mode:'joystick',zoom:1});assert.deepEqual(normalizeControls({mode:'touch',zoom:1.5}),{mode:'touch',zoom:1.5});
- assert.deepEqual(normalizeControls({mode:'bogus',zoom:Infinity}),{mode:'joystick',zoom:1});assert.equal(normalizeControls({zoom:20}).zoom,2);assert.equal(normalizeControls({zoom:-2}).zoom,1);assert.equal(normalizeControls({zoom:1.3}).zoom,1.25);
+ assert.deepEqual(normalizeControls({mode:'joystick'}),{mode:'joystick',zoom:1});assert.deepEqual(normalizeControls(null),{mode:'touch',zoom:1});assert.deepEqual(normalizeControls({mode:'touch',zoom:1.5}),{mode:'touch',zoom:1.5});
+ assert.deepEqual(normalizeControls({mode:'bogus',zoom:Infinity}),{mode:'touch',zoom:1});assert.equal(normalizeControls({zoom:20}).zoom,2);assert.equal(normalizeControls({zoom:-2}).zoom,1);assert.equal(normalizeControls({zoom:1.3}).zoom,1.25);
 });
 test('zoom scales the actual world viewport while retaining HUD dimensions',()=>{
  const screen=battlefieldSize(600,1298,true);assert.deepEqual(zoomViewport(screen,1.5),{width:400,height:812});assert.deepEqual(zoomViewport(screen,2),{width:300,height:609});assert.deepEqual(zoomViewport(screen,1),screen);
