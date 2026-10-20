@@ -98,3 +98,9 @@ test('DPS is per target, appears on learn/remove previews and renders assumption
 test('field estimates allow the final tick boundary without changing combat timing',()=>{
  const w=scene();w.skills={frost:4};const e=w.spawn('wolf',false,{x:100,y:0});Object.assign(e,{hp:100000,maxHp:100000,arrival:0,statuses:{}});const info=inspectSpell(w,'frost');w.cast('frost',4);for(let i=0;i<460;i++)stepOriginal(w,.01);assert.ok(Math.abs(info.dps.value-w.metrics.damageDealt/info.interval)<=info.values.damage/info.interval+1e-8);assert.match(info.dps.label,/Est\./);
 });
+
+
+test('hero-upgrade labels keep spell separators while individual cards omit only their own spell prefix',()=>{
+ const w=scene();w.skills={fireball:2};const hero=offerHtml(w,{id:'haste',type:'passive',stat:'haste',amount:.08});assert.match(hero,/Fireball - Cooldown/);assert.match(hero,/Fireball - Est\. DPS/);assert.doesNotMatch(hero,/FireballCooldown/);
+ const spell=offerHtml(w,{id:'fireball',type:'skill',rank:3});assert.match(spell,/>Cooldown<\/dt>/);assert.doesNotMatch(spell,/Fireball - Cooldown/);
+});

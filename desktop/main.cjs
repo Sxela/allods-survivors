@@ -1,4 +1,4 @@
-const {app,BrowserWindow,Menu,protocol,session,dialog}=require('electron');
+const {app,BrowserWindow,Menu,protocol,session,dialog,shell}=require('electron');
 const path=require('node:path');
 const fs=require('node:fs/promises');
 const {serveAsset}=require('./protocol.cjs');
@@ -32,7 +32,10 @@ const action=fn=>()=>fn().catch(error=>dialog.showErrorBox('Allods Survivors',er
 function createWindow(){
   if(process.argv.includes('--smoke-test'))console.log('Desktop: creating game window');
   window=new BrowserWindow({title:'Allods Survivors',width:1080,height:840,minWidth:640,minHeight:640,backgroundColor:'#050806',show:false,icon:path.join(__dirname,'game/assets/portrait-dragon.png'),webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true,offscreen:process.argv.includes('--smoke-test'),backgroundThrottling:!process.argv.includes('--smoke-test')}});
-  window.webContents.setWindowOpenHandler(()=>({action:'deny'}));
+  window.webContents.setWindowOpenHandler(({url})=>{
+    if(['https://github.com/Sxela/allods-survivors','https://github.com/Sxela/regis'].includes(url))shell.openExternal(url).catch(error=>console.error('Could not open project link:',error.message));
+    return {action:'deny'};
+  });
   window.webContents.on('will-navigate',(event,address)=>{if(address!=='allods://game/index.html'&&address!=='allods://game/')event.preventDefault();});
   window.webContents.on('will-attach-webview',event=>event.preventDefault());
   window.webContents.on('did-fail-load',(_event,code,description)=>console.error('Game load failed:',code,description));

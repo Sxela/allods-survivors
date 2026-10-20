@@ -12,21 +12,29 @@ The campaign uses native map regions from the [Allods2.eu map pack](https://allo
 
 Allods 2 reference used for this project: [Allods2.eu: About](https://www.allods2.eu/en/about/).
 
+Built with workflows collected in [Regis](https://github.com/Sxela/regis), a combined skill developed from the findings of this project and related game adaptations.
+
 ## Screenshots
 
-| Elemental combat and spell loadouts | Equipment and the original character doll |
+Captured from the current build using staged encounters and example builds. Character dolls remain dressed.
+
+Level-up and camp cards show exact before/after stats, cooldown changes and estimated DPS. Improve hero stats or individual spells; every fifth level offers new spells, and five individual spell improvements unlock a free specialization with explicit trade-offs. Item spell-level bonuses remain part of the build. Current stats and the bestiary are available from the settings gear.
+
+| Native-map combat | Native terrain and scenery |
 | --- | --- |
-| ![Autocasting elemental spells with defensive buffs and the original HUD](docs/screenshots/combat.png) | ![Inventory with wearable gear and a fully dressed character doll](docs/screenshots/inventory.png) |
-| **Side-by-side item comparisons** | **Buy and sell in the inventory shop** |
-| ![Hover comparison showing stat gains, losses and spell-level bonuses](docs/screenshots/item-comparison.png) | ![The inventory shop with equipment offers and gold prices](docs/screenshots/shop.png) |
+| ![Elemental spells, defensive wards and the current HUD in a native map region](docs/screenshots/combat.png) | ![Original grassy terrain, elevation, scenery and larger gold veins](docs/screenshots/terrain.png) |
+| **Guardian encounters** | **Equipment and the original character doll** |
+| ![Urd on screen with the boss health bar and current campaign HUD](docs/screenshots/boss.png) | ![Current inventory with equipped items, backpack and a dressed character doll](docs/screenshots/inventory.png) |
+| **Level-up upgrades with exact stat and DPS changes** | **Spell specializations and their trade-offs** |
+| ![Level-up cards comparing spell damage, cooldown, DPS and hero upgrades before and after](docs/screenshots/upgrades.png) | ![Quick and focused spell specializations comparing cast speed, damage and sustained DPS](docs/screenshots/spell-upgrades.png) |
+| **Safe-camp upgrades** | **Equipment shop inside the inventory** |
+| ![Camp improvement cards with rarity, exact upgrade previews, prices and available gold](docs/screenshots/camp.png) | ![Current equipment shop with class-specific items and scaled gold prices](docs/screenshots/shop.png) |
+| **Side-by-side item comparisons** | **Current stats and contributing sources** |
+| ![An item hover comparison with gains, losses and individual spell-level bonuses](docs/screenshots/item-comparison.png) | ![Build inspection showing current hero stats and their class, equipment and upgrade sources](docs/screenshots/stats.png) |
 
-**Steep grassy hills**
+**Bestiary: original creatures, attack types and current encounter stats**
 
-![A steep grassy hill with a raised crest and shaded slope in the Shattered Grove](docs/screenshots/terrain.png)
-
-**Boss encounters**
-
-![Urd fully inside the arena, with the boss health bar visible](docs/screenshots/boss.png)
+![The searchable bestiary showing original dragon artwork and scaled combat information](docs/screenshots/bestiary.png)
 
 Move with WASD or the arrow keys. Spells cast automatically. Space dashes, I opens inventory, and Escape pauses. Defeat each guardian, extract, and finish the final camp after defeating Urd. Death resets progression. Compatible equipment fills empty slots and clear upgrades equip automatically; items with stat tradeoffs remain in the backpack.
 

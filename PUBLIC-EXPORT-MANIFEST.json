@@ -23,8 +23,8 @@
     },
     {
       "path": "desktop/main.cjs",
-      "bytes": 4946,
-      "sha256": "e4e8458b9000d33b40a0874c75e20a80c86e1710bfe9eec77a47179f865f95cb"
+      "bytes": 5175,
+      "sha256": "1f360d8a17f9e54f64b4d86b04806e3aefd2a4387dd4719508075e75a70399ba"
     },
     {
       "path": "desktop/protocol.cjs",
@@ -37,34 +37,59 @@
       "sha256": "846172a8da6c82741ae89d79b099d8d392091e32a80084e95024ffba406981d4"
     },
     {
+      "path": "docs/screenshots/bestiary.png",
+      "bytes": 153122,
+      "sha256": "ec62a247cedff44b6ad2ce0f4db0ba05611063cf2eaf2969f9e25a2b31747263"
+    },
+    {
       "path": "docs/screenshots/boss.png",
-      "bytes": 934854,
-      "sha256": "ace8aff08500fd72fde59f419fc3cf192cd87b92caa10da438f9549b3d3080b3"
+      "bytes": 1007069,
+      "sha256": "c61526e7862bf9834bb33de17cfb02b9d0ac010fea3fbf0e4ddd96d57ba192cf"
+    },
+    {
+      "path": "docs/screenshots/camp.png",
+      "bytes": 279851,
+      "sha256": "1c0f724f8bec124d0f7958d0b8db50140788f2f3d51578ef1575d592ad65ed8f"
     },
     {
       "path": "docs/screenshots/combat.png",
-      "bytes": 986254,
-      "sha256": "4940a4dfc84153281692f6cfbe31c6a42780f4e3417a3eea873c14f0c49fef9b"
+      "bytes": 1043932,
+      "sha256": "52ad5393ac99d19e0f5168d270ddc6e7d11cb811871e155fd0a230ca4b0224f9"
     },
     {
       "path": "docs/screenshots/inventory.png",
-      "bytes": 409040,
-      "sha256": "d023d11efb0e102c7280dd6d0d8ecfee647ca962b6186265cc686900010c1092"
+      "bytes": 404016,
+      "sha256": "c0a6c88209a4e6cfd6d2ad809c1aa8c5ee16d7eaea164f9bafa7b5b899dde853"
     },
     {
       "path": "docs/screenshots/item-comparison.png",
-      "bytes": 361196,
-      "sha256": "d685e9e716a1c8303664a4a057864f9c2bbb4a8738c697046f711760650ebf17"
+      "bytes": 454712,
+      "sha256": "6d043cddcdd511d27e29c2b502729f2f23b7fadc60deef5da22ef5d36f6cc62c"
     },
     {
       "path": "docs/screenshots/shop.png",
-      "bytes": 283253,
-      "sha256": "cd1a1065f31fa3f5beec8e426e9453e14928d1d132816799dff014fa203a48db"
+      "bytes": 328643,
+      "sha256": "5ca8160310d9f432bb548e68ce6c6872664179ff0594362ec0696ab2f4a895c7"
+    },
+    {
+      "path": "docs/screenshots/spell-upgrades.png",
+      "bytes": 251486,
+      "sha256": "44354a10ae216e8b67015f71f553c35998a37f30ae53a86a5db11e452fe3cccc"
+    },
+    {
+      "path": "docs/screenshots/stats.png",
+      "bytes": 209208,
+      "sha256": "5b4bcd78d49e88a656ae4482f50f3e471fedcccc5beeb635c98341a1dd6e49e8"
     },
     {
       "path": "docs/screenshots/terrain.png",
-      "bytes": 1004440,
-      "sha256": "d525ead79b6289814e7b39cf4235d6859371be6fe3b213e75e31208879731438"
+      "bytes": 1025546,
+      "sha256": "d6e9539b9f8b0e04e725d55ab895497bf617837a72d4d8bebb101b4a114e6e78"
+    },
+    {
+      "path": "docs/screenshots/upgrades.png",
+      "bytes": 227062,
+      "sha256": "896011f2648d5edc0ddf3f3284d8d7e034f62a09525e7cf53dcececec539f8fe"
     },
     {
       "path": "docs/survivors-mechanics.md",
@@ -93,8 +118,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9393,
-      "sha256": "b86addcbc749ec30abab2d74bf3692a1c385a9b4ac6853a41b783ebe8a72963a"
+      "bytes": 10973,
+      "sha256": "209f97dc12eb048397fae4f15bd0ed4dddcc17ac4e1b5e0a644fa6594acd6e63"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -10588,8 +10613,8 @@
     },
     {
       "path": "survivors/forest-ui.css",
-      "bytes": 16020,
-      "sha256": "f38235cfca784b08fde7cf8d1c6339e46061a7b5b3ec5521da1ce39e75f84bb4"
+      "bytes": 19505,
+      "sha256": "66bb2251392aa46f0504c35d32377e34cef9e01be215db6c297133ea96e7afa7"
     },
     {
       "path": "survivors/game.mjs",
@@ -10598,13 +10623,13 @@
     },
     {
       "path": "survivors/index.html",
-      "bytes": 2705,
-      "sha256": "0d71602cbfe60acb49e1a49aa6b62dd6b8697a1fb1b3dbe638a4370687870ee2"
+      "bytes": 2971,
+      "sha256": "eff1b5ee7565ef94b8636207f26bbcdccb34e7500670457f89970ef65aba9a03"
     },
     {
       "path": "survivors/inspection-view.mjs",
-      "bytes": 8563,
-      "sha256": "62e9369413321c38788db39f4b0785a9223fb9925e9e0c34d0685d3b7a77b4b5"
+      "bytes": 8634,
+      "sha256": "248734a574317d19c99861e0ed831a3170a4d5ed369f8d7b9a1939fd518f5ec8"
     },
     {
       "path": "survivors/inspection.css",
@@ -10893,8 +10918,8 @@
     },
     {
       "path": "tests/knowledge-inspection.test.mjs",
-      "bytes": 13714,
-      "sha256": "701269979ae729ffd1bdad5288345bc7141ce553af6165a30b2cf1f1f24d331d"
+      "bytes": 14231,
+      "sha256": "9f7838658c8727bfaa66f50351ea4fd4d0578fb78c90b860d5a718e20d019be4"
     },
     {
       "path": "tests/landscape-loadout.test.mjs",
