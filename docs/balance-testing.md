@@ -1,5 +1,29 @@
 # Balance testing
 
+## Wall of Earth removal follow-up (2026-10-25)
+
+The former five-seed zone-two regression failed on seed 8128 after removing Wall of Earth changed randomized rewards and loot. The fixed-loadout probe was collecting and auto-equipping real items: this seed gained Invisibility from gloves, adding a defensive autocast without learning it. Earlier "empty gear" descriptions mean an empty starting inventory, not a prohibition on later pickups.
+
+Two behavior bugs amplified sustain: short self-buffs bypassed their displayed cooldown by refreshing at duration minus 0.25 seconds, and ranged enemies stopped at firing range even while unable to detect the invisible target. Buffs now wait their real recast interval, and searching ranged enemies approach the last-known position. Nearby detection and item-granted spell levels remain intact. Heal/Shield magnitudes and cast-interval formulas are unchanged.
+
+Normal's later-region pressure was also increased: hit protection is 0.42 seconds (was 0.45), regional damage growth caps at 3x rather than 2.5x, and prolonged-fight new-arrival damage caps at 1.6x rather than 1.35x. Region-one base damage is unchanged and its initial hit protection still starts at 0.65 seconds. Hard uses the same capped 3x regional growth so Normal does not overtake its base per-hit scaling; its 1.1 base damage multiplier, 0.4-second hit protection and other modifiers remain. Easy's preset is unchanged; the shared cooldown and search corrections apply to every difficulty.
+
+The original zone-two assertion and its five seeds remain unchanged: stationary Mage deaths are required, tactical guardian kills must remain possible, and natural XP healing and loot stay active. All five pairs pass. Focused tests also verify cooldown downtime for learned and item-granted buffs and pursuit by projectile enemies and casters.
+
+| Controlled zone-two sample | Stationary guardian kills | Tactical guardian kills |
+| --- | ---: | ---: |
+| normal | 0/5 | 5/5 |
+| heldout | 3/10 | 7/10 |
+| easy | 5/5 | 5/5 |
+| hard | 0/5 | 1/5 |
+
+Normal uses the original seeds 42, 8128, 1337, 2026 and 9001. The additional sample uses 17, 101, 256, 512, 1024, 2048, 4096, 8192, 12345 and 54321. Before the patch, that additional sample had 4/10 stationary guardian kills and 9/10 tactical kills; afterward it has 3/10 and 7/10. One tactical probe reaches the 240-second horizon without killing the guardian; a horizon stop is not a death or success. These exceptions are retained, not removed from the sample. The moving probe is a bot with a fixed mid-rank build, not a human win-rate estimate.
+
+An additional 12 earned-start Mage runs used two seeds, all difficulties, balanced upgrades and camping/tactical policies. Easy cleared 2/4; Normal and Hard cleared 0/4 each, with Normal deaths in regions two/three. This small sample does not establish satisfactory campaign completion rates and calls for further build/class/human playtesting. It does not justify claiming all stationary builds fail or every moving build can win.
+
+Evidence is private under `.build/zone2-final-*.json`, `.build/zone2-heldout-before.json`, and `.build/balance/sustain-cooldown-earned.json`. `.build/balance/sustain-fix-verification.json` fingerprints the final runtime and recorded reports. Full unit suite: 301 passing tests. Earlier balance tables below are historical and do not validate this version.
+
+
 The economy/zone-two section below records the current tuning. Subsequent matrices are historical snapshots and do not describe the current presets.
 
 Correctness tests and balance probes answer different questions. `npm test` checks rules and regressions. `npm run test:balance` runs earned-start survival simulations; its outcomes are diagnostic, not human win rates.

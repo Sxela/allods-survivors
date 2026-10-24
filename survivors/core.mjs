@@ -21,8 +21,8 @@ export const ENEMIES=Object.keys(MONSTERS);
 export const EQUIPMENT_DROP_CHANCE=.004;
 export const DIFFICULTIES=Object.freeze({
   easy:Object.freeze({name:'Easy',description:'Forgiving combat; mostly standing is viable. Collect upgrades and reach the exit.',health:.5,damage:.35,speed:.85,density:.8,spawnRate:.85,hitGrace:.8,healthGrowth:0,damageGrowth:0,overstayHealth:0,overstayDamage:0,gold:1,lootPower:1,magicFind:0}),
-  normal:Object.freeze({name:'Normal',description:'Move, dodge and plan your build. Enemy pressure grows across the first regions.',health:1,damage:1,speed:1,density:1,spawnRate:1,hitGrace:.45,healthGrowth:.5,damageGrowth:1.5,overstayHealth:.2,overstayDamage:.35,gold:1,lootPower:1,magicFind:0}),
-  hard:Object.freeze({name:'Hard',description:'Survival demands movement and a strong build. +50% gold, +25% item stats and better magic/rare odds.',health:1.2,damage:1.1,speed:1.1,density:1.3,spawnRate:1.2,hitGrace:.4,healthGrowth:.5,damageGrowth:1.5,overstayHealth:.35,overstayDamage:.6,gold:1.5,lootPower:1.25,magicFind:1}),
+  normal:Object.freeze({name:'Normal',description:'Move, dodge and plan your build. Enemy pressure grows across the first regions.',health:1,damage:1,speed:1,density:1,spawnRate:1,hitGrace:.42,healthGrowth:.5,damageGrowth:2,overstayHealth:.2,overstayDamage:.6,gold:1,lootPower:1,magicFind:0}),
+  hard:Object.freeze({name:'Hard',description:'Survival demands movement and a strong build. +50% gold, +25% item stats and better magic/rare odds.',health:1.2,damage:1.1,speed:1.1,density:1.3,spawnRate:1.2,hitGrace:.4,healthGrowth:.5,damageGrowth:2,overstayHealth:.35,overstayDamage:.6,gold:1.5,lootPower:1.25,magicFind:1}),
 });
 export {ENEMY_SPRITES};
 export function enemyFootprint(type='wolf',boss=false){const [width,height]=ENEMY_SPRITES[type]||[132,132];return {halfWidth:Math.max(width/2,15),above:height-2,below:Math.max(2,6)};}
@@ -185,8 +185,9 @@ export class World {
       if(this.cooldowns[id]<=0){
         const active=p.statuses[id];if(SELF_BUFFS.has(id)&&active?.ttl>.3&&(id!=='shield'||active.pool>0)){this.cooldowns[id]=Math.min(.25,active.ttl-.25);continue;}
         const cast=this.cast(id,rank),normal=this.spellInterval(id,rank);
-        // Self buffs don't need a foe and refresh before their status expires.
-        this.cooldowns[id]=cast===false?.3:SELF_BUFFS.has(id)?Math.min(normal,Math.max(.25,p.statuses[id].ttl-.25)):normal;
+        // Buff duration does not shorten the displayed recast interval. A short
+        // buff must expire before its cooldown permits the next automatic cast.
+        this.cooldowns[id]=cast===false?.3:normal;
         this.cooldownWaiting[id]=cast===false;
         if(cast!==false)this.cooldownDurations[id]=this.cooldowns[id];
       }
@@ -211,7 +212,9 @@ export class World {
       let dx=target.x-e.x,dy=target.y-e.y,d=Math.hypot(dx,dy)||1;e.dx=dx/d;e.dy=dy/d;
       const projectile=def.projectile??def.projectileId,caster=!!ENEMY_SPELLBOOKS[e.type],ranged=!!projectile||caster;
       const petrified=e.statuses.stonecurse?.ttl>0;
-      const velocity=e.speed*(e.slow>0?.38:1)*(petrified?0:1)*(ranged&&d<240?0:1)*(invisible&&target===e.lastSeen&&d<10?0:1);
+      // Searching ranged enemies must approach the last seen position rather
+      // than stop at firing range while unable to detect an invisible target.
+      const velocity=e.speed*(e.slow>0?.38:1)*(petrified?0:1)*(ranged&&!invisible&&d<240?0:1)*(invisible&&target===e.lastSeen&&d<10?0:1);
       e.moving=velocity>0&&e.attackTime<=0&&!e.casting;
       if(e.moving){const nx=e.x+e.dx*velocity*dt,ny=e.y+e.dy*velocity*dt;if(def.flying?arenaWithin(arenaFor(this),nx,ny,e.radius):!blocksMovement(this,nx,ny,e.radius)){e.x=nx;e.y=ny;}else if(this.campaign){const point=arenaDirection(this,e);if(point){const d=Math.hypot(point.x-e.x,point.y-e.y)||1,step=Math.min(d,velocity*dt);e.dx=(point.x-e.x)/d;e.dy=(point.y-e.y)/d;const x=e.x+e.dx*step,y=e.y+e.dy*step;if(!blocksMovement(this,x,y,e.radius)){e.x=x;e.y=y;}}}}
       e.attackCooldown-=dt;

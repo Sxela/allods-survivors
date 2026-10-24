@@ -38,8 +38,8 @@
     },
     {
       "path": "docs/balance-testing.md",
-      "bytes": 26446,
-      "sha256": "846172a8da6c82741ae89d79b099d8d392091e32a80084e95024ffba406981d4"
+      "bytes": 29858,
+      "sha256": "e2b66d6dc4da9ae1bbd64ceec818b5a2069e5b43d28f8816d55202dd8ad2e8c8"
     },
     {
       "path": "docs/performance-playtest.md",
@@ -128,8 +128,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 12656,
-      "sha256": "ec4f90fd59aab127c4fc9886cf19d260f7f5c84122fff79e219637e4c901ca77"
+      "bytes": 12755,
+      "sha256": "fba93b9600a5a0f9781c2dd1d76a005874ab178f58fb561a13018d1e2d8b6d20"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -10593,8 +10593,8 @@
     },
     {
       "path": "survivors/core.mjs",
-      "bytes": 29703,
-      "sha256": "c82be10c23d16f174db64293ccd120a64607ee22af6454b9687d087b9303a750"
+      "bytes": 29879,
+      "sha256": "cfab0cc056b77962fdc1cb9bd9f22ab5443ee4291136b113fee32c9b81ef1ac7"
     },
     {
       "path": "survivors/encounters.mjs",
@@ -10993,8 +10993,8 @@
     },
     {
       "path": "tests/original-content-core.test.mjs",
-      "bytes": 3846,
-      "sha256": "9c9c914d41273feac3110a30b2c803ed3b45ba0b96fd0ad9a5609516e2061357"
+      "bytes": 4323,
+      "sha256": "f28bed12baa1776f3d824005a2e71b625b8729def79ab4e4cb3715d4784db595"
     },
     {
       "path": "tests/original-spells.test.mjs",
@@ -11033,8 +11033,8 @@
     },
     {
       "path": "tests/spell-replacement.test.mjs",
-      "bytes": 2900,
-      "sha256": "a91ae14495f8fb9046d1bfbae6cd685989266198f58dcba3ef793ba25deb2bfa"
+      "bytes": 4292,
+      "sha256": "7944d1471e1f6b7af84a658013049289d4bffb03b7d87ef803e9b5879ec14279"
     },
     {
       "path": "tests/terrain-mesh.test.mjs",

@@ -22,11 +22,28 @@ test('queued levels remain pending correctly after replacement and maxed spells 
   assert.equal(w.pendingLevels,1);assert.equal(w.status,'levelup');assert.equal(w.choices.length,4);
 });
 test('smaller builds retain the usual three upgrade choices',()=>{const w=new World();w.offer();assert.equal(w.choices.length,3);assert.ok(w.choices.every(c=>c.type!=='replace'));});
-test('Shield and Invisibility autocast on the player without targets and refresh before expiry',()=>{
-  const w=new World();w.skills={shield:1,invisibility:1};w.spawnTimer=Infinity;
-  for(let i=0;i<600;i++){w.step(.05);assert.ok(w.player.statuses.shield?.pool>0);assert.ok(w.player.statuses.invisibility?.ttl>0);}
+test('self buffs autocast without targets and respect their displayed cooldown after expiry',()=>{
+  for(const campaign of [false,true])for(const id of ['shield','invisibility']){
+    const w=new World({campaign});w.skills={[id]:1};w.spawnTimer=Infinity;
+    if(campaign){w.campaign.waveTimer=Infinity;w.campaign.trickleTimer=Infinity;}
+    w.step(.05);assert.ok(w.player.statuses[id]?.ttl>0);const interval=w.spellInterval(id,1),first=w.time;
+    assert.equal(w.cooldowns[id],interval);assert.equal(w.cooldownDurations[id],interval);
+    let expired=false;
+    while(w.time-first<interval-.05){w.step(.05);if(!w.player.statuses[id])expired=true;assert.equal(w.metrics.casts,1);}
+    assert.ok(expired,'a short buff must leave downtime instead of bypassing its cooldown');
+    for(let i=0;i<3;i++)w.step(.05);assert.equal(w.metrics.casts,2);assert.ok(w.player.statuses[id]?.ttl>0);
+  }
 });
 test('a depleted shield is replenished automatically without requiring a nearby enemy',()=>{
   const w=new World();w.skills={shield:1};w.spawnTimer=Infinity;w.step(.05);w.player.statuses.shield.pool=0;
   for(let i=0;i<32;i++)w.step(.05);assert.ok(w.player.statuses.shield.pool>0);
+});
+
+test('item-granted Invisibility uses the same cooldown and leaves the learned build unchanged',()=>{
+  const w=new World({campaign:true});w.skills={};w.campaign.waveTimer=Infinity;w.campaign.trickleTimer=Infinity;
+  w.inventory.add({id:'stealth-gloves',icon:'gear-0010423',slot:'gloves',name:'Stealth gloves',rarity:'rare',balanceVersion:2,stats:{'skill:invisibility':2}});
+  assert.ok(w.equipItem('stealth-gloves'));assert.equal(w.skills.invisibility,undefined);assert.equal(w.castingSkills()[0].source,'gear');
+  w.step(.05);const interval=w.spellInterval('invisibility',0);assert.equal(w.cooldownDurations.invisibility,interval);
+  for(let i=0;i<110;i++)w.step(.05);
+  assert.equal(w.metrics.casts,1);assert.equal(w.player.statuses.invisibility,undefined);assert.ok(w.cooldowns.invisibility>0);
 });

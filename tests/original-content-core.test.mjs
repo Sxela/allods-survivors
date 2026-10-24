@@ -29,6 +29,15 @@ test('Invisibility makes distant enemies seek last seen position rather than the
   const w=arena(),e=enemy(w,'wolf',300);e.speed=60;w.cast('invisibility',1);w.player.y=200;
   w.step(.025);assert.equal(e.dy,0);assert.ok(e.dx<0);
 });
+test('ranged enemies approach the last seen position while invisibility prevents target acquisition',()=>{
+  for(const type of ['goblin_s','orc_sh']){
+    const w=arena(),e=enemy(w,type,180);e.speed=60;e.attackCooldown=0;
+    w.cast('invisibility',1);w.player.y=200;w.step(.025);
+    assert.ok(e.x<180,`${type} must search instead of waiting forever at firing range`);
+    assert.equal(e.dy,0);assert.equal(w.enemyProjectiles.length,0);assert.ok(!e.casting);
+  }
+});
+
 test('Original projectile associations drive enemy attacks without invented boss spreads',()=>{
   for(const type of ['orc','goblin_s','skeleton_a1','dragon']){
     const w=arena(),e=enemy(w,type,180);e.attackCooldown=0;w.step(.025);if(type==='dragon')advance(w,.525);
