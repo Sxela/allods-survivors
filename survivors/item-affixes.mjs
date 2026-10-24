@@ -45,7 +45,7 @@ export const UNIQUES={
   ring:{name:'Star of the Lost Treasury',stats:{magicFind:.3,goldFind:.4,airResist:.15,'skill:lightning':2}},
   amulet:{name:'Memory of the Five Spheres',stats:{magicFind:.2,goldFind:.25,fireSkill:3,waterSkill:3,airSkill:3,earthSkill:3,astralSkill:3}},
   shield:{name:'The Unbroken Promise',stats:{armor:5,defense:22,fireResist:.2,waterResist:.2,spellDamage:.12}},
-  bracers:{name:'Keeper of Ancient Runes',stats:{armor:3,defense:12,mind:4,haste:.1,'skill:earthwall':2}},
+  bracers:{name:'Keeper of Ancient Runes',stats:{armor:3,defense:12,mind:4,haste:.1}},
   gloves:{name:'Hands of the Spellsmith',stats:{attack:12,attackSpeed:.12,haste:.12,spellDamage:.12,'skill:fireball':2}},
 };
 export function rollAffixes(family,rarity,roll){

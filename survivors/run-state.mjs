@@ -38,6 +38,13 @@ export function restoreRun(raw,viewport){
     for(const record of [world.player,world.baseStats,world.classBases,...world.enemies,...world.allies])for(const key of ['mana','maxMana','manaRegen','spirit'])delete record[key];
     for(const [id,bonus] of Object.entries(world.localBonuses||{})){if(bonus.cost){bonus.ward=(bonus.ward||0)+bonus.cost;delete bonus.cost;}world.localBonuses[id]=bonus;}
     for(const id of Object.keys(world.behaviors))world.behaviors[id]=world.behaviors[id].map(mode=>mode==='economy'?'mobile':mode);
+    // Retire Wall of Earth without invalidating an otherwise usable saved run.
+    for(const key of ['skills','cooldowns','cooldownDurations','cooldownWaiting','localBonuses','behaviors','individualPurchases'])if(world[key])delete world[key].earthwall;
+    delete world.player['skill:earthwall'];delete world.player.statuses?.earthwall;
+    world.fields=world.fields.filter(f=>f.kind!=='earthwall');
+    world.effects=world.effects.filter(f=>f.kind!=='earthwall'&&f.vfx!=='earthwall');
+    world.choices=world.choices.filter(c=>c?.id!=='earthwall');
+    world.campaign.shopOffers=world.campaign.shopOffers.filter(c=>c?.id!=='earthwall');
     const migrateChoice=c=>{if(c.skillStat==='cost'){c.skillStat='ward';c.description=`+${(c.amount*100).toFixed(1)}% effective ward rank.`;}if(c.type==='behavior'&&c.mode==='economy'){c.mode='mobile';c.name='Mobile ward';c.description='+12% movement while active; -10% effective rank.';}else if(c.type==='behavior'&&c.id&&c.mode==='focus'&&c.description.includes('mana'))c.description='+20% effective rank; -10% movement while active.';};
     world.choices.forEach(migrateChoice);world.campaign.shopOffers.forEach(migrateChoice);repriceCamp(world);
     Object.assign(world.player,safeArenaPoint(world,world.player));for(const key of ['enemies','allies','neutrals','gems','powerups','lootDrops'])for(const e of world[key])Object.assign(e,safeArenaPoint(world,e,e.radius||12));
@@ -48,6 +55,7 @@ export function restoreRun(raw,viewport){
     for(const field of ['behaviors','individualPurchases'])world[field]=Object.fromEntries(Object.entries(world[field]).filter(([id])=>skills[id]));
     if(world.status==='levelup'&&world.choices.some(c=>!c||!['skill','passive','learn','replace','keep','behavior'].includes(c.type)||typeof c.name!=='string'||typeof c.description!=='string'))return null;
     world.inventory=new Inventory(save.inventory,world.hero);world.refreshEquipment();world.rng.restore(save.rng);world.events=[];
+    if(world.status==='levelup'&&!world.choices.length)world.offer();
     if(['paused','inventory'].includes(world.status))world.status=world.campaign.phase==='camp'?'camp':'playing';
     return world;
   }catch{return null;}

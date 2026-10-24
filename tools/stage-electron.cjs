@@ -59,7 +59,7 @@ async function collectRuntime(){
   // The manifest retains only UI entries actually referenced by CSS/code.
   manifest.ui=Object.fromEntries(Object.entries(original.ui).filter(([,v])=>assets.has(v.src)).map(([id,v])=>[id,runtimeMetadata(v)]));
   manifest.icons=Object.fromEntries(Object.entries(original.icons).filter(([,v])=>assets.has(v.src)).map(([id,v])=>[id,runtimeMetadata(v)]));
-  const runtimeMonsters=Object.fromEntries(Object.entries(MONSTERS).map(([id,m])=>[id,{...runtimeMetadata(m),registry:{ID:m.registry.ID,...(m.registry.Dying!==undefined?{Dying:m.registry.Dying}:{})}}]));
+  const runtimeMonsters=Object.fromEntries(Object.entries(MONSTERS).map(([id,m])=>[id,{...runtimeMetadata(m),registry:{ID:m.registry.ID,...(m.registry.Dying!==undefined?{Dying:m.registry.Dying}:{}),...(m.registry.Z!==undefined?{Z:m.registry.Z}:{})}}]));
   code.set('monster-data.mjs',`// Runtime-only fields used by spawning and animation.\nexport default ${JSON.stringify({monsters:runtimeMonsters,projectileVfxById})};\n`);
   return {code,manifest,assets};
 }

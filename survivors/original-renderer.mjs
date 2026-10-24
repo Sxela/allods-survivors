@@ -27,9 +27,9 @@ export function drawSpellFields(vfx,w){
   for(const f of [...w.fields,...(w.enemyFields||[])]){
     if(f.enemy){const ctx=vfx.ctx;ctx.save();ctx.strokeStyle='#dc786777';ctx.lineWidth=1.5;ctx.beginPath();if(f.kind==='firewall'){ctx.moveTo(f.x1,f.y1);ctx.lineTo(f.x2,f.y2);}else ctx.ellipse(f.x,f.y,f.r,f.r*.65,0,0,Math.PI*2);ctx.stroke();ctx.restore();}
     if(f.kind==='poison'){vfx.poison(f.x,f.y,f.r,w.time,Math.min(1,f.ttl));continue;}
-    if(f.kind==='firewall'||f.kind==='earthwall'){
+    if(f.kind==='firewall'){
       const length=Math.hypot(f.x2-f.x1,f.y2-f.y1),count=Math.ceil(length/18);
-      for(let i=0;i<=count;i++)vfx.draw(f.vfx,f.x1+(f.x2-f.x1)*i/count,f.y1+(f.y2-f.y1)*i/count,{time:w.time+i*.08,scale:f.kind==='earthwall'?1:1.6});
+      for(let i=0;i<=count;i++)vfx.draw(f.vfx,f.x1+(f.x2-f.x1)*i/count,f.y1+(f.y2-f.y1)*i/count,{time:w.time+i*.08,scale:1.6});
     }else if(f.kind==='frost'){
       vfx.draw('frost',f.x,f.y,{time:w.time,scale:f.r/40,alpha:.3});
     }

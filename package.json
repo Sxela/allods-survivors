@@ -4,8 +4,13 @@
   "private": true,
   "description": "Allods Survivors desktop game",
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
+    "test": "npm run test:unit && npm run test:browser",
+    "test:unit": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/runtime-browser.cjs && node tests/browser-menu-fit.cjs && node tests/browser-unit-grounding.cjs",
     "test:balance": "node tools/balance-campaign.mjs --policies=collect,stationary,tactical",
+    "test:performance": "node tools/performance-playtest.cjs",
+    "audit:assets": "node tools/audit-asset-parity.mjs",
+    "audit:assets:preview": "node tools/preview-asset-parity.cjs",
     "desktop:stage": "node tools/stage-electron.cjs",
     "desktop": "node tools/run-electron.cjs",
     "desktop:pack": "node tools/build-electron.cjs --dir",
@@ -13,6 +18,7 @@
   },
   "devDependencies": {
     "electron": "44.7.2",
-    "electron-builder": "26.15.3"
+    "electron-builder": "26.15.3",
+    "playwright": "1.64.1"
   }
 }

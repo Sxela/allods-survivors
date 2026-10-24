@@ -80285,32 +80285,6 @@
         "formula": "d=round((atan2(dy,dx)-PI/2)*16/(2*PI)) mod16; group=d<=8?d:16-d; flipX=d>8; frame=group*phases+phase"
       }
     },
-    "earthwall": {
-      "src": "assets/vfx-earthwall.png",
-      "cellWidth": 36,
-      "cellHeight": 68,
-      "columns": 8,
-      "count": 1,
-      "directions": 1,
-      "phases": 1,
-      "fps": 18,
-      "layout": "direction-major",
-      "alignment": "center",
-      "anchorX": 18,
-      "anchorY": 34,
-      "frames": [
-        {
-          "x": 0,
-          "y": 0,
-          "w": 36,
-          "h": 68,
-          "anchorX": 18,
-          "anchorY": 34,
-          "sourceWidth": 32,
-          "sourceHeight": 64
-        }
-      ]
-    },
     "curse": {
       "src": "assets/vfx-curse.png",
       "cellWidth": 16,
@@ -91214,17 +91188,6 @@
       "height": 36,
       "sourceRect": [
         387,
-        45,
-        36,
-        36
-      ]
-    },
-    "spell-dust": {
-      "src": "assets/ui-spell-dust.png",
-      "width": 36,
-      "height": 36,
-      "sourceRect": [
-        425,
         45,
         36,
         36

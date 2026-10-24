@@ -18,7 +18,6 @@ export const SPELLS={
   invisibility:entry('Invisibility','Renders a unit invisible. The unit still can be detected, but not visually','spell-invisibility','steam',13,'air'),
   protectAir:entry('Protection from Air','Increases resistance to Air magic, lowering damage and duration of Air effects','spell-shield','orbit',12,'air'),
   stone:entry('Stone Missile','Inflicts Earth damage to a single target','spell-stones','stone',1.3,'earth'),
-  earthwall:entry('Wall of Earth','Temporarily creates an impassable wall','spell-dust','earthwall',8,'earth'),
   stonecurse:entry('Stone Curse','Temporarily turns a single target to stone','spell-stone-shield','curse',5,'earth'),
   protectEarth:entry('Protection from Earth','Increases resistance to Earth magic, lowering damage and duration of Earth effects','spell-stone-shield','protect_earth',12,'earth'),
   bless:entry('Bless',"Increases warrior's chances to do maximum damage with a hand-held weapon",'spell-sword','bless',12,'astral'),
@@ -51,12 +50,10 @@ function projectile(world,id,target,rank){
   world.projectiles.push({kind:id,vfx:spell.vfx,element:spell.element,targetId:target.id,x:p.x,y:p.y-12,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,speed,ttl:4,damage:spellValues(id,rank).damage,radius:spellValues(id,rank).radius||0,homing:true,hits:new Set(),pierce:1});
 }
 function segmentDistance(x,y,f){const dx=f.x2-f.x1,dy=f.y2-f.y1,t=Math.max(0,Math.min(1,((x-f.x1)*dx+(y-f.y1)*dy)/(dx*dx+dy*dy||1)));return Math.hypot(x-(f.x1+dx*t),y-(f.y1+dy*t));}
-export function blocksMovement(world,x,y,radius=12){return !arenaWalkable(arenaFor(world),x,y,radius)||world.fields.some(f=>f.kind==='earthwall'&&f.ttl>0&&segmentDistance(x,y,f)<f.width/2+radius);}
-export const EARTH_WALL_MIN_DISTANCE=110;
+export function blocksMovement(world,x,y,radius=12){return !arenaWalkable(arenaFor(world),x,y,radius);}
 function wall(world,kind,target,rank){const p=world.player,dx=target.x-p.x,dy=target.y-p.y,angle=Math.hypot(dx,dy)>.001?Math.atan2(dy,dx):Math.atan2(p.dy??1,p.dx??0),a=angle+Math.PI/2,values=spellValues(kind,rank),length=values.length,half=length/2;
   let x=target.x,y=target.y;
-  if(kind==='earthwall'){const distance=Math.max(EARTH_WALL_MIN_DISTANCE,Math.min(300,Math.hypot(dx,dy)));x=p.x+Math.cos(angle)*distance;y=p.y+Math.sin(angle)*distance;world.fields=world.fields.filter(f=>f.kind!=='earthwall');}
-  world.fields.push({kind,vfx:SPELLS[kind].vfx,x,y,x1:x-Math.cos(a)*half,y1:y-Math.sin(a)*half,x2:x+Math.cos(a)*half,y2:y+Math.sin(a)*half,width:kind==='earthwall'?26:38,r:half,ttl:values.duration,damage:values.damage||0,element:kind==='earthwall'?'earth':'fire',tick:0});
+  world.fields.push({kind,vfx:SPELLS[kind].vfx,x,y,x1:x-Math.cos(a)*half,y1:y-Math.sin(a)*half,x2:x+Math.cos(a)*half,y2:y+Math.sin(a)*half,width:38,r:half,ttl:values.duration,damage:values.damage||0,element:'fire',tick:0});
 }
 function addAlly(world,type,x,y,rank){const values=spellValues('summon',rank),hp=values.allyHp;world.allies.push({id:world.nextId++,type,...safeArenaPoint(world,{x,y},13),hp,maxHp:hp,radius:13,speed:115,damage:values.allyDamage,ttl:values.duration,attackCooldown:0,dx:0,dy:1,moving:false});effect(world,'ghost',x,y);}
 export function castOriginal(world,id,rank=1){
@@ -69,7 +66,7 @@ export function castOriginal(world,id,rank=1){
     for(const e of targets){effect(world,id==='lightning'?'lightning':'chain',p.x,p.y-15,{x2:e.x,y2:e.y-15,ttl:.35,maxTtl:.35});world.hurt(e,values.damage,'air');}
   }else if(id==='poison'||id==='frost'){
     if(!target)return false;world.fields.push({kind:id,vfx:spell.vfx,x:target.x,y:target.y,r:values.radius,ttl:values.duration,tick:0,damage:values.damage,element:'water',rank});
-  }else if(id==='firewall'||id==='earthwall'){if(!target)return false;wall(world,id,target,rank);}
+  }else if(id==='firewall'){if(!target)return false;wall(world,id,target,rank);}
   else if(id.startsWith('protect'))s[id]={ttl:values.duration,reduction:values.reduction,durationScale:Math.max(.2,.65-rank*.04)};
   else if(id==='stonecurse'){if(!target)return false;statuses(target).stonecurse={ttl:statusDuration(target,'earth',values.duration)};effect(world,'curse',target.x,target.y);}
   else if(id==='bless')s.bless={ttl:values.duration,maxRollChance:values.maxRollChance};
@@ -102,7 +99,7 @@ export function stepOriginal(world,dt){
     if(key==='poison'&&e.hp>0){const alive=Math.min(dt,status.ttl);status.tick=(status.tick||0)+alive;while(status.tick>=.4){status.tick-=.4;world.hurt(e,status.dps*.4,'water');}}
     status.ttl-=dt;if(status.ttl<=0)delete e.statuses[key];
   }
-  for(const f of world.fields){f.ttl-=dt;if(f.ttl<=0)continue;if(f.kind==='earthwall')continue;
+  for(const f of world.fields){f.ttl-=dt;if(f.ttl<=0)continue;
     f.tick-=dt;while(f.tick<=0){f.tick+=.4;for(const e of world.enemies){if(e.hp<=0)continue;const inside=f.kind==='firewall'?segmentDistance(e.x,e.y,f)<f.width/2+e.radius:distance(f,e)<f.r+e.radius;if(!inside)continue;world.hurt(e,f.damage,f.element);
       if(f.kind==='poison')statuses(e).poison={ttl:statusDuration(e,'water',3),dps:3+f.rank*2,tick:0};
     }}

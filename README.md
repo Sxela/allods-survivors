@@ -4,11 +4,11 @@ A standalone autocast survival game with original Allods artwork, spells, equipm
 
 **Unofficial fan project.** Allods 2 / Rage of Mages II: Necromancer was developed by [Nival Interactive](https://www.gog.com/en/game/rage_of_mages_ii_necromancer). All rights to the original game and its artwork, characters, interface, audio, fonts and other assets belong to their original creators and respective rights holders. No ownership of those assets is claimed. This project is not affiliated with or endorsed by Nival Interactive or the original game's publishers.
 
-The forest menu backdrop, gold panel frame and burgundy button are generated artwork. Menu text, class selection, stats and cooldowns remain live UI; character dolls, equipment and spell icons use original Allods assets. Base outfits are presentation only and grant no equipment or stats. In-game paperdolls, backpack rows, item cells, minimap and spell slots retain their original Allods image backdrops; vital and stat text uses plain backgrounds for readability.
+The forest menu backdrop, gold panel frame and burgundy button are generated artwork. Menu text, class selection, stats and cooldowns remain live UI; character dolls, equipment and spell icons use original Allods assets. Base outfits are presentation only and grant no equipment or stats. Inventory and HUD paperdolls share the same composition: cloaks and wings behind the character, and boots beneath robe hems. In-game paperdolls, backpack rows, item cells, minimap and spell slots retain their original Allods image backdrops; vital and stat text uses plain backgrounds for readability.
 
 Portrait screens and windows at most 900 CSS pixels wide automatically use a mobile layout that fills the screen. Full-screen touch steering is the default: hold on the battlefield to move in that direction, drag to steer, and release to stop. An optional translucent thumb joystick can be enabled in settings; it stays above the spell row, has a small dead zone, and resets when inventory, pause, or level-up opens. The mobile HUD keeps eight spell slots, backpack, pause and a left-hand settings gear; desktop controls return on wider landscape screens. Phone notch and home-indicator safe areas are respected. The gear button on the left opens controls and camera settings: choose thumb joystick or full-screen hold-and-drag steering, and set world zoom from 100% to 200%. Buttons and menus keep their size. Preferences are saved separately from progress and survive death or a new session.
 
-The campaign uses native map regions from the [Allods2.eu map pack](https://allods2.eu/files/maps_all.zip): 202 suitable map files currently contribute bounded regions of at most 48 x 40 tiles. Choose a seeded 12-region journey or all 202 regions. Original terrain, heights, sparse trees/buildings and supported creature families are retained. Fight a guardian, enter its portal within 30 active seconds, then spend earned gold at camp. Spells use cooldowns only; mana, mana regeneration, mana affixes and mana-efficiency rewards are removed, including from older saves. **Continue saved run** restores the current region, build and pending rewards. See [the mechanics profile](docs/survivors-mechanics.md) for the map selection rules, formulas and tests.
+The campaign uses native map regions from the [Allods2.eu map pack](https://allods2.eu/files/maps_all.zip): 202 suitable map files currently contribute bounded regions of at most 48 x 40 tiles. Choose a seeded 12-region journey or all 202 regions. Original terrain, heights, sparse trees/buildings and supported creature families are retained. Fight a guardian, enter its portal within 30 active seconds, then spend earned gold at camp. The spell pool contains 23 retained native spell identities; Wall of Earth is removed from spell choices, casting and item bonuses, including older saves. Spells use cooldowns only; mana, mana regeneration, mana affixes and mana-efficiency rewards are removed, including from older saves. **Continue saved run** restores the current region, build and pending rewards. See [the mechanics profile](docs/survivors-mechanics.md) for the map selection rules, formulas and tests.
 
 Allods 2 reference used for this project: [Allods2.eu: About](https://www.allods2.eu/en/about/).
 
@@ -116,3 +116,20 @@ Upgrade and camp cards show their rolled HP, speed, spell rank and potency chang
 Waves begin with 25-40 enemies on Normal, grow by five every two waves within an area (up to +25), and gain up to 20 more across route progress. Reinforcements use the current camera perimeter and retain queued spawns; extraction increases their frequency. Difficulty scales density and timing.
 
 Fresh Mage campaigns start with Fire Arrow and Fireball, giving focused and area attacks immediately. Existing saved loadouts are restored as saved.
+
+## Technical validation and asset loading
+
+Required artwork reports download/decode progress and offers Retry on failure. Region actors and scenery load before play advances; old scene resources are released, and floor-item thumbnails use a bounded on-demand cache. Original lossless atlas pixels, combat rules and equipment automation are preserved.
+
+Install browser test prerequisites separately from building the desktop app:
+
+```sh
+npm ci
+npx playwright install --with-deps chromium webkit
+npm test
+npm run audit:assets
+```
+
+`npm test` runs unit rules and portable browser checks, including desktop/touch loading recovery, save/continue, menu fit and actual sprite grounding. `npm run test:unit` runs the unit suite alone. CI installs its browser binaries explicitly. For an installed-Chrome-only local run, set `ALLODS_BROWSER_CHANNEL=chrome` and `ALLODS_BROWSERS=chromium`; that narrower run does not validate WebKit or real phones.
+
+See [asset parity](docs/asset-parity.md) for the role audit and light/dark previews (`npm run audit:assets:preview`), and [performance playtesting](docs/performance-playtest.md) for throttled cold/warm measurements (`npm run test:performance`). Reports stay in `.build/`. Production-style local serving uses `node survivors/launcher.cjs --production --no-open` with gzip and conditional caching; deployed hosting still needs its own validation.

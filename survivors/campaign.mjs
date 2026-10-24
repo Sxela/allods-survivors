@@ -34,8 +34,6 @@ export function exitPosition(world,enemy){
 }
 export function openExit(world,enemy){
   const a=world.campaign;if(!a||a.phase!=='combat'||!enemy.areaBoss)return;
-  // The arena floor is connected; remove temporary walls so the reward and exit remain reachable.
-  world.fields=world.fields.filter(f=>f.kind!=='earthwall');
   a.phase='extract';a.remaining=CAMPAIGN_RULES.evacuation;
   a.exit={...exitPosition(world,enemy),armed:false,hold:0};world.emit('exitOpened',{seconds:a.remaining});
 }

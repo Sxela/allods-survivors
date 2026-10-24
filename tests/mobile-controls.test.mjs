@@ -25,10 +25,6 @@ test('joystick movement has the same speed on cardinal and diagonal directions',
  assert.ok(Math.abs(Math.hypot(diagonal.player.x,diagonal.player.y)-straight.player.x)<.0001);
  const stopped={x:straight.player.x,y:straight.player.y};for(let i=0;i<20;i++)straight.step(.016,joystickVector(0,0,50));assert.equal(straight.player.x,stopped.x);assert.equal(straight.player.y,stopped.y);
 });
-test('thumb movement respects existing Wall of Earth collision',()=>{
- const w=scene();w.fields=[{kind:'earthwall',x1:70,y1:-60,x2:70,y2:60,width:18,ttl:100}];for(let i=0;i<100;i++)w.step(.016,joystickVector(100,0,50));assert.ok(w.player.x>30&&w.player.x<50);
-});
-
 test('control preferences reject malformed values and clamp camera zoom',()=>{
  assert.deepEqual(normalizeControls({mode:'joystick'}),{mode:'joystick',zoom:1});assert.deepEqual(normalizeControls(null),{mode:'touch',zoom:1});assert.deepEqual(normalizeControls({mode:'touch',zoom:1.5}),{mode:'touch',zoom:1.5});
  assert.deepEqual(normalizeControls({mode:'bogus',zoom:Infinity}),{mode:'touch',zoom:1});assert.equal(normalizeControls({zoom:20}).zoom,2);assert.equal(normalizeControls({zoom:-2}).zoom,1);assert.equal(normalizeControls({zoom:1.3}).zoom,1.25);

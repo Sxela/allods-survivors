@@ -1,8 +1,7 @@
 import {nativeTileAt} from './map-arenas.mjs';
-import {presentationClothing} from './wardrobe.mjs';
+import {paperdollLayers} from './wardrobe.mjs';
 import {SPELL_CAPS} from './spell-loadout.mjs';
 import {SPELLS} from './original-spells.mjs';
-import {canEquip} from './loot.mjs';
 import {BIOMES,biomeStage} from './biomes.mjs';
 import {landscapeFeatures,decorations,terrainElevation} from './landscape.mjs';
 export const HUD_WIDTH=160,HUD_BOTTOM=64,MOBILE_HUD_BOTTOM=80;
@@ -41,10 +40,13 @@ export function renderSpellRow(root,world,icon){
 export function updateVanillaHud(state,world,manifest){
   const p=world.player,signature=world.hero+JSON.stringify(Object.values(world.inventory.equipment).map(item=>item&&[item.id,item.icon]));
   if(signature!==state.dollSignature){
-    state.dollSignature=signature;const doll=manifest.paperdolls[world.hero],root=state.side.querySelector('#hud-character');root.replaceChildren();
-    const add=src=>{const img=document.createElement('img');img.src=src;img.alt='';img.draggable=false;root.append(img);return img;};add(doll.src);
-    const clothing=presentationClothing(manifest,world.hero);if((!world.inventory.equipment.armor||!canEquip(world.inventory.equipment.armor,world.hero))&&clothing)add(clothing).className='base-clothing';
-    for(const slot of ['boots','armor','bracers','gloves','helm','weapon','shield','ring','amulet']){const item=world.inventory.equipment[slot];if(!item||!canEquip(item,world.hero))continue;const src=manifest.items[item.icon]?.overlays?.[world.hero]?.src||(item.icon===slot?doll.overlays[slot]?.src:null);if(src)add(src);}
+    state.dollSignature=signature;const root=state.side.querySelector('#hud-character');root.replaceChildren();
+    for(const layer of paperdollLayers(manifest,world.hero,world.inventory.equipment)){
+      const img=document.createElement('img');img.src=layer.src;img.alt='';img.draggable=false;
+      img.className=layer.kind==='body'?'doll-body':layer.kind==='clothing'?'base-clothing':'doll-equipment';
+      if(layer.slot){img.dataset.dollLayer=layer.slot;img.dataset.dollDepth=layer.back?'back':'front';}
+      root.append(img);
+    }
   }
   if(world.time-state.lastMap<.1&&world.time>=state.lastMap)return;state.lastMap=world.time;
   const canvas=state.side.querySelector('#minimap'),g=canvas.getContext('2d'),span=1400,scale=128/span,x0=p.x-span/2,y0=p.y-span/2;

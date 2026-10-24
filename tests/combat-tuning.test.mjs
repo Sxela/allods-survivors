@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {World,EQUIPMENT_DROP_CHANCE} from '../survivors/core.mjs';
-import {blocksMovement,EARTH_WALL_MIN_DISTANCE} from '../survivors/original-spells.mjs';
 import {ENEMY_SPELLBOOKS,enemyDamage} from '../survivors/enemy-spells.mjs';
 import {VfxRenderer,lightningPath} from '../survivors/vfx.mjs';
 const arena=()=>{const w=new World({seed:733});w.skills={};w.spawnTimer=Infinity;return w;};
@@ -21,14 +20,7 @@ test('Magic Find changes quality without changing the equipment-drop gate',()=>{
   assert.equal(count(0),count(10));
 });
 
-test('Earth Wall always leaves a clear radius around the caster, even with overlapping targets and high gear ranks',()=>{
-  for(const distance of [0,1,10,50,500])for(const rank of [1,8,30]){
-    const w=arena(),e=add(w,'wolf',distance);assert.equal(w.cast('earthwall',rank),true);const wall=w.fields[0];
-    assert.ok(Math.hypot(wall.x,w.player.y-wall.y)>=EARTH_WALL_MIN_DISTANCE-1e-6);
-    for(let i=0;i<16;i++){const a=i*Math.PI/8;assert.equal(blocksMovement(w,Math.cos(a)*80,Math.sin(a)*80),false);}
-    e.x=-10;w.cast('earthwall',rank);assert.equal(w.fields.filter(f=>f.kind==='earthwall').length,1);assert.equal(blocksMovement(w,w.player.x,w.player.y),false);
-  }
-});
+test('Wall of Earth is retired and cannot be cast',()=>{const w=arena();assert.equal(w.cast('earthwall',8),false);assert.equal(w.fields.length,0);});
 
 test('the curved beams use 50% larger cores spaced about half a sprite apart',()=>{
   const calls=[],renderer=new VfxRenderer({}, {}, {});renderer.draw=(id,x,y,options)=>calls.push({id,x,y,...options});renderer.chain(0,0,300,0,1,.2,'chain');

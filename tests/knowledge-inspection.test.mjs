@@ -86,7 +86,7 @@ test('shared damage and haste previews include item-granted DPS without mutating
 });
 test('DPS remains unchanged at the cooldown floor and utility spells do not invent damage',()=>{
  const w=scene();w.player.haste=100;w.skills={lightning:8};const row=offerPreview(w,{id:'lightning',type:'skill',skillStat:'tempo',amount:.1}).lines.find(r=>r.unit==='DPS');assert.equal(row,undefined,'No duplicate unchanged DPS row at the cast floor');
- for(const id of ['shield','heal','earthwall','invisibility','summon']){w.skills={[id]:1};assert.equal(inspectSpell(w,id).dps,null);assert.ok(!offerPreview(w,{id,type:'skill',rank:2}).lines.some(r=>r.unit==='DPS'));}
+ for(const id of ['shield','heal','invisibility','summon']){w.skills={[id]:1};assert.equal(inspectSpell(w,id).dps,null);assert.ok(!offerPreview(w,{id,type:'skill',rank:2}).lines.some(r=>r.unit==='DPS'));}
 });
 test('DPS is per target, appears on learn/remove previews and renders assumptions with one decimal',()=>{
  const w=scene();w.skills={prismatic:1};const info=inspectSpell(w,'prismatic');assert.equal(info.dps.value,info.values.damage/info.interval);

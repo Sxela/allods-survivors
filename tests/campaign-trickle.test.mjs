@@ -21,7 +21,7 @@ test('saving mid-interval preserves the remaining delay and old saves initialize
  const legacy=snapshotRun(w);delete legacy.state.campaign.trickleTimer;const migrated=restoreRun(legacy);ticks(migrated,49);assert.equal(migrated.metrics.spawned,0);ticks(migrated,1);assert.equal(migrated.metrics.spawned,1);
 });
 test('blocked background arrivals stay queued without accumulating a spawn backlog',()=>{
- const w=scene();w.spawnPosition=()=>({x:0,y:0});w.fields=[{kind:'earthwall',x1:-30,y1:0,x2:30,y2:0,width:26,ttl:10}];ticks(w,250);assert.equal(w.metrics.spawned,0);assert.equal(w.campaign.queue.length,1);w.fields=[];ticks(w,1);assert.equal(w.metrics.spawned,1);assert.equal(w.campaign.queue.length,0);
+ const w=scene();w.spawnPosition=()=>({x:1e6,y:1e6});ticks(w,250);assert.equal(w.metrics.spawned,0);assert.equal(w.campaign.queue.length,1);w.spawnPosition=()=>({x:w.player.x,y:w.player.y});ticks(w,1);assert.equal(w.metrics.spawned,1);assert.equal(w.campaign.queue.length,0);
 });
 test('the extraction fight keeps background pressure, while the next area resets its clock',()=>{
  const w=scene();w.campaign.phase='extract';w.campaign.remaining=20;w.campaign.exit={x:1000,y:1000,armed:true};ticks(w,50);assert.equal(w.metrics.spawned,1);w.status='camp';w.campaign.phase='camp';assert.ok(w.nextArea());assert.equal(w.campaign.trickleTimer,null);assert.equal(w.enemies.length,0);

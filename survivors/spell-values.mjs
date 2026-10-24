@@ -4,7 +4,6 @@ export function spellValues(id,rank){
   if(['lightning','prismatic'].includes(id))return {damage:22+rank*12,targets:id==='lightning'?1:3+Math.floor(rank/2)};
   if(['poison','frost'].includes(id))return {damage:5+rank*4,radius:65+rank*9,duration:3+rank*.35,tick:.4};
   if(id==='firewall')return {damage:8+rank*6,duration:4+rank*.3,length:100+rank*15,tick:.4};
-  if(id==='earthwall')return {duration:5+rank*.4,length:100+rank*15};
   if(id==='heal')return {healing:12+rank*6};
   if(id==='drain')return {damage:20+rank*10,leech:true};
   if(id==='shield')return {absorption:30+rank*12,fraction:.55,duration:8+rank*.5};

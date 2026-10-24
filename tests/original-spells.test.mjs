@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {SPELLS,castOriginal,stepOriginal,absorbIncoming,statusDuration,physicalRoll,movementMultiplier,blocksMovement} from '../survivors/original-spells.mjs';
+import {SPELLS,castOriginal,stepOriginal,absorbIncoming,statusDuration,physicalRoll,movementMultiplier} from '../survivors/original-spells.mjs';
 
 function fixture(){
   const world={player:{x:0,y:0,hp:40,maxHp:100,damage:1,dx:1,dy:0,moving:true},enemies:[],projectiles:[],fields:[],effects:[],allies:[],corpses:[],events:[],nextId:100,rng:()=>.1,
@@ -9,10 +9,10 @@ function fixture(){
     hurt(e,amount,element){e.hp-=amount;this.hits.push({id:e.id,amount,element});},hits:[]};
   world.enemies=[{id:1,x:100,y:0,hp:1000,maxHp:1000,radius:14},{id:2,x:120,y:20,hp:1000,maxHp:1000,radius:14}];return world;
 }
-test('only the 24 source-described spells are offered, with original identities',()=>{
-  assert.equal(Object.keys(SPELLS).length,24);
+test('the 23 retained source-described spells are offered, with original identities',()=>{
+  assert.equal(Object.keys(SPELLS).length,23);
   assert.equal(SPELLS.bolt.name,'Fire Arrow');assert.equal(SPELLS.lightning.name,'Lightning');assert.equal(SPELLS.frost.name,'Blizzard');
-  for(const id of ['orbit','meteor','acid','darkness','light','curse','slow'])assert.equal(SPELLS[id],undefined);
+  for(const id of ['earthwall','orbit','meteor','acid','darkness','light','curse','slow'])assert.equal(SPELLS[id],undefined);
 });
 test('Fire Arrow, Ice Missile and Stone Missile are homing single-target projectiles; Fireball alone splashes',()=>{
   const w=fixture();for(const id of ['bolt','ice','stone','fireball'])assert.equal(castOriginal(w,id,1),true);
@@ -47,10 +47,9 @@ test('Haste increases movement; Bless biases physical weapon rolls only',()=>{
   const w=fixture();castOriginal(w,'hasteSpell',1);assert.ok(movementMultiplier(w.player)>1);
   assert.equal(physicalRoll(w,10,20),11);castOriginal(w,'bless',1);assert.equal(physicalRoll(w,10,20),20);assert.equal(w.player.damage,1);
 });
-test('Stone Curse petrifies one victim and Wall of Earth blocks movement',()=>{
+test('Stone Curse petrifies one victim temporarily',()=>{
   const w=fixture();castOriginal(w,'stonecurse',1);assert.ok(w.enemies[0].statuses.stonecurse.ttl>0);assert.equal(w.enemies[1].statuses,undefined);
-  castOriginal(w,'earthwall',1);assert.equal(blocksMovement(w,100,0),true);assert.equal(blocksMovement(w,0,0),false);
-  stepOriginal(w,20);assert.equal(blocksMovement(w,100,0),false);assert.equal(w.enemies[0].statuses.stonecurse,undefined);
+  stepOriginal(w,20);assert.equal(w.enemies[0].statuses.stonecurse,undefined);
 });
 test('Wall of Fire damages along its segment rather than its entire bounding circle',()=>{
   const w=fixture();castOriginal(w,'firewall',1);w.enemies[1].x=150;w.enemies[1].y=0;stepOriginal(w,.05);

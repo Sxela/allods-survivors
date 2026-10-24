@@ -8,13 +8,13 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 556,
-      "sha256": "fb656d5c4dbb02bbd6e4eb9f36781324f2228e8307f371f39f1d1a8c091efd8f"
+      "bytes": 656,
+      "sha256": "05b1999b7efd338c5abed6f7737967ffb1e41f291ea0be4ffdf56b94af76b094"
     },
     {
       "path": ".github/workflows/release.yml",
-      "bytes": 4191,
-      "sha256": "303661c1a23c88136bace15dcbb90a1f5b0e799627ad842ef43b28d5842bb1db"
+      "bytes": 4321,
+      "sha256": "896dbb19718ac991fdf5032c1fc26c0b7ee43ef9649a5f407d37698cc919ba3c"
     },
     {
       "path": ".gitignore",
@@ -32,9 +32,19 @@
       "sha256": "20c99dcf346ee9b73d6ca142295f112c8c2a382ef5b52e76baa4fff38c9c5834"
     },
     {
+      "path": "docs/asset-parity.md",
+      "bytes": 6336,
+      "sha256": "2de482de17e22b41109895959f5196331c495407ae6c302bcdf9ab0a608be5c6"
+    },
+    {
       "path": "docs/balance-testing.md",
       "bytes": 26446,
       "sha256": "846172a8da6c82741ae89d79b099d8d392091e32a80084e95024ffba406981d4"
+    },
+    {
+      "path": "docs/performance-playtest.md",
+      "bytes": 5938,
+      "sha256": "5a33c1c1eca7e6ebab847e992a3f518567b46b879baff3e4196880d837ae7049"
     },
     {
       "path": "docs/screenshots/bestiary.png",
@@ -108,18 +118,18 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 121957,
-      "sha256": "129fd1e8aa08769172f259fab734d27305227fe9ce0d244b967ec1f6c4be396e"
+      "bytes": 122924,
+      "sha256": "d31475616c46ea298784f3f2b52a09b1ef4173a51b56817bb0e8c1477e5fcdc0"
     },
     {
       "path": "package.json",
-      "bytes": 595,
-      "sha256": "a266d5921ec913e5535b09021384d1f2cf3dce94068595f56854a0c89a1851b4"
+      "bytes": 1002,
+      "sha256": "ff8a2265249f23dd7f0041e1552c260aa889a527d78db7def3892c8a7d6b0188"
     },
     {
       "path": "README.md",
-      "bytes": 10973,
-      "sha256": "209f97dc12eb048397fae4f15bd0ed4dddcc17ac4e1b5e0a644fa6594acd6e63"
+      "bytes": 12656,
+      "sha256": "ec4f90fd59aab127c4fc9886cf19d260f7f5c84122fff79e219637e4c901ca77"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -135,6 +145,11 @@
       "path": "survivors/allods-ui.css",
       "bytes": 4757,
       "sha256": "902115daf54476128222a554c283fa74bf4c7192ec48f62435bf3e6b0eb5aafb"
+    },
+    {
+      "path": "survivors/asset-loader.mjs",
+      "bytes": 4744,
+      "sha256": "d00873f92dc6a78c73085c02da4c73470a6d04c3c5b82ffc8b170601b74a3dcf"
     },
     {
       "path": "survivors/assets/allods-romul.ttf",
@@ -8323,8 +8338,8 @@
     },
     {
       "path": "survivors/assets/manifest.json",
-      "bytes": 1757154,
-      "sha256": "415c8f2782043af0e549f794b93a81ac067a546259cc30e89bbecff35f6c92ef"
+      "bytes": 1756424,
+      "sha256": "b349aa1504f344e5fe8e5132607a8a73116a0d2555d47eb59f1de8797fe59e04"
     },
     {
       "path": "survivors/assets/meteor.wav",
@@ -10247,11 +10262,6 @@
       "sha256": "e41e12a374e8443ea04259747b294934a43306f33a6e1c9c68214dd030dd84fe"
     },
     {
-      "path": "survivors/assets/ui-spell-dust.png",
-      "bytes": 2729,
-      "sha256": "f4b91cf6856afb7d693fa2a3f0014c008e106bcdca444e439edf740fd35b0a70"
-    },
-    {
       "path": "survivors/assets/ui-spell-fire-shield.png",
       "bytes": 3169,
       "sha256": "73e64cfcdcd4c3d8b99e8412eaf67b79ac5539f5543d921e376cf79f1ba65e04"
@@ -10395,11 +10405,6 @@
       "path": "survivors/assets/vfx-drain.png",
       "bytes": 1893,
       "sha256": "d75b492656f87883f2ba446955859c3ba282da5255e8a264e83579468a3abfce"
-    },
-    {
-      "path": "survivors/assets/vfx-earthwall.png",
-      "bytes": 3499,
-      "sha256": "12ae81fd38ed49fd4ea38f2c0907f4fd6d7f8284581323a352608ffb88a7bac7"
     },
     {
       "path": "survivors/assets/vfx-explosion.png",
@@ -10583,8 +10588,8 @@
     },
     {
       "path": "survivors/campaign.mjs",
-      "bytes": 6996,
-      "sha256": "a43487090c3da90ee0e38abf40c398afeb2d3ee7eeaadf04f183b2c6a19d1a5e"
+      "bytes": 6834,
+      "sha256": "822b93f0b8c2431369cb2553d4318d1282bf81b4b977d6621f0c34dd7bd0861b"
     },
     {
       "path": "survivors/core.mjs",
@@ -10613,18 +10618,23 @@
     },
     {
       "path": "survivors/forest-ui.css",
-      "bytes": 19505,
-      "sha256": "66bb2251392aa46f0504c35d32377e34cef9e01be215db6c297133ea96e7afa7"
+      "bytes": 20083,
+      "sha256": "5af262987e6fd253f3ec3feecee467170a9ddf52be39ed7339b6959da2377ccc"
     },
     {
       "path": "survivors/game.mjs",
-      "bytes": 59821,
-      "sha256": "16889896644f1dc9b53e438b7d4cdcd20fe502a3051dc2b5379f4593553d90de"
+      "bytes": 63555,
+      "sha256": "2974c724b1339e9db07e6e8851050f8ec2b1023b172bb962ae968ba09d982bcc"
+    },
+    {
+      "path": "survivors/http-server.cjs",
+      "bytes": 3264,
+      "sha256": "01ff3e785893ec8a3c1eb6c4036d01ee89c11be4f2f77b7e1c699369a8867c75"
     },
     {
       "path": "survivors/index.html",
-      "bytes": 2971,
-      "sha256": "eff1b5ee7565ef94b8636207f26bbcdccb34e7500670457f89970ef65aba9a03"
+      "bytes": 3274,
+      "sha256": "05d75b861a9a23748e20adac93395a106930dd49235046b70247b8f5fd9dacbb"
     },
     {
       "path": "survivors/inspection-view.mjs",
@@ -10653,8 +10663,8 @@
     },
     {
       "path": "survivors/inventory-view.mjs",
-      "bytes": 7387,
-      "sha256": "a874ab5f31a94c6e5a21d36b56ac71c8e2e92cb949a0eec5e7080fdc6e237154"
+      "bytes": 6982,
+      "sha256": "a852824642868c7424187fb5c3e4c910cf2b30ac56cd698e1738e0bdd371878e"
     },
     {
       "path": "survivors/inventory.css",
@@ -10663,8 +10673,8 @@
     },
     {
       "path": "survivors/item-affixes.mjs",
-      "bytes": 8888,
-      "sha256": "e16f576a9a6cf8dd3617cfa22c2062dc1dd858a8064c7fd610cd387dba019751"
+      "bytes": 8868,
+      "sha256": "81f81c39a5cf8747296e76f6b3b16c618aedacf5c5a34db73bc44e385edae988"
     },
     {
       "path": "survivors/item-catalog.mjs",
@@ -10683,8 +10693,8 @@
     },
     {
       "path": "survivors/launcher.cjs",
-      "bytes": 2384,
-      "sha256": "59353980d4bce5acb67c8c7efce7d69740600c2422bb0f25456ea347cc7fc3dd"
+      "bytes": 1367,
+      "sha256": "12779a783a79bb55858dc05064e166053f2b5c08448393bc1f3fc28fa5882ad2"
     },
     {
       "path": "survivors/loot.mjs",
@@ -10718,8 +10728,8 @@
     },
     {
       "path": "survivors/monster-data.mjs",
-      "bytes": 37159,
-      "sha256": "5ccc0a10e27387c8d4ff17989aef1b91a1bd6972f6651b0e1a8c65391c4cfa6c"
+      "bytes": 37180,
+      "sha256": "daefc9789634dd7a5bab36822b9960461833bb1c6c5acbdd532c34c44ff7c0da"
     },
     {
       "path": "survivors/monsters.mjs",
@@ -10733,13 +10743,13 @@
     },
     {
       "path": "survivors/original-renderer.mjs",
-      "bytes": 6227,
-      "sha256": "c3a4651b18e71e4c86c41716b1f9a118aaf4ee3d2cfdc4e6fc8882a06ce1e193"
+      "bytes": 6182,
+      "sha256": "fc8042f7158723eb24ebbd562e31d02b3b713867bd938beb75bd2ee79362848f"
     },
     {
       "path": "survivors/original-spells.mjs",
-      "bytes": 13527,
-      "sha256": "6801a2fc25a3727d3d200ba01a6af30edc4e6e6826e02982f31478e00e960c80"
+      "bytes": 12948,
+      "sha256": "9e4830876a13a5e6975ef0f23a2e981401f5ec8d32eba3b77815fed2ba09cb40"
     },
     {
       "path": "survivors/pickup-guides.mjs",
@@ -10763,8 +10773,8 @@
     },
     {
       "path": "survivors/run-state.mjs",
-      "bytes": 7361,
-      "sha256": "cf289d9e65d0d237d50aa2323ab9a6f0794371445cecfc1e789c35cad9351ee0"
+      "bytes": 8078,
+      "sha256": "df5f9038fc14cd95f766a69e9b92dc28b84465877fb73bd1b5643355e02888eb"
     },
     {
       "path": "survivors/shop-view.mjs",
@@ -10783,13 +10793,13 @@
     },
     {
       "path": "survivors/spell-loadout.mjs",
-      "bytes": 1214,
-      "sha256": "cd5de95d5cd8b1bbe0b8d18406e755691cf39f5cf50b5aae5ebe7e8fd7b1da84"
+      "bytes": 1215,
+      "sha256": "57e91dca971c27642fa91e27e9365f271cee35a81fe79d3d73dcb6cfefce9a7b"
     },
     {
       "path": "survivors/spell-values.mjs",
-      "bytes": 1385,
-      "sha256": "acfdf4550dd73039c8e961e4ab1afcfa7e9de72e69292a5628d338148793ab6d"
+      "bytes": 1314,
+      "sha256": "6eb8df2f9693b9b285d7727f2ee682e09ef5ad5277828e6042d262e00db50347"
     },
     {
       "path": "survivors/style.css",
@@ -10808,8 +10818,8 @@
     },
     {
       "path": "survivors/vanilla-hud.mjs",
-      "bytes": 7275,
-      "sha256": "0a51e11818cdb707bee20a8edbc4b5d0b72702952a6dc24efd3e4474b1a87ed6"
+      "bytes": 6950,
+      "sha256": "0018826e4de425056bdafb8e8fa18d91897d902aabdc61f3180e2cd7cc1e2c0c"
     },
     {
       "path": "survivors/vfx.mjs",
@@ -10818,8 +10828,13 @@
     },
     {
       "path": "survivors/wardrobe.mjs",
-      "bytes": 716,
-      "sha256": "da757787fefd85026a8561efcffb7470d73a17f8e9a43df6a3c93a6051d15905"
+      "bytes": 2010,
+      "sha256": "307ff728ff359475456ba86e9f0bd7ed2fbd2ed09cf2d80f2db15dde497f69fb"
+    },
+    {
+      "path": "tests/asset-loader.test.mjs",
+      "bytes": 3435,
+      "sha256": "a57ea03b68fb3e401cadbc1682ebbf5cca48e80cecd07283a2b0ed0d6ee19018"
     },
     {
       "path": "tests/auto-equip.test.mjs",
@@ -10837,9 +10852,19 @@
       "sha256": "3a6096acde299ac44d692e3ba59f14e5fd8de8b57a4f27c642c951ef469ef747"
     },
     {
+      "path": "tests/browser-menu-fit.cjs",
+      "bytes": 4916,
+      "sha256": "faa37d44222dc0d43417ef5ddfa4682b4c3087dfa7837990da4b6794de6ec2f2"
+    },
+    {
+      "path": "tests/browser-unit-grounding.cjs",
+      "bytes": 5237,
+      "sha256": "09c422cb182c72ecf09dc2ab8b67f0fea09e7b093ad59cf6ae29acafa9293169"
+    },
+    {
       "path": "tests/campaign-trickle.test.mjs",
-      "bytes": 3181,
-      "sha256": "a536b0a580a8590265ce81da7d7654c1c47589e5c5c4225eda8ce346f42fdc6f"
+      "bytes": 3154,
+      "sha256": "4720f982dab49026b6fd0062e204756295c6073f97ee531ed5f9bf8e8271c941"
     },
     {
       "path": "tests/campaign.test.mjs",
@@ -10858,8 +10883,8 @@
     },
     {
       "path": "tests/combat-tuning.test.mjs",
-      "bytes": 5233,
-      "sha256": "54f2b21c59a46a8309e1aa739d07e73b502386ee7afa700c2d200d4f87335639"
+      "bytes": 4679,
+      "sha256": "18333d67bbacd5e3417a7da9f16126d7fea16ad762bcf0cf91da77e7b818a6a8"
     },
     {
       "path": "tests/combat-visuals.test.mjs",
@@ -10912,14 +10937,19 @@
       "sha256": "319a2b8b69b65bb17599794ee866d922149ced5754807abb2e2b373b8b8ebf55"
     },
     {
+      "path": "tests/http-server.test.mjs",
+      "bytes": 2461,
+      "sha256": "cd98993395af08b01099dcc90169b17e0716a561e53e726facf4abc9880ce3d8"
+    },
+    {
       "path": "tests/inventory-drag.test.mjs",
       "bytes": 8396,
       "sha256": "15398d899d771aa66f519c30b8bc34fd21cfbb03d799f1f1b401fbe15e9de7c9"
     },
     {
       "path": "tests/knowledge-inspection.test.mjs",
-      "bytes": 14231,
-      "sha256": "9f7838658c8727bfaa66f50351ea4fd4d0578fb78c90b860d5a718e20d019be4"
+      "bytes": 14219,
+      "sha256": "700e9996872b69f9db6d8309fb6f90af4707cda38d95042b0566e3639703a9b4"
     },
     {
       "path": "tests/landscape-loadout.test.mjs",
@@ -10943,8 +10973,8 @@
     },
     {
       "path": "tests/mobile-controls.test.mjs",
-      "bytes": 4053,
-      "sha256": "1730547f38d3ba94553863dc02f7cde9d4a9eae77f6afffc274ae5db827d0f2e"
+      "bytes": 3784,
+      "sha256": "a2dff1d3e5daaf4433b68d2924b0a1d8cf1332f4bfc85773084b297a22ba5b9f"
     },
     {
       "path": "tests/monsters.test.mjs",
@@ -10968,8 +10998,8 @@
     },
     {
       "path": "tests/original-spells.test.mjs",
-      "bytes": 6478,
-      "sha256": "af9ff8a6da9e68249643edc189ef11f60884624af42801d9b5e9f773bfea706b"
+      "bytes": 6294,
+      "sha256": "fa5249380c4f4e4868d2710697f226bfec625ccd74bddc11fc86c4520ca2995a"
     },
     {
       "path": "tests/package-audit.test.mjs",
@@ -10987,6 +11017,21 @@
       "sha256": "c078ec7602a1d48a81bf5c0b9e820e9d639d357a21e4bf5443e563dc68d26692"
     },
     {
+      "path": "tests/retired-spells.test.mjs",
+      "bytes": 2787,
+      "sha256": "75db61d2605631d0133f748ccfed2ae68bec5e49be9af9f0aab5448d6be289b9"
+    },
+    {
+      "path": "tests/runtime-asset-parity.test.mjs",
+      "bytes": 882,
+      "sha256": "d3dcbdf0984847976671c8e88227040f47db963f06022f7612dd6c6250b15878"
+    },
+    {
+      "path": "tests/runtime-browser.cjs",
+      "bytes": 5924,
+      "sha256": "660ae799522feaa4059bf8b6dc36f4c695133790c6ea2a1734dfcc8c6062cefc"
+    },
+    {
       "path": "tests/spell-replacement.test.mjs",
       "bytes": 2900,
       "sha256": "a91ae14495f8fb9046d1bfbae6cd685989266198f58dcba3ef793ba25deb2bfa"
@@ -11000,6 +11045,11 @@
       "path": "tests/vfx.test.mjs",
       "bytes": 2688,
       "sha256": "2d4c83ce9fcdf7c293ae5d60362f4b021f6ec3430df75bccf06103869ee37509"
+    },
+    {
+      "path": "tools/audit-asset-parity.mjs",
+      "bytes": 3302,
+      "sha256": "d01e2cc3e722a830696035a1e47d444be523ae7a55920648555df38d20b9e4b4"
     },
     {
       "path": "tools/audit-electron.cjs",
@@ -11022,9 +11072,19 @@
       "sha256": "3cde4fff37a412ed5507af8206485cd4f4c104a5a5ee9e59c24826dc4cdb9be2"
     },
     {
+      "path": "tools/performance-playtest.cjs",
+      "bytes": 8005,
+      "sha256": "a615f39779091e09dcaecb52724d78a8c6b194859a1b12ba6b434db7eba3f4bd"
+    },
+    {
       "path": "tools/prepare-release.cjs",
       "bytes": 2005,
       "sha256": "69810e49857e67f1109332d4b1b83f525a1b5bc4ee45b78b8748693b16dce614"
+    },
+    {
+      "path": "tools/preview-asset-parity.cjs",
+      "bytes": 3674,
+      "sha256": "69ac46f629694f3c59fb0d9cc520749b580d920c2366188148eb89967fa148a1"
     },
     {
       "path": "tools/run-electron.cjs",
@@ -11033,8 +11093,8 @@
     },
     {
       "path": "tools/stage-electron.cjs",
-      "bytes": 7270,
-      "sha256": "a7e9c34e78979d41924b2548d68fffc4f7a98acd6eb36ddf25a97969a4107e52"
+      "bytes": 7320,
+      "sha256": "fdb51bf02761a6278eb616870a8f9dee11d775e4ee4d2f15628e392f757b9918"
     }
   ]
 }
