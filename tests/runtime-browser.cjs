@@ -24,6 +24,26 @@ async function run(){
    // Exercise pause, input release and a saved-run menu; use actual UI to continue.
    await page.locator('#pause-button').click();const paused=await page.evaluate(()=>survivors.world.time);await page.waitForTimeout(100);assert.equal(await page.evaluate(()=>survivors.world.time),paused);
    await page.reload();await page.waitForFunction(()=>survivors.ready,null,{timeout:60000});await page.waitForSelector('#continue-run',{state:'visible'});
+   // Transfer the actual exported file through the same picker used on phones.
+   const downloadReady=page.waitForEvent('download');await page.locator('#export-save-button').click();
+   const download=await downloadReady,exported=await fs.readFile(await download.path()),original=JSON.parse(exported.toString());
+   await page.evaluate(()=>{const save=JSON.parse(localStorage.getItem('allods-survivors-v1'));save.gold=777;localStorage.setItem('allods-survivors-v1',JSON.stringify(save));});
+   await page.reload();await page.waitForFunction(()=>survivors.ready,null,{timeout:60000});
+   const openImport=async buffer=>{const ready=page.waitForEvent('filechooser');await page.locator('#import-save-button').click();await (await ready).setFiles({name:'Allods-Survivors-save.json',mimeType:'application/json',buffer});};
+   await openImport(Buffer.from('{bad json'));await page.waitForSelector('#close-import-error');
+   assert.match(await page.locator('#modal').innerText(),/not valid save JSON/);await page.locator('#close-import-error').click();
+   assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('allods-survivors-v1')).gold),777);
+   await openImport(exported);await page.waitForSelector('#cancel-import-save');await page.keyboard.press('Escape');
+   assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('allods-survivors-v1')).gold),777);
+   await openImport(exported);await page.waitForSelector('#confirm-import-save');
+   // A blocked write must leave the original save and confirmation in place.
+   await page.evaluate(()=>{window.__storageWrite=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw Error('Quota exceeded');};});
+   await page.locator('#confirm-import-save').click();assert.match(await page.locator('#import-save-error').innerText(),/could not be imported/);
+   assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('allods-survivors-v1')).gold),777);
+   await page.evaluate(()=>{Storage.prototype.setItem=window.__storageWrite;delete window.__storageWrite;});
+   await Promise.all([page.waitForEvent('load'),page.locator('#confirm-import-save').click()]);await page.waitForFunction(()=>window.survivors?.ready&&JSON.parse(localStorage.getItem('allods-survivors-v1')).gold!==777,null,{timeout:60000});
+   const imported=await page.evaluate(()=>JSON.parse(localStorage.getItem('allods-survivors-v1')));
+   assert.equal(imported.gold,original.gold);assert.deepEqual(imported.run,original.run);
    const bounds=await page.evaluate(()=>{const game=document.querySelector('#game').getBoundingClientRect();return [...document.querySelectorAll('#menu h1,#menu button,#menu select,#menu .project-links a')].filter(e=>e.getClientRects().length).map(e=>{const r=e.getBoundingClientRect();return {id:e.id||e.textContent,left:r.left,top:r.top,right:r.right,bottom:r.bottom,game:{left:game.left,top:game.top,right:game.right,bottom:game.bottom}};});});
    for(const r of bounds){assert.ok(r.left>=r.game.left-1&&r.right<=r.game.right+1&&r.top>=r.game.top-1&&r.bottom<=r.game.bottom+1,`Saved-menu bounds: ${r.id}`);}
    await page.screenshot({path:path.join(OUT,`${engine}-${viewport.width}-saved.png`)});await page.locator('#continue-run').click();await page.waitForFunction(()=>survivors.world?.status==='playing');
@@ -33,7 +53,7 @@ async function run(){
    const transition=await page.evaluate(()=>{const w=survivors.world;const old=w.campaign.mapId,time=w.time;w.status='camp';w.campaign.phase='camp';if(!w.nextArea())throw Error('Fixture failed to enter next area');return {old,next:w.campaign.mapId,time};});
    await page.waitForFunction(oldTime=>!survivors.assets.loading&&survivors.world.time>oldTime&&document.querySelector('#game').dataset.nativeMap===survivors.world.campaign.mapId,transition.time,{timeout:60000});
    assert.notEqual(transition.next,transition.old);assert.equal(await page.evaluate(()=>survivors.assets.pending),0);
-   assert.deepEqual(errors,[]);results.push({engine,viewport,menu,transition,checks:['required-failure','retry','readiness','lazy-items','pause','save','menu-fit','continue','region-transition','summoned-alias-art']});await context.close();
+   assert.deepEqual(errors,[]);results.push({engine,viewport,menu,transition,checks:['required-failure','retry','readiness','lazy-items','pause','save','menu-fit','continue','region-transition','summoned-alias-art','save-import-export','save-import-cancel','save-import-invalid','save-import-storage-failure']});await context.close();
   }}finally{await browser.close();}
  }}finally{await new Promise(r=>server.close(r));}
  await fs.writeFile(path.join(OUT,'report.json'),JSON.stringify({scope:'Actual current resources; browser emulation, not physical devices',results},null,2));console.log(`Runtime browser checks passed: ${results.length} layouts.`);

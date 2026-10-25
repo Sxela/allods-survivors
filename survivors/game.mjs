@@ -4,6 +4,7 @@ import {offerHtml,spellHtml,buildHtml,bestiaryListHtml,drawBestiary,spellLiveTex
 import {bestiaryEntries} from './bestiary.mjs';
 import {MAP_ARENAS,NATIVE_SCENERY_IDS,setActiveArena,nativeTileAt,arenaFor,arenaBounds} from './map-arenas.mjs';
 import {snapshotRun,restoreRun} from './run-state.mjs';
+import {parseSaveImport,MAX_SAVE_BYTES} from './save-transfer.mjs';
 import {areaName,CAMPAIGN_RULES,ROUTE} from './campaign.mjs';
 import {mobileLayout,mountThumbstick,CONTROLS_KEY,normalizeControls,zoomViewport,screenSteering} from './mobile-controls.mjs';
 import {classPortraitLayers} from './wardrobe.mjs';
@@ -34,7 +35,7 @@ let controlsOpen=false;
 const keys=new Set(),particles=[],camera={x:0,y:0},pointer={active:false,x:0,y:0,id:null};
 const safeArea={top:0,right:0,bottom:0,left:0},safeProbe=document.createElement('div');
 safeProbe.setAttribute('aria-hidden','true');safeProbe.style.cssText='position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)';document.body.append(safeProbe);
-let confirmingSession=false,pendingReplacementIndex=null,choiceReadyAt=0,autoSaveAt=0;
+let pendingImport=null,confirmingSession=false,pendingReplacementIndex=null,choiceReadyAt=0,autoSaveAt=0;
 const heroMetrics={};
 function measureHeroes(){for(const [hero,c] of Object.entries(CLASSES)){const f=manifest.sprites[c.sprite].frames[0],sheet=images[c.sprite],sample=document.createElement('canvas');sample.width=f.w;sample.height=f.h;const g=sample.getContext('2d');g.drawImage(sheet,f.x,f.y,f.w,f.h,0,0,f.w,f.h);const bounds=opaqueBounds(g.getImageData(0,0,f.w,f.h).data,f.w,f.h);heroMetrics[hero]={height:bounds.height*1.15,width:bounds.width*1.15};}}
 const skillIcons={bolt:'firebolt',frost:'ice',lightning:'chain-lightning',orbit:'ghost',meteor:'fireball',poison:'poison',power:'sword',haste:'haste',vitality:'healing',speed:'haste',magnet:'magic',regen:'healing'};
@@ -322,7 +323,28 @@ $('#start').onclick=startRun;$('#pause-button').onclick=pause;$('#legacy-button'
 $('#inventory-button').onclick=openInventory;$('#inventory-menu-button').onclick=openInventory;
 const newSessionButton=document.createElement('button');newSessionButton.id='new-session-button';newSessionButton.className='text-button session-button';newSessionButton.textContent='New session';newSessionButton.onclick=confirmNewSession;sessionActions.append(newSessionButton);
 const exportSaveButton=document.createElement('button');exportSaveButton.id='export-save-button';exportSaveButton.className='text-button session-button';exportSaveButton.textContent='Export save';exportSaveButton.onclick=()=>{persist();const url=URL.createObjectURL(new Blob([JSON.stringify(save,null,2)],{type:'application/json'})),link=document.createElement('a');link.href=url;link.download='Allods-Survivors-save.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};sessionActions.append(exportSaveButton);
-addEventListener('keydown',e=>{const key=e.key.toLowerCase();if(key==='escape'&&!spellDetail.hidden){e.preventDefault();hideSpellDetail();return;}if(loading){if(!e.ctrlKey&&!e.metaKey&&key!=='tab'&&key!=='f5')e.preventDefault();return;}if(controlsOpen){if(key==='escape'){e.preventDefault();closeControls();}return;}if([' ','arrowup','arrowdown','arrowleft','arrowright'].includes(key))e.preventDefault();if(confirmingSession){if(key==='escape')cancelNewSession();if(key!=='tab'&&key!=='enter')e.preventDefault();return;}keys.add(key);if(e.repeat)return;if(pendingReplacementIndex!==null&&world?.status==='levelup'){if(key==='escape'){e.preventDefault();showChoices();}else if(['1','2','3','4','5','6','7','8'].includes(key))finishReplacement(world.replacementSkills(world.choices[pendingReplacementIndex].id)[+key-1]);return;}if(key==='i'){e.preventDefault();openInventory();return;}if(key==='escape'){if(inventoryModel)closeInventory();else if(world)pause();else $('#modal').hidden=true;}if(key===' '&&world)world.dash();if(world?.status==='levelup'&&['1','2','3','4'].includes(key))choose(+key-1);});addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));addEventListener('blur',()=>{keys.clear();pointer.active=false;thumbstick.cancel();if(world?.status==='playing')pause();});document.addEventListener('visibilitychange',()=>{if(world)persist();if(document.hidden&&world?.status==='playing')pause();audioEngine?.setScene(document.hidden?'hidden':world?.status==='playing'?'playing':'paused');});
+const importSaveInput=document.createElement('input');importSaveInput.id='import-save-file';importSaveInput.type='file';importSaveInput.accept='.json,application/json';importSaveInput.hidden=true;$('#game').append(importSaveInput);
+const importSaveButton=document.createElement('button');importSaveButton.id='import-save-button';importSaveButton.className='text-button session-button';importSaveButton.textContent='Import save';importSaveButton.onclick=()=>importSaveInput.click();sessionActions.append(importSaveButton);
+function cancelImportSave(){pendingImport=null;$('#modal').hidden=true;importSaveButton.focus();}
+importSaveInput.onchange=async()=>{
+  const file=importSaveInput.files?.[0];importSaveInput.value='';if(!file)return;
+  importSaveButton.disabled=true;
+  try{
+    if(file.size>MAX_SAVE_BYTES)throw Error('Save files must be smaller than 4 MB.');
+    const imported=parseSaveImport(await file.text());pendingImport=imported;keys.clear();pointer.active=false;thumbstick.cancel();
+    modal(`<div class="eyebrow">RESTORE YOUR JOURNEY</div><h2>Import save?</h2><p>This replaces your current progress with the selected save. Export your current save first if you want a backup.</p><p id="import-save-error" role="alert"></p><div class="dialog-actions"><button id="cancel-import-save" class="text-button">Cancel</button><button id="confirm-import-save" class="primary">Replace progress</button></div>`);
+    $('#cancel-import-save').onclick=cancelImportSave;
+    $('#confirm-import-save').onclick=()=>{
+      try{localStorage.setItem('allods-survivors-v1',JSON.stringify(pendingImport));}catch{$('#import-save-error').textContent='Progress could not be imported in this browser. Your current save has not been replaced.';return;}
+      save=pendingImport;pendingImport=null;world=null;location.reload();
+    };
+    $('#cancel-import-save').focus();
+  }catch(error){
+    pendingImport=null;modal(`<h2>Could not import save</h2><p role="alert">${escapeText(error.message)}</p><button id="close-import-error" class="text-button">Back</button>`);
+    $('#close-import-error').onclick=cancelImportSave;$('#close-import-error').focus();
+  }finally{importSaveButton.disabled=false;}
+};
+addEventListener('keydown',e=>{const key=e.key.toLowerCase();if(key==='escape'&&!spellDetail.hidden){e.preventDefault();hideSpellDetail();return;}if(loading){if(!e.ctrlKey&&!e.metaKey&&key!=='tab'&&key!=='f5')e.preventDefault();return;}if(controlsOpen){if(key==='escape'){e.preventDefault();closeControls();}return;}if([' ','arrowup','arrowdown','arrowleft','arrowright'].includes(key))e.preventDefault();if(pendingImport){if(key==='escape')cancelImportSave();if(key!=='tab'&&key!=='enter')e.preventDefault();return;}if(confirmingSession){if(key==='escape')cancelNewSession();if(key!=='tab'&&key!=='enter')e.preventDefault();return;}keys.add(key);if(e.repeat)return;if(pendingReplacementIndex!==null&&world?.status==='levelup'){if(key==='escape'){e.preventDefault();showChoices();}else if(['1','2','3','4','5','6','7','8'].includes(key))finishReplacement(world.replacementSkills(world.choices[pendingReplacementIndex].id)[+key-1]);return;}if(key==='i'){e.preventDefault();openInventory();return;}if(key==='escape'){if(inventoryModel)closeInventory();else if(world)pause();else $('#modal').hidden=true;}if(key===' '&&world)world.dash();if(world?.status==='levelup'&&['1','2','3','4'].includes(key))choose(+key-1);});addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));addEventListener('blur',()=>{keys.clear();pointer.active=false;thumbstick.cancel();if(world?.status==='playing')pause();});document.addEventListener('visibilitychange',()=>{if(world)persist();if(document.hidden&&world?.status==='playing')pause();audioEngine?.setScene(document.hidden?'hidden':world?.status==='playing'?'playing':'paused');});
 canvas.addEventListener('pointerdown',e=>{
   if(loading||world?.status!=='playing'||e.isPrimary===false||e.button!==0||pointer.active)return;
   const bounds=canvas.getBoundingClientRect(),x=(e.clientX-bounds.left)/displayScale,y=(e.clientY-bounds.top)/displayScale,view=battlefieldSize(width,height,mobileMode,safeArea.bottom);

@@ -10,6 +10,8 @@ Portrait screens and windows at most 900 CSS pixels wide automatically use a mob
 
 The campaign uses native map regions from the [Allods2.eu map pack](https://allods2.eu/files/maps_all.zip): 202 suitable map files currently contribute bounded regions of at most 48 x 40 tiles. Choose a seeded 12-region journey or all 202 regions. Original terrain, heights, sparse trees/buildings and supported creature families are retained. Fight a guardian, enter its portal within 30 active seconds, then spend earned gold at camp. The spell pool contains 23 retained native spell identities; Wall of Earth is removed from spell choices, casting and item bonuses, including older saves. Self-buffs obey their displayed recast cooldown, so short effects can expire before the next cast. Spells use cooldowns only; mana, mana regeneration, mana affixes and mana-efficiency rewards are removed, including from older saves. **Continue saved run** restores the current region, build and pending rewards. See [the mechanics profile](docs/survivors-mechanics.md) for the map selection rules, formulas and tests.
 
+Save files can be transferred between browser, mobile and desktop using **Export save** and **Import save** on the main menu. Select the exported JSON file and choose **Replace progress** to confirm. Import replaces the current inventory, gold and saved run; Cancel leaves them untouched. Invalid or oversized files are rejected. The Electron **Game > Import progress** menu remains available too.
+
 Allods 2 reference used for this project: [Allods2.eu: About](https://www.allods2.eu/en/about/).
 
 Built with workflows collected in [Regis](https://github.com/Sxela/regis), a combined skill developed from the findings of this project and related game adaptations.

@@ -128,8 +128,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 12755,
-      "sha256": "fba93b9600a5a0f9781c2dd1d76a005874ab178f58fb561a13018d1e2d8b6d20"
+      "bytes": 13156,
+      "sha256": "a0d4b01370a1f87efdb48515b8dfd8e42609a8ac93b3d62dc547af3dc8cea820"
     },
     {
       "path": "Start-Survivors-Browser.cmd",
@@ -10623,8 +10623,8 @@
     },
     {
       "path": "survivors/game.mjs",
-      "bytes": 63555,
-      "sha256": "2974c724b1339e9db07e6e8851050f8ec2b1023b172bb962ae968ba09d982bcc"
+      "bytes": 65968,
+      "sha256": "8bd6262921e836d70139b5c7896638ddd92a812b8ab70b4f93ffa70c76490c8d"
     },
     {
       "path": "survivors/http-server.cjs",
@@ -10775,6 +10775,11 @@
       "path": "survivors/run-state.mjs",
       "bytes": 8078,
       "sha256": "df5f9038fc14cd95f766a69e9b92dc28b84465877fb73bd1b5643355e02888eb"
+    },
+    {
+      "path": "survivors/save-transfer.mjs",
+      "bytes": 1630,
+      "sha256": "6914b4a952454359179bd6a5b13b24672857d0f9112db63913aae44c2dc702fc"
     },
     {
       "path": "survivors/shop-view.mjs",
@@ -11028,8 +11033,13 @@
     },
     {
       "path": "tests/runtime-browser.cjs",
-      "bytes": 5924,
-      "sha256": "660ae799522feaa4059bf8b6dc36f4c695133790c6ea2a1734dfcc8c6062cefc"
+      "bytes": 8521,
+      "sha256": "cba45ab95bc46069c58e42158e94e6c4aa1a6a2cd3a76cc4ab04c5b7c68b65fd"
+    },
+    {
+      "path": "tests/save-transfer.test.mjs",
+      "bytes": 1902,
+      "sha256": "8b2ace089bbeeee82543b74bb9bcf00e39df19500f8a3082998fe133c8676586"
     },
     {
       "path": "tests/spell-replacement.test.mjs",
