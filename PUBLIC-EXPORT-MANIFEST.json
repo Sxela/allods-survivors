@@ -10633,8 +10633,8 @@
     },
     {
       "path": "survivors/index.html",
-      "bytes": 3274,
-      "sha256": "05d75b861a9a23748e20adac93395a106930dd49235046b70247b8f5fd9dacbb"
+      "bytes": 3442,
+      "sha256": "b84fc960496d1ca318fae9216de9fada5c2803d19aab686aec6d9b771a909f2a"
     },
     {
       "path": "survivors/inspection-view.mjs",
